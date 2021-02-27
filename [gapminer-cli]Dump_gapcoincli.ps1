@@ -38,7 +38,7 @@ while($f -lt $Last){$Timer=Measure-Command{
     Write-Warning "$($Timer.TotalSeconds) sec ellapsed."}
     Remove-Item $hashout -Force
     Remove-Item $stdout -Force
-    Write-Warning "Final Raw Output is '$($Path)DumpBlocks_$($s)-$($Last-1)_test.csv'"
+    Write-Warning "Final Raw Output is '$($Path)DumpBlocks_$($s)-$($Last-1).csv'"
     
 
     #2/4 CONVERT RAW DATA INTO VARIABLES
@@ -124,8 +124,8 @@ while($f -lt $Last){$Timer=Measure-Command{
     ######Custom Format Output from RAW datas######
     ###############################################
     #If Clean DumpBlocks file exist, rename with formatted date
-    If ((Test-Path -Path "$($Path)DumpBlocks_$($s)-$($Last-1)_MersenneForum.csv" -PathType Leaf) -eq $True){
-    $Null=Rename-Item -Path "$($Path)DumpBlocks_$($s)-$($Last-1)_MersenneForum.csv" -NewName "$($Path)DumpBlocks_$($s)-$($Last-1)_MersenneForum_$($FDate).csv" -Force -ErrorAction Ignore}
+    If ((Test-Path -Path "$($Path)DumpBlocks_$($s)-$($Last-1)_Clean.csv" -PathType Leaf) -eq $True){
+    $Null=Rename-Item -Path "$($Path)DumpBlocks_$($s)-$($Last-1)_Clean.csv" -NewName "$($Path)DumpBlocks_$($s)-$($Last-1)_Clean_$($FDate).csv" -Force -ErrorAction Ignore}
     #Adapt this to selection or swap columns
     ('{0}{1}{2}{3}{4}{5}{6}{7}{8}' -f $height[$c],$Date[$c],$nonce[$c],$adder[$c],$difficulty[$c],$shift[$c],$Merit6[$c],$Gap[$c],$gapstart[$c])|Add-Content "$($Path)DumpBlocks_$($s)-$($Last-1)_Clean.csv"}
     Write-Warning "Final Clean Output is '$($Path)DumpBlocks_$($s)-$($Last-1)_Clean.csv'"
