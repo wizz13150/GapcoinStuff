@@ -116,7 +116,7 @@ while($f -lt $Last){$Timer=Measure-Command{
     #$nextblockhash=$In|Where{$_ -match "nextblockhash"}
     #$nextblockhash=$nextblockhash -replace '    "nextblockhash" : ' -replace '"'
     #$nextblockhash=@("nextblockhash,") + $nextblockhash
-    for($c = 0; $c -lt $height.Count; $c++){
+    
 
     #3/4 CONVERT CLEAN VARIABLES DATA INTO CUSTOM FORMAT
     ###############################################
