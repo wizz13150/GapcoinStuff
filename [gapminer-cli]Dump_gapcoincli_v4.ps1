@@ -1,5 +1,5 @@
 ﻿    #1/4 PRODUCE RAW OUTPUT 
-    #Section 2,3,4 can be used separately with partial raw output. Only need line 5 variables. 
+    #Section 2,3,4 can be used separately with partial raw output. Only need line 7 variables. 
     #Output from gapcoin-cli.exe takes 2 sec, need to find a way to be faster.
     #Line to eventually edit : 7,130.
     #Line to eventually comment/uncomment for a custom format : 52 to 118.
