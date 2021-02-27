@@ -118,7 +118,6 @@ while($f -lt $Last){$Timer=Measure-Command{
     #$nextblockhash=@("nextblockhash,") + $nextblockhash
     for($c = 0; $c -lt $height.Count; $c++){
 
-
     #3/4 CONVERT CLEAN VARIABLES DATA INTO CUSTOM FORMAT
     ###############################################
     ######Custom Format Output from RAW datas######
@@ -126,6 +125,7 @@ while($f -lt $Last){$Timer=Measure-Command{
     #If Clean DumpBlocks file exist, rename with formatted date
     If ((Test-Path -Path "$($Path)DumpBlocks_$($s)-$($Last-1)_Clean.csv" -PathType Leaf) -eq $True){
     $Null=Rename-Item -Path "$($Path)DumpBlocks_$($s)-$($Last-1)_Clean.csv" -NewName "$($Path)DumpBlocks_$($s)-$($Last-1)_Clean_$($FDate).csv" -Force -ErrorAction Ignore}
+    for($c = 0; $c -lt $height.Count; $c++){
     #Adapt this to selection or swap columns
     ('{0}{1}{2}{3}{4}{5}{6}{7}{8}' -f $height[$c],$Date[$c],$nonce[$c],$adder[$c],$difficulty[$c],$shift[$c],$Merit6[$c],$Gap[$c],$gapstart[$c])|Add-Content "$($Path)DumpBlocks_$($s)-$($Last-1)_Clean.csv"}
     Write-Warning "Final Clean Output is '$($Path)DumpBlocks_$($s)-$($Last-1)_Clean.csv'"
