@@ -1,10 +1,10 @@
 ﻿    #1/4 PRODUCE RAW OUTPUT FROM GAPCOIN BLOCKCHAIN
     #Sections 2,3,4 can be used separately with partial DumpBlocks_* file. Only need line 7 variables to run. 
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
-    #How to: Set line 8, put gapcoin-cli in $Path directory. Run script from everywhere.
+    #How to: Set line 8, put gapcoin-cli.exe in $Path directory. Run script from everywhere.
     #Lines to eventually edit : 8,131.
     #Lines to eventually comment/uncomment for a custom output format : 50 to 116.
-    #First & Last block (+1 excluded). Dir Path
+    #First & Last block (+1 excluded). gapcoin-cli.exe and output Path.
     $f=$s=1;$Last=1001;$Path="C:\Temp\Test\"
 
     #Repeated variables & Date
