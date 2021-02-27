@@ -1,10 +1,10 @@
-Wizz_^
+**Wizz_^**
 
 Gapcoin Stuff
 
 ######################################
 
-Sample files are produced by [gapminer-cli]Dump_gapcoincli_v4.ps1.
+**Sample files are produced by [gapminer-cli]Dump_gapcoincli_v4.ps1.**
 
 [Sample]DumpBlocks_1-x.csv
 
@@ -14,7 +14,7 @@ Sample files are produced by [gapminer-cli]Dump_gapcoincli_v4.ps1.
 
 ######################################
 
-Data are produced by gapminer-cpu RawOutput.
+**Data are produced by gapminer-cpu RawOutput.**
 
 [Data]Shift25-99_2HoursEach_PPSTESTS.csv
 
@@ -22,7 +22,7 @@ Data are produced by gapminer-cpu RawOutput.
 
 ######################################
 
-gapminer-cpu produce or clear output from gapminer-cpu.
+**gapminer-cpu produce or clear output from gapminer-cpu.**
 
 [gapminer-cpu]ClearFoundSharesFromGapminer-cpuRawOutput.ps1
 
@@ -32,10 +32,10 @@ gapminer-cpu produce or clear output from gapminer-cpu.
 
 ######################################
 
-gapminer-cli produce or clear output from gapminer-cli.
+**gapminer-cli produce or clear output from gapminer-cli.**
 
 [gapminer-cli]Dump_gapcoincli_v4.ps1
 
 ######################################
 
-#Pi
+**#Pi**
