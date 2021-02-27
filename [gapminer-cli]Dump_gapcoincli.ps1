@@ -1,6 +1,6 @@
 ﻿    #1/4 PRODUCE RAW OUTPUT FROM GAPCOIN BLOCKCHAIN
     #Sections 2,3,4 can be used separately with partial raw output. Only need line 7 variables to run. 
-    #Output from gapcoin-cli.exe takes 2 sec, need to find a way to be faster.
+    #Output from gapcoin-cli.exe takes 2 sec, need to find a way to be way faster.
     #Lines to eventually edit : 7,130.
     #Lines to eventually comment/uncomment for a custom format : 52 to 118.
     #First & Last block (+1 excluded). Dir Path
