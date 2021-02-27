@@ -2,7 +2,7 @@
     #Sections 2,3,4 can be used separately with partial raw output. Only need line 7 variables to run. 
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
     #Lines to eventually edit : 7,130.
-    #Lines to eventually comment/uncomment for a custom format : 52 to 118.
+    #Lines to eventually comment/uncomment for a custom format : 49 to 115.
     #First & Last block (+1 excluded). Dir Path
     $f=$s=1;$Last=1001;$Path="C:\Temp\Test\"
 
@@ -44,10 +44,7 @@ while($f -lt $Last){$Timer=Measure-Command{
     #2/4 CONVERT RAW DATA INTO VARIABLES
     ###############################################
     ######Custom Format Output from RAW datas######
-    ###############################################
-    #If Clean DumpBlocks file exist, rename withformatted date
-    If ((Test-Path -Path "$($Path)DumpBlocks_$($s)-$($Last-1)_Clean.csv" -PathType Leaf) -eq $True){
-    $Null=Rename-Item -Path "$($Path)DumpBlocks_$($s)-$($Last-1)_Clean.csv" -NewName "$($Path)DumpBlocks_$($s)-$($Last-1)_Clean_$($FDate).csv" -Force -ErrorAction Ignore}
+    ###############################################     
     $In=(Get-Content "$($Path)DumpBlocks_$($s)-$($Last-1).csv")
     #$hash=$In|Where{$_ -match '"hash" :'}
     #$hash=$hash -replace '    "hash" : ' -replace '"'
