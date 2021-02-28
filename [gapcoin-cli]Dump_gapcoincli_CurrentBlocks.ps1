@@ -20,7 +20,7 @@
     #And then get last proccessed block height and next hash from it
     $LastProcessed=Get-Content -Path $Dump|Where {$_ -match "height"}
     $LastProcessed=$LastProcessed -replace '    "height" : ' -replace ','
-    $LastProcessed=$LastProcessed.split()[-1]    
+    $LastProcessed=$LastProcessed.split()[-1]
     $LastProcessed|Set-Content $lastproc
     #Get next hash from Dump_LastBlocks file
     $LastHash=Get-Content -Path $Dump|Where {$_ -match "nextblockhash"}
@@ -29,27 +29,28 @@
     $LastProcessed=[decimal]$LastProcessed+1
 
     #Or from lastproc file if exist
-    }Else{If((Test-Path -Path $lastproc -PathType Leaf) -eq $True){
-    Write-Warning "Searching for the last proccessed block in lastproc file."
-    $LastProcessed=Get-Content -Path $lastproc
-    Write-Warning "Last proccessed block is $LastProcessed found in $lastproc"
+    }Else{
+    #If((Test-Path -Path $lastproc -PathType Leaf) -eq $True){
+    #Write-Warning "Searching for the last proccessed block in lastproc file."
+    #$LastProcessed=Get-Content -Path $lastproc
+    #Write-Warning "Last proccessed block is $LastProcessed found in $lastproc"
     #Request hash from last processed block
-    Write-Warning "No hash found, so request hash for block $LastProcessed..." 
-    $Null=Start-Process $Proc -Argumentlist "getblockhash $LastProcessed" -RedirectStandardOutput $hashout -Wait -WindowStyle Hidden -PassThru
-    $LastHash=Get-Content $hashout}
+    #Write-Warning "No hash found, so request hash for block $LastProcessed..." 
+    #$Null=Start-Process $Proc -Argumentlist "getblockhash $LastProcessed" -RedirectStandardOutput $hashout -Wait -WindowStyle Hidden -PassThru
+    #$LastHash=Get-Content $hashout}
 
     #Else it will Start from current last block height
-    Else{
+    #Else{
     $LastProcessed=$LastHeight
     #Request hash from last processed block
     Write-Warning "No proccessed last blocks found nor hash, so request hash for block $LastProcessed..." 
     $Null=Start-Process $Proc -Argumentlist "getblockhash $LastProcessed" -RedirectStandardOutput $hashout -Wait -WindowStyle Hidden -PassThru
-    $LastHash=Get-Content $hashout}}
-
+    $LastHash=Get-Content $hashout}
+    #}
     #Display numbers of blocks to dump until now
     $Diff=$LastHeight-$LastProcessed
     Write-Warning "$($Diff) blocks to dump until up to date."
-    
+
     
 
     ###################################################################################
@@ -59,28 +60,21 @@
 
     Write-Warning "Starting Loop..."
 While($True){
-
     while($LastProcessed -lt $LastHeight){$Timer=Measure-Command{
     Write-Host "     " -BackgroundColor DarkGreen
-    #Write-Warning "Processing hash for block $LastProcessed..."    
-    #Request hash from last processed block   
-    #$Null=Start-Process $Proc -Argumentlist "getblockhash $LastProcessed" -Wait -RedirectStandardOutput $hashout -WindowStyle Hidden -PassThru
-    #$LastHash=Get-Content $hashout
-
     #Dump block
     Write-Warning "Processing raw data for block $LastProcessed..."
     $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockout -Wait -WindowStyle Hidden -PassThru
     $Block=Get-Content $blockout
     $Block|Add-Content $Dump
-    Write-Warning "Raw data dumped in $Dump"
-
+    #Get next hash
+    $LastHash=$Block|Select-String -SimpleMatch nextblockhash
+    $LastHash=$LastHash -replace '    "nextblockhash" : ' -replace '"'
     #Save last processed block height
-    #$LastProcessed=$LastBlock| Where {$_ -match "height"}
-    #$LastProcessed=$LastProcessed -replace '    "height" : ' -replace ','|Set-Content -Path $lastproc
-    Write-Warning "Last proccessed height is $LastProcessed, saved in $lastproc"}
+    $LastProcessed|Set-Content $lastproc
+    Write-Warning "Raw data dumped in $Dump"
+    $LastProcessed=[decimal]$LastProcessed+1}} #End measure 
     Write-Warning "[DUMP] $($Timer.TotalSeconds) sec ellapsed."
-    $LastProcessed=[decimal]$LastProcessed+1
-    } #End measure
     
     #Request again for last block height since start processing, if new one, don't sleep
     Write-Warning "Processing last block height, if new one, don't sleep..."
@@ -105,5 +99,4 @@ While($True){
     $LastHeight=Get-Content $heightout
     Write-Warning "Last block height is $LastHeight"
     Write-Warning "Block $LastHeight processed."
-    }#End Dump Loop
-       
+    }#End Dump Loop       
