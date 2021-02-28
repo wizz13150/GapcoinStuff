@@ -2,8 +2,8 @@
     #Sections 2,3,4 can be used separately with partial DumpBlocks_* file. Only need line 7 variables to run. 
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
     #How to: Set line 8, put gapcoin-cli.exe in $Path directory. Run script from everywhere.
-    #Lines to eventually edit : 8,200
-    #Lines to eventually comment/uncomment for a custom output format : 122 to 188
+    #Lines to eventually edit : 8,195
+    #Lines to eventually comment/uncomment for a custom output format : 117 to 183
     #Path for gapcoin-cli.exe and outputs
     $Path="C:\Temp\Test\"
 
@@ -181,7 +181,6 @@ While($True){
     #$nextblockhash=$In|Where{$_ -match "nextblockhash"}
     #$nextblockhash=$nextblockhash -replace '    "nextblockhash" : ' -replace '"'
     #$nextblockhash=@("nextblockhash,") + $nextblockhash
-    for($c = 0; $c -lt $height.Count; $c++){
 
 
     #3/4 CONVERT CLEAN VARIABLES DATA INTO CUSTOM FORMAT
@@ -191,9 +190,10 @@ While($True){
     #If Clean DumpBlocks file exist, rename with formatted date
     If ((Test-Path -Path $DumpCustom -PathType Leaf) -eq $True){
     $Null=Rename-Item -Path "$($Path)$($DumpCustom).csv" -NewName "$($DumpCustom)_$($FDate).csv" -Force -ErrorAction Ignore}
+    for($c = 0; $c -lt $height.Count; $c++){
     #Adapt this to selection or swap columns
-    ('{0}{1}{2}{3}{4}{5}{6}{7}{8}' -f $height[$c],$Date[$c],$nonce[$c],$adder[$c],$difficulty[$c],$shift[$c],$Merit6[$c],$Gap[$c],$gapstart[$c])|Add-Content $DumpCustom}
-    Write-Warning "Final Mersenne Output is $DumpMersenne"
+    ('{0}{1}{2}{3}{4}{5}{6}{7}{8}' -f $height[$c],$Date[$c],$nonce[$c],$adder[$c],$difficulty[$c],$shift[$c],$Merit6[$c],$Gap[$c],$gapstart[$c])|Add-Content "$($Path)$($DumpCustom).csv"}
+    Write-Warning "Final Mersenne Output is $DumpCustom"
 
 
     #4/4 CONVERT CLEAN VARIABLES DATA INTO MERSENNE FORUM SUBMISSON FORMAT
@@ -202,8 +202,8 @@ While($True){
     ###############################################
     #If MersenneForum DumpBlocks file exist, rename with formatted date
     If ((Test-Path -Path "$($Path)$($DumpMersenne).csv" -PathType Leaf) -eq $True){
-    $Null=Rename-Item -Path $DumpMersenne -NewName "$($Path)DumpBlocks_Mersenne_$($FDate).csv" -Force -ErrorAction Ignore}
+    $Null=Rename-Item -Path "$($Path)$($DumpMersenne).csv" -NewName "$($DumpMersenne)_$($FDate).csv" -Force -ErrorAction Ignore}
     for($c = 0; $c -lt $height.Count; $c++){
     #If next is edited, no more for submission
-    ('{0}C??,{2},Gapcoin,{4}{5},{6}' -f $Gap[$c],'C??,',$Merit6[$c],'Gapcoin,',$Date[$c],$Digits[$c],$gapstart[$c])|Add-Content "$($Path)DumpBlocks_$($s)-$($Last-1)_MersenneForum.csv"}
-    Write-Warning "Final MersenneForum Output is '$($Path)DumpBlocks_$($s)-$($Last-1)_MersenneForum.csv'"
+    ('{0}C??,{2},Gapcoin,{4}{5},{6}' -f $Gap[$c],'C??,',$Merit6[$c],'Gapcoin,',$Date[$c],$Digits[$c],$gapstart[$c])|Add-Content "$($Path)$($DumpMersenne).csv"}
+    Write-Warning "Final MersenneForum Output is $DumpMersenne"
