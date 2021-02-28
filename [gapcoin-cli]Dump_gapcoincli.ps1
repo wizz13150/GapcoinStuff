@@ -2,15 +2,15 @@
     #Sections 2,3,4 can be used separately with partial DumpBlocks_* file. Only need line 7 variables to run. 
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
     #How to: Set line 8, put gapcoin-cli.exe in $Path directory. Run script from everywhere.
-    #Lines to eventually edit : 8,164
+    #Lines to eventually edit : 8,163
     #Lines to eventually comment/uncomment for a custom output format : 85 to 151
     #Path for gapcoin-cli.exe and outputs
     $Path="C:\Temp\Test\"
 
     #Repeated Variables
     $heightout="$($Path)heightout.txt";$hashout="$($Path)hashout.txt";$blockout="$($Path)blockout.txt";$lastproc="$($Path)lastproc.txt"
-    $Dump="$($Path)Dump_LastBlocks_Test.csv";$Proc="$($Path)gapcoin-cli.exe";$DumpMersenne="Dump_LastBlocks_Test_Mersenne"
-    $DumpCustom="Dump_LastBlocks_Test_Custom";$FDate=((Get-Date) -replace " ","_" -replace ":" -replace "/")
+    $Dump="$($Path)Dump_LastBlocks.csv";$Proc="$($Path)gapcoin-cli.exe";$DumpMersenne="Dump_LastBlocks_Mersenne"
+    $DumpCustom="Dump_LastBlocks_Custom";$FDate=((Get-Date) -replace " ","_" -replace ":" -replace "/")
 
     #First Request for last block height value
     $Null=Start-Process $Proc -Argumentlist "getblockcount" -RedirectStandardOutput $heightout -Wait -WindowStyle Hidden -PassThru
@@ -162,23 +162,28 @@ While($True){
     #Adapt this to selection or swap columns
     ('{0}{1}{2}{3}{4}{5}{6}{7}{8}' -f $height[$c],$Date[$c],$nonce[$c],$adder[$c],$difficulty[$c],$shift[$c],$Merit6[$c],$Gap[$c],$gapstart[$c])|Add-Content "$($Path)$($DumpCustom).csv"}
     Write-Warning "Custom Format Output added to $DumpCustom.csv"
-
-
+    
     
     #4/4 CONVERT CLEAN VARIABLES DATA INTO MERSENNE FORUM SUBMISSON FORMAT
     ###############################################
     ###### Custom Format for Mersenne Forum  ######
     ###############################################
-    #If MersenneForum DumpBlocks file exist, rename with formatted date
-    #If ((Test-Path -Path "$($Path)$($DumpMersenne).csv" -PathType Leaf) -eq $True){
-    #$Null=Rename-Item -Path "$($Path)$($DumpMersenne).csv" -NewName "$($DumpMersenne)_$($FDate).csv" -Force -ErrorAction Ignore}
+    #If MersenneForum DumpBlocks file doesn't exist, create with first line
+    If ((Test-Path -Path "$($Path)$($DumpMersenne).csv" -PathType Leaf) -eq $False){
+    $Null=New-Item "$($Path)$($DumpMersenne).csv" |Set-Content "Gap,C??,Merit6,Gapcoin,Date,Digits,Gapstart,"
     for($c = 0; $c -lt $height.Count; $c++){
-    #If next is edited, no more for submission
-    ('{0}C??,{2},Gapcoin,{4}{5},{6}')|Add-Content "$($Path)$($DumpMersenne).csv"}
-    Write-Warning "MersenneForum Format Output is $DumpMersenne.csv"
+    #If next one is edited, no more for submission
+    ('{0}{1}{2}{3}{4}{5}{6}{7}{8}' -f $height[$c],$Date[$c],$nonce[$c],$adder[$c],$difficulty[$c],$shift[$c],$Merit6[$c],$Gap[$c],$gapstart[$c])|Add-Content "$($Path)$($DumpCustom).csv"}
+    Write-Warning "MersenneForum Format Output is $DumpCustom"    
+    }Else{
+    #Adapt variables for loop dump
+    $Gap=$Gap.split()[1] -replace ',';$Merit=$Merit -replace ',';$Date=$Date.split()[1] -replace ','
+    $Digits=[string]$Digits -replace 'Digits ';$gapstart=$gapstart.split()[1] -replace ','
+    #If next one is edited, no more for submission
+    "$Gap,C??,$Merit,Gapcoin,$Date,$Digits,$gapstart"|Add-Content "$($Path)$($DumpMersenne).csv"
+    Write-Warning "MersenneForum Format Output added to $DumpMersenne.csv"}
     }#End dumping loop
-    
-    
+     
     #Loop to check for new blocks or sleep 10 sec
     $Previous=$LastHeight
     while($LastHeight -le $LastProcessed){
@@ -188,6 +193,5 @@ While($True){
     If($LastHeight -eq $Previous){
     Write-Warning "No new block, sleep for 10 sec. (Current height: $LastHeight)"
     Write-Host "     " -BackgroundColor DarkYellow
-    Start-Sleep -Seconds 10}Else{Write-Warning "New block found, going forward !"}}
-        
+    Start-Sleep -Seconds 10}Else{Write-Warning "New block found, going forward !"}}        
     }#End Dump Loop
