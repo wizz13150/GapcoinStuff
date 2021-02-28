@@ -21,9 +21,9 @@
     $LastProcessed=Get-Content -Path $Dump|Where {$_ -match "height"}
     $LastProcessed=$LastProcessed -replace '    "height" : ' -replace ','
     $LastProcessed=$LastProcessed.split()[-1]
-    $LastProcessed=[decimal]$LastProcessed+1
     $LastProcessed|Set-Content $lastproc
     Write-Warning "Last proccessed block is $LastProcessed found in $Dump"
+    $LastProcessed=[decimal]$LastProcessed+1
 
     #Or from lastproc file if exist
     }Else{If((Test-Path -Path $lastproc -PathType Leaf) -eq $True){
