@@ -1,3 +1,4 @@
+    ##Not final version##
     #Current Blocks dumper from gapcoin-cli.exe
     #Path for gapcoin-cli.exe and outputs
     $Path="C:\Temp\Test\"
