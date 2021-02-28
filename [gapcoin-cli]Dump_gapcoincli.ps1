@@ -2,7 +2,7 @@
     #Sections 2,3,4 can be used separately with partial DumpBlocks_* file. Only need line 7 variables to run. 
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
     #How to: Set line 8, put gapcoin-cli.exe in $Path directory. Run script from everywhere.
-    #Lines to eventually edit : 8,180
+    #Lines to eventually edit : 8,164
     #Lines to eventually comment/uncomment for a custom output format : 86 to 152
     #Path for gapcoin-cli.exe and outputs
     $Path="C:\Temp\Test\"
@@ -32,14 +32,14 @@
     Else{
     Write-Warning "No proccessed block nor hash found, so request new hash" 
     #Ask for starting block
-    $userinput = Read-Host "No Dump file found, enter first block to dump (Default is 1)"
+    $userinput = Read-Host "No Dump file found, enter first block to dump (Default is block 1)"
     if(-not($userinput)){$userinput = '1'}#else{Write-output "Input a ete saisi"}
     $LastProcessed=$userinput
     
     #Request hash from last processed block
     $Null=Start-Process $Proc -Argumentlist "getblockhash $LastProcessed" -RedirectStandardOutput $hashout -Wait -WindowStyle Hidden -PassThru
     $LastHash=Get-Content $hashout
-    Write-Warning "Last hash to use is $LastHash" 
+    Write-Warning "Last hash to use is $LastHash"
     #Dump block
     Write-Warning "Processing raw data for block $LastProcessed..."
     $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockout -Wait -WindowStyle Hidden -PassThru
@@ -61,9 +61,10 @@
 
     Write-Warning "Starting Loop..."
 While($True){
-    while($LastProcessed -lt $LastHeight){
-    $LastProcessed=[decimal]$LastProcessed+1
+    Write-Warning "First step in loop"
+    while([decimal]$LastProcessed -lt [decimal]$LastHeight){
     Write-Host "     " -BackgroundColor DarkGreen
+    $LastProcessed=[decimal]$LastProcessed+1
     #Dump block
     Write-Warning "Processing raw data for block $LastProcessed..."
     $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockout -Wait -WindowStyle Hidden -PassThru
@@ -81,7 +82,6 @@ While($True){
     ###############################################
     ######Custom Format Output from RAW datas######
     ###############################################
-    Write-Warning "Processing variables..."
     $In=Get-Content $blockout
     #$hash=$In|Where{$_ -match '"hash" :'}
     #$hash=$hash -replace '    "hash" : ' -replace '"'
@@ -156,29 +156,26 @@ While($True){
     ###############################################
     ######Custom Format Output from RAW datas######
     ###############################################
-    Write-Warning "Processing Custom Format Output..."
     #If Clean DumpBlocks file exist, rename with formatted date
     #If ((Test-Path -Path "$($Path)$($DumpCustom).csv" -PathType Leaf) -eq $True){
     #$Null=Rename-Item -Path "$($Path)$($DumpCustom).csv" -NewName "$($DumpCustom)_$($FDate).csv" -Force -ErrorAction Ignore}
     for($c = 0; $c -lt $height.Count; $c++){
     #Adapt this to selection or swap columns
     ('{0}{1}{2}{3}{4}{5}{6}{7}{8}' -f $height[$c],$Date[$c],$nonce[$c],$adder[$c],$difficulty[$c],$shift[$c],$Merit6[$c],$Gap[$c],$gapstart[$c])|Add-Content "$($Path)$($DumpCustom).csv"}
-    Write-Warning "Custom Format Output is '$($Path)$($DumpCustom).csv'"
-
+    Write-Warning "Custom Format Output added to $DumpCustom.csv"
 
     
     #4/4 CONVERT CLEAN VARIABLES DATA INTO MERSENNE FORUM SUBMISSON FORMAT
     ###############################################
     ###### Custom Format for Mersenne Forum  ######
     ###############################################
-    Write-Warning "Processing MersenneForum Format Output..."
     #If MersenneForum DumpBlocks file exist, rename with formatted date
     #If ((Test-Path -Path "$($Path)$($DumpMersenne).csv" -PathType Leaf) -eq $True){
     #$Null=Rename-Item -Path "$($Path)$($DumpMersenne).csv" -NewName "$($DumpMersenne)_$($FDate).csv" -Force -ErrorAction Ignore}
     for($c = 0; $c -lt $height.Count; $c++){
     #If next is edited, no more for submission
-    ('{0}C??,{2},Gapcoin,{4}{5},{6}' -f $Gap[$c],'C??,',$Merit6[$c],'Gapcoin,',$Date[$c],$Digits[$c],$gapstart[$c])|Add-Content "$($Path)$($DumpMersenne).csv"}
-    Write-Warning "MersenneForum Format Output is '$($Path)$($DumpMersenne).csv'"
+    ('{0}C??,{2},Gapcoin,{4}{5},{6}')|Add-Content "$($Path)$($DumpMersenne).csv"}
+    Write-Warning "MersenneForum Format Output is $DumpMersenne.csv"
     }#End dumping loop
     
     
