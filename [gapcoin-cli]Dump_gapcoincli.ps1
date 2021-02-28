@@ -2,8 +2,8 @@
     #Sections 2,3,4 can be used separately with partial DumpBlocks_* file. Only need line 7 variables to run. 
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
     #How to: Set line 8, put gapcoin-cli.exe in $Path directory. Run script from everywhere.
-    #Lines to eventually edit : 8,182
-    #Lines to eventually comment/uncomment for a custom output format : 104 to 170
+    #Lines to eventually edit : 8,180
+    #Lines to eventually comment/uncomment for a custom output format : 86 to 152
     #Path for gapcoin-cli.exe and outputs
     $Path="C:\Temp\Test\"
 
@@ -36,7 +36,6 @@
     if(-not($userinput)){$userinput = '1'}#else{Write-output "Input a ete saisi"}
     $LastProcessed=$userinput
     
-    #$LastProcessed=$LastHeight
     #Request hash from last processed block
     $Null=Start-Process $Proc -Argumentlist "getblockhash $LastProcessed" -RedirectStandardOutput $hashout -Wait -WindowStyle Hidden -PassThru
     $LastHash=Get-Content $hashout
@@ -54,9 +53,7 @@
     Write-Warning "$($Diff) blocks to dump until up to date."}Else{
     $Diff=[decimal]$LastHeight-[decimal]$LastProcessed
     Write-Warning "$($Diff) blocks to dump until up to date"}
-
     
-
     ###################################################################################
     ###Loop to dump repeatedly from last processed block height until current blocks###
     ###                    Or from current last block                               ###
@@ -78,29 +75,14 @@ While($True){
     #Save last processed block height
     $LastProcessed|Set-Content $lastproc
     Write-Warning "Raw data dumped in $Dump"}
-    $Previous=$LastHeight
-    #Loop to check for new blocks or sleep 10 sec
-    while($LastHeight -le $LastProcessed){
-    Write-Warning "Check for a new block..."
-    $Null=Start-Process $Proc -Argumentlist "getblockcount" -RedirectStandardOutput $heightout -Wait -WindowStyle Hidden -PassThru
-    $LastHeight=Get-Content $heightout
-    If($LastHeight -eq $Previous){
-    Write-Warning "No new block, sleep for 10 sec. (Current height: $LastHeight)"
-    Write-Host "     " -BackgroundColor DarkYellow
-    Start-Sleep -Seconds 10}Else{Write-Warning "New block found, going forward !"}        
-    }
     
     
-    
-    }#End Dump Loop
-
-
     #2/4 CONVERT RAW DATA INTO VARIABLES
     ###############################################
     ######Custom Format Output from RAW datas######
     ###############################################
-    #If Clean DumpBlocks file exist, rename withformatted date
-    $In=Get-Content $Dump
+    Write-Warning "Processing variables..."
+    $In=Get-Content $blockout
     #$hash=$In|Where{$_ -match '"hash" :'}
     #$hash=$hash -replace '    "hash" : ' -replace '"'
     #$hash=@("hash,") + $hash
@@ -119,9 +101,9 @@ While($True){
     #$merkleroot=$In|Where{$_ -match "merkleroot"}
     #$merkleroot=$merkleroot -replace '    "merkleroot" : ' -replace '"'
     #$merkleroot=@("merkleroot,") + $merkleroot
-    ##$tx=$In|Where{$_ -match "tx"}                 #Ligne +1 ToDo, doesn't works
-    ##$tx=$tx -replace '    "tx" : ' -replace '"'   #Ligne +1 ToDo, doesn't works
-    ##$tx=@("tx,") + $tx                            #Ligne +1 ToDo, doesn't works
+    ##$tx=$In|Where{$_ -match "tx"}                         #Ligne +1 ToDo, doesn't works
+    ##$tx=$tx -replace '    "tx" : ' -replace '"'           #Ligne +1 ToDo, doesn't works
+    ##$tx=@("tx,") + $tx                                    #Ligne +1 ToDo, doesn't works
     $time=$In|Where{$_ -match "time"}
     $time=$time -replace '    "time" : ' -replace ',' 
     $blockdates=ForEach ($ut in $time){
@@ -169,28 +151,45 @@ While($True){
     #$nextblockhash=$nextblockhash -replace '    "nextblockhash" : ' -replace '"'
     #$nextblockhash=@("nextblockhash,") + $nextblockhash
 
-
+    
     #3/4 CONVERT CLEAN VARIABLES DATA INTO CUSTOM FORMAT
     ###############################################
     ######Custom Format Output from RAW datas######
     ###############################################
+    Write-Warning "Processing Custom Format Output..."
     #If Clean DumpBlocks file exist, rename with formatted date
-    If ((Test-Path -Path "$($Path)$($DumpCustom).csv" -PathType Leaf) -eq $True){
-    $Null=Rename-Item -Path "$($Path)$($DumpCustom).csv" -NewName "$($DumpCustom)_$($FDate).csv" -Force -ErrorAction Ignore}
+    #If ((Test-Path -Path "$($Path)$($DumpCustom).csv" -PathType Leaf) -eq $True){
+    #$Null=Rename-Item -Path "$($Path)$($DumpCustom).csv" -NewName "$($DumpCustom)_$($FDate).csv" -Force -ErrorAction Ignore}
     for($c = 0; $c -lt $height.Count; $c++){
     #Adapt this to selection or swap columns
     ('{0}{1}{2}{3}{4}{5}{6}{7}{8}' -f $height[$c],$Date[$c],$nonce[$c],$adder[$c],$difficulty[$c],$shift[$c],$Merit6[$c],$Gap[$c],$gapstart[$c])|Add-Content "$($Path)$($DumpCustom).csv"}
-    Write-Warning "Final Mersenne Output is '$($Path)$($DumpCustom).csv'"
+    Write-Warning "Custom Format Output is '$($Path)$($DumpCustom).csv'"
 
 
+    
     #4/4 CONVERT CLEAN VARIABLES DATA INTO MERSENNE FORUM SUBMISSON FORMAT
     ###############################################
     ###### Custom Format for Mersenne Forum  ######
     ###############################################
+    Write-Warning "Processing MersenneForum Format Output..."
     #If MersenneForum DumpBlocks file exist, rename with formatted date
-    If ((Test-Path -Path "$($Path)$($DumpMersenne).csv" -PathType Leaf) -eq $True){
-    $Null=Rename-Item -Path "$($Path)$($DumpMersenne).csv" -NewName "$($DumpMersenne)_$($FDate).csv" -Force -ErrorAction Ignore}
+    #If ((Test-Path -Path "$($Path)$($DumpMersenne).csv" -PathType Leaf) -eq $True){
+    #$Null=Rename-Item -Path "$($Path)$($DumpMersenne).csv" -NewName "$($DumpMersenne)_$($FDate).csv" -Force -ErrorAction Ignore}
     for($c = 0; $c -lt $height.Count; $c++){
     #If next is edited, no more for submission
     ('{0}C??,{2},Gapcoin,{4}{5},{6}' -f $Gap[$c],'C??,',$Merit6[$c],'Gapcoin,',$Date[$c],$Digits[$c],$gapstart[$c])|Add-Content "$($Path)$($DumpMersenne).csv"}
-    Write-Warning "Final MersenneForum Output is '$($Path)$($DumpMersenne).csv'"
+    Write-Warning "MersenneForum Format Output is '$($Path)$($DumpMersenne).csv'"
+    
+    
+    #Loop to check for new blocks or sleep 10 sec
+    $Previous=$LastHeight
+    while($LastHeight -le $LastProcessed){
+    Write-Warning "Check for a new block..."
+    $Null=Start-Process $Proc -Argumentlist "getblockcount" -RedirectStandardOutput $heightout -Wait -WindowStyle Hidden -PassThru
+    $LastHeight=Get-Content $heightout
+    If($LastHeight -eq $Previous){
+    Write-Warning "No new block, sleep for 10 sec. (Current height: $LastHeight)"
+    Write-Host "     " -BackgroundColor DarkYellow
+    Start-Sleep -Seconds 10}Else{Write-Warning "New block found, going forward !"}}
+        
+    }#End Dump Loop
