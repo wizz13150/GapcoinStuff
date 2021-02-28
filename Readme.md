@@ -34,7 +34,9 @@ Gapcoin Stuff
 
 **gapminer-cli produce or clear output from gapminer-cli.**
 
-[gapminer-cli]Dump_gapcoincli_v4.ps1
+[gapcoin-cli]Dump_gapcoincli_v4.ps1
+
+[gapcoin-cli]Dump_gapcoincli_CurrentBlocks.ps1
 
 ######################################
 
