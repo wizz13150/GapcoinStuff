@@ -1,4 +1,3 @@
-    ##Not final version##
     #Current Blocks dumper from gapcoin-cli.exe
     #Path for gapcoin-cli.exe and outputs
     $Path="C:\Temp\Test\"
@@ -27,10 +26,8 @@
     $LastHash=Get-Content -Path $Dump|Where {$_ -match "nextblockhash"}
     $Lasthash=($Lasthash -replace '    "nextblockhash" : ' -replace '"').Split()[-1]
     Write-Warning "Last proccessed block in Dump file is $LastProcessed"
-    $LastProcessed=[decimal]$LastProcessed+1
-
-    #Or from lastproc file if exist
-    }Else{
+    $LastProcessed=[decimal]$LastProcessed+1}Else{
+    #Or from lastproc file if exist    
     #If((Test-Path -Path $lastproc -PathType Leaf) -eq $True){
     #Write-Warning "Searching for the last proccessed block in lastproc file."
     #$LastProcessed=Get-Content -Path $lastproc
@@ -46,11 +43,13 @@
     #Request hash from last processed block
     Write-Warning "No proccessed last blocks found nor hash, so request hash for block $LastProcessed..." 
     $Null=Start-Process $Proc -Argumentlist "getblockhash $LastProcessed" -RedirectStandardOutput $hashout -Wait -WindowStyle Hidden -PassThru
-    $LastHash=Get-Content $hashout}
-    #}
+    $LastHash=Get-Content $hashout} #}
     #Display numbers of blocks to dump until now
-    $Diff=$LastHeight-$LastProcessed
-    Write-Warning "$($Diff) blocks to dump until up to date."
+    If(([decimal]$LastHeight -eq [decimal]$LastProcessed) -eq $True){
+    $Diff=$LastHeight
+    Write-Warning "$($Diff) blocks to dump until up to date."}Else{
+    $Diff=[decimal]$LastHeight-[decimal]$LastProcessed
+    Write-Warning "$($Diff) blocks to dump until up to date"}
 
     
 
@@ -100,4 +99,5 @@ While($True){
     $LastHeight=Get-Content $heightout
     Write-Warning "Last block height is $LastHeight"
     Write-Warning "Block $LastHeight processed."
-    }#End Dump Loop       
+    }#End Dump Loop
+       
