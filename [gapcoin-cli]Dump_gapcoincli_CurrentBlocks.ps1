@@ -26,26 +26,29 @@
     $LastHash=Get-Content -Path $Dump|Where {$_ -match "nextblockhash"}
     $Lasthash=($Lasthash -replace '    "nextblockhash" : ' -replace '"').Split()[-1]
     Write-Warning "Last proccessed block in Dump file is $LastProcessed"
-    $LastProcessed=[decimal]$LastProcessed+1}Else{
-    #Or from lastproc file if exist    
-    #If((Test-Path -Path $lastproc -PathType Leaf) -eq $True){
-    #Write-Warning "Searching for the last proccessed block in lastproc file."
-    #$LastProcessed=Get-Content -Path $lastproc
-    #Write-Warning "Last proccessed block is $LastProcessed found in $lastproc"
+    $LastProcessed=[decimal]$LastProcessed+1}
+    Else{
+    Write-Warning "No proccessed block nor hash found, so request new hash for block $LastProcessed..." 
+    #Ask for starting block
+    $userinput = Read-Host "No Dump file found, enter first block to dump (Default is 1)"
+    if(-not($userinput)){$userinput = '1'}#else{Write-output "Input a ete saisi"}
+    $LastProcessed=$userinput
+    
+    #$LastProcessed=$LastHeight
     #Request hash from last processed block
-    #Write-Warning "No hash found, so request hash for block $LastProcessed..." 
-    #$Null=Start-Process $Proc -Argumentlist "getblockhash $LastProcessed" -RedirectStandardOutput $hashout -Wait -WindowStyle Hidden -PassThru
-    #$LastHash=Get-Content $hashout}
-
-    #Else it will Start from current last block height
-    #Else{
-    $LastProcessed=$LastHeight
-    #Request hash from last processed block
-    Write-Warning "No proccessed last blocks found nor hash, so request hash for block $LastProcessed..." 
     $Null=Start-Process $Proc -Argumentlist "getblockhash $LastProcessed" -RedirectStandardOutput $hashout -Wait -WindowStyle Hidden -PassThru
-    $LastHash=Get-Content $hashout} #}
+    $LastHash=Get-Content $hashout
+    Write-Warning "Last hash to use is $LastHash" 
+    #Dump block
+    Write-Warning "Processing raw data for block $LastProcessed..."
+    $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockout -Wait -WindowStyle Hidden -PassThru
+    $Block=Get-Content $blockout
+    $Null=New-Item $Dump -ItemType file
+    $Block|Add-Content $Dump
+    $LastProcessed=[decimal]$LastProcessed+1} #}
+
     #Display numbers of blocks to dump until now
-    If(([decimal]$LastHeight -eq [decimal]$LastProcessed) -eq $True){
+    If(($LastHeight -eq $LastProcessed) -eq $True){
     $Diff=$LastHeight
     Write-Warning "$($Diff) blocks to dump until up to date."}Else{
     $Diff=[decimal]$LastHeight-[decimal]$LastProcessed
@@ -99,5 +102,4 @@ While($True){
     $LastHeight=Get-Content $heightout
     Write-Warning "Last block height is $LastHeight"
     Write-Warning "Block $LastHeight processed."
-    }#End Dump Loop
-       
+    }#End Dump Loop       
