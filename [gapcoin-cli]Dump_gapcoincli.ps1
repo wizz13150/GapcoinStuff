@@ -1,52 +1,119 @@
-﻿    #1/4 PRODUCE RAW OUTPUT FROM GAPCOIN BLOCKCHAIN
+    #1/4 PRODUCE RAW OUTPUT FROM GAPCOIN BLOCKCHAIN
     #Sections 2,3,4 can be used separately with partial DumpBlocks_* file. Only need line 7 variables to run. 
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
     #How to: Set line 8, put gapcoin-cli.exe in $Path directory. Run script from everywhere.
-    #Lines to eventually edit : 8,131.
-    #Lines to eventually comment/uncomment for a custom output format : 50 to 116.
-    #First & Last block (+1 excluded). gapcoin-cli.exe and output Path.
-    $f=$s=1;$Last=1001;$Path="C:\Temp\Test\"
+    #Lines to eventually edit : 8,200
+    #Lines to eventually comment/uncomment for a custom output format : 122 to 188
+    #Path for gapcoin-cli.exe and outputs
+    $Path="C:\Temp\Test\"
 
-    #Repeated variables & Date
-    $stdout="$($Path)stdout.txt";$hashout="$($Path)hashout.txt";$Proc="$($Path)gapcoin-cli.exe"
-    $FDate=((Get-Date) -replace " ","_" -replace ":" -replace "/")
-    #If DumpBlocks file exist, rename with formatted date
-    If ((Test-Path -Path "$($Path)DumpBlocks_$($s)-$($Last-1).csv" -PathType Leaf) -eq $True){
-    $Null=Rename-Item -Path "$($Path)DumpBlocks_$($s)-$($Last-1).csv" -NewName "$($Path)DumpBlocks_$($s)-$($Last-1)_$($FDate).csv" -Force -ErrorAction Ignore}
-    #Request first Hash & Block before loop
-    Write-Warning "Processing First Hash, Block and NextHash."
-    $Null=Start-Process $Proc -Argumentlist "getblockhash $f" -Wait -RedirectStandardOutput $hashout -WindowStyle Hidden -PassThru
-    $FirstHash=Get-Content $hashout
-    $Null=Start-Process $Proc -Argumentlist "getblock $FirstHash" -Wait -RedirectStandardOutput $stdout -WindowStyle Hidden -PassThru
-    $FirstHash=Get-Content $hashout
-    $FirstBlock=Get-Content $stdout
-    $FirstBlock|Add-Content "$($Path)DumpBlocks_$($s)-$($Last-1).csv"
-    $NextHash=$FirstBlock| Where {$_ -match "nextblockhash"}
-    $Array=$NextHash.ToString()
-    $NextHash=$Array.Split('"')[3]
-    $f++
-    Write-Warning "Starting Loop..."
-    #Start Loop
-while($f -lt $Last){$Timer=Measure-Command{    
-    Write-Warning "Processing Block $f/$($Last-1.)"
-    $Null=Start-Process $Proc -Argumentlist "getblock $NextHash" -Wait -RedirectStandardOutput $stdout -ErrorAction Continue -WindowStyle Hidden -PassThru
-    $Output=Get-Content $stdout
-    $Output|Add-Content "$($Path)DumpBlocks_$($s)-$($Last-1).csv"
-    $Stuff=$output|Select-String -SimpleMatch nextblockhash
-    $Array=$Stuff.ToString()
-    $NextHash=$Array.Split('"')[3]}
-    $f++
-    Write-Warning "$($Timer.TotalSeconds) sec ellapsed."}
-    Remove-Item $hashout -Force
-    Remove-Item $stdout -Force
-    Write-Warning "Final Raw Output is '$($Path)DumpBlocks_$($s)-$($Last-1).csv'"
+    #Repeated Variables
+    $heightout="$($Path)heightout.txt";$hashout="$($Path)hashout.txt";$blockout="$($Path)blockout.txt";$lastproc="$($Path)lastproc.txt"
+    $Dump="$($Path)Dump_LastBlocks_Test.csv";$Proc="$($Path)gapcoin-cli.exe";$DumpMersenne="Dump_LastBlocks_Test_Mersenne"
+    $DumpCustom="Dump_LastBlocks_Test_Custom";$FDate=((Get-Date) -replace " ","_" -replace ":" -replace "/")
+
+    #First Request for last block height value
+    $Null=Start-Process $Proc -Argumentlist "getblockcount" -RedirectStandardOutput $heightout -Wait -WindowStyle Hidden -PassThru
+    $LastHeight=Get-Content $heightout
+    Write-Warning "Up to date last block height is $LastHeight"
+
+    #Check if Dump_LastBlocks file already exist                                    #Trop long, a changer
+    Write-Warning "Searching for last processed block in Dump_LastBlocks file."
+    If((Test-Path -Path $Dump -PathType Leaf) -eq $True){
+    #And then get last proccessed block height and next hash from it
+    $LastProcessed=Get-Content -Path $Dump|Where {$_ -match "height"}
+    $LastProcessed=$LastProcessed -replace '    "height" : ' -replace ','
+    $LastProcessed=$LastProcessed.split()[-1]
+    $LastProcessed|Set-Content $lastproc
+    #Get next hash from Dump_LastBlocks file
+    $LastHash=Get-Content -Path $Dump|Where {$_ -match "nextblockhash"}
+    $Lasthash=($Lasthash -replace '    "nextblockhash" : ' -replace '"').Split()[-1]
+    Write-Warning "Last proccessed block in Dump file is $LastProcessed"
+    $LastProcessed=[decimal]$LastProcessed+1}
+    Else{
+    Write-Warning "No proccessed block nor hash found, so request new hash" 
+    #Ask for starting block
+    $userinput = Read-Host "No Dump file found, enter first block to dump (Default is 1)"
+    if(-not($userinput)){$userinput = '1'}#else{Write-output "Input a ete saisi"}
+    $LastProcessed=$userinput
     
+    #$LastProcessed=$LastHeight
+    #Request hash from last processed block
+    $Null=Start-Process $Proc -Argumentlist "getblockhash $LastProcessed" -RedirectStandardOutput $hashout -Wait -WindowStyle Hidden -PassThru
+    $LastHash=Get-Content $hashout
+    Write-Warning "Last hash to use is $LastHash" 
+    #Dump block
+    Write-Warning "Processing raw data for block $LastProcessed..."
+    $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockout -Wait -WindowStyle Hidden -PassThru
+    $Block=Get-Content $blockout
+    $Null=New-Item $Dump -ItemType file
+    $Block|Add-Content $Dump
+    $LastProcessed=[decimal]$LastProcessed+1} #}
+
+    #Display numbers of blocks to dump until now
+    If(($LastHeight -eq $LastProcessed) -eq $True){
+    $Diff=$LastHeight
+    Write-Warning "$($Diff) blocks to dump until up to date."}Else{
+    $Diff=[decimal]$LastHeight-[decimal]$LastProcessed
+    Write-Warning "$($Diff) blocks to dump until up to date"}
+
+    
+
+    ###################################################################################
+    ###Loop to dump repeatedly from last processed block height until current blocks###
+    ###                    Or from current last block                               ###
+    ###################################################################################
+
+    Write-Warning "Starting Loop..."
+While($True){
+    while($LastProcessed -lt $LastHeight){$Timer=Measure-Command{
+    Write-Host "     " -BackgroundColor DarkGreen
+    #Dump block
+    Write-Warning "Processing raw data for block $LastProcessed..."
+    $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockout -Wait -WindowStyle Hidden -PassThru
+    $Block=Get-Content $blockout
+    $Block|Add-Content $Dump
+    #Get next hash
+    $LastHash=$Block|Select-String -SimpleMatch nextblockhash
+    $LastHash=$LastHash -replace '    "nextblockhash" : ' -replace '"'
+    #Save last processed block height
+    $LastProcessed|Set-Content $lastproc
+    Write-Warning "Raw data dumped in $Dump"
+    $LastProcessed=[decimal]$LastProcessed+1}} #End measure 
+    Write-Warning "[DUMP] $($Timer.TotalSeconds) sec ellapsed."
+    
+    #Request again for last block height since start processing, if new one, don't sleep
+    Write-Warning "Processing last block height, if new one, don't sleep..."
+    $Null=Start-Process $Proc -Argumentlist "getblockcount" -RedirectStandardOutput $heightout -Wait -WindowStyle Hidden -PassThru
+    $LastHeight=Get-Content $heightout
+    Write-Warning "Last block height is $LastHeight"
+    Write-Warning "Block $LastHeight processed."
+
+    #Loop to check for new blocks or sleep 10 sec
+    while($LastProcessed -le $LastHeight){$Timer=Measure-Command{
+    Write-Warning "Check for a new block..."
+    $Null=Start-Process $Proc -Argumentlist "getblockcount" -RedirectStandardOutput $heightout -Wait -WindowStyle Hidden -PassThru
+    $LastHeight=Get-Content $heightout
+    Write-Warning "No new block, sleeping for 10 sec."
+    Write-Host "     " -BackgroundColor DarkYellow
+    Start-Sleep -Seconds 10}
+    Write-Warning "{CHECK] $($Timer.TotalSeconds) sec ellapsed."} #End measure
+
+    #Another request for last block height since start processing, if no new one, sleep
+    Write-Warning "Processing last block height..."
+    $Null=Start-Process $Proc -Argumentlist "getblockcount" -RedirectStandardOutput $heightout -Wait -WindowStyle Hidden -PassThru
+    $LastHeight=Get-Content $heightout
+    Write-Warning "Last block height is $LastHeight"
+    Write-Warning "Block $LastHeight processed."
+    }#End Dump Loop
+
 
     #2/4 CONVERT RAW DATA INTO VARIABLES
     ###############################################
     ######Custom Format Output from RAW datas######
-    ###############################################     
-    $In=(Get-Content "$($Path)DumpBlocks_$($s)-$($Last-1).csv")
+    ###############################################
+    #If Clean DumpBlocks file exist, rename withformatted date
+    $In=Get-Content $Dump
     #$hash=$In|Where{$_ -match '"hash" :'}
     #$hash=$hash -replace '    "hash" : ' -replace '"'
     #$hash=@("hash,") + $hash
@@ -114,19 +181,19 @@ while($f -lt $Last){$Timer=Measure-Command{
     #$nextblockhash=$In|Where{$_ -match "nextblockhash"}
     #$nextblockhash=$nextblockhash -replace '    "nextblockhash" : ' -replace '"'
     #$nextblockhash=@("nextblockhash,") + $nextblockhash
-    
+    for($c = 0; $c -lt $height.Count; $c++){
+
 
     #3/4 CONVERT CLEAN VARIABLES DATA INTO CUSTOM FORMAT
     ###############################################
     ######Custom Format Output from RAW datas######
     ###############################################
     #If Clean DumpBlocks file exist, rename with formatted date
-    If ((Test-Path -Path "$($Path)DumpBlocks_$($s)-$($Last-1)_Clean.csv" -PathType Leaf) -eq $True){
-    $Null=Rename-Item -Path "$($Path)DumpBlocks_$($s)-$($Last-1)_Clean.csv" -NewName "$($Path)DumpBlocks_$($s)-$($Last-1)_Clean_$($FDate).csv" -Force -ErrorAction Ignore}
-    for($c = 0; $c -lt $height.Count; $c++){
+    If ((Test-Path -Path $DumpCustom -PathType Leaf) -eq $True){
+    $Null=Rename-Item -Path "$($Path)$($DumpCustom).csv" -NewName "$($DumpCustom)_$($FDate).csv" -Force -ErrorAction Ignore}
     #Adapt this to selection or swap columns
-    ('{0}{1}{2}{3}{4}{5}{6}{7}{8}' -f $height[$c],$Date[$c],$nonce[$c],$adder[$c],$difficulty[$c],$shift[$c],$Merit6[$c],$Gap[$c],$gapstart[$c])|Add-Content "$($Path)DumpBlocks_$($s)-$($Last-1)_Clean.csv"}
-    Write-Warning "Final Clean Output is '$($Path)DumpBlocks_$($s)-$($Last-1)_Clean.csv'"
+    ('{0}{1}{2}{3}{4}{5}{6}{7}{8}' -f $height[$c],$Date[$c],$nonce[$c],$adder[$c],$difficulty[$c],$shift[$c],$Merit6[$c],$Gap[$c],$gapstart[$c])|Add-Content $DumpCustom}
+    Write-Warning "Final Mersenne Output is $DumpMersenne"
 
 
     #4/4 CONVERT CLEAN VARIABLES DATA INTO MERSENNE FORUM SUBMISSON FORMAT
@@ -134,8 +201,8 @@ while($f -lt $Last){$Timer=Measure-Command{
     ###### Custom Format for Mersenne Forum  ######
     ###############################################
     #If MersenneForum DumpBlocks file exist, rename with formatted date
-    If ((Test-Path -Path "$($Path)DumpBlocks_$($s)-$($Last-1)_MersenneForum.csv" -PathType Leaf) -eq $True){
-    $Null=Rename-Item -Path "$($Path)DumpBlocks_$($s)-$($Last-1)_MersenneForum.csv" -NewName "$($Path)DumpBlocks_$($s)-$($Last-1)_MersenneForum_$($FDate).csv" -Force -ErrorAction Ignore}
+    If ((Test-Path -Path "$($Path)$($DumpMersenne).csv" -PathType Leaf) -eq $True){
+    $Null=Rename-Item -Path $DumpMersenne -NewName "$($Path)DumpBlocks_Mersenne_$($FDate).csv" -Force -ErrorAction Ignore}
     for($c = 0; $c -lt $height.Count; $c++){
     #If next is edited, no more for submission
     ('{0}C??,{2},Gapcoin,{4}{5},{6}' -f $Gap[$c],'C??,',$Merit6[$c],'Gapcoin,',$Date[$c],$Digits[$c],$gapstart[$c])|Add-Content "$($Path)DumpBlocks_$($s)-$($Last-1)_MersenneForum.csv"}
