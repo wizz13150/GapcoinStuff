@@ -2,7 +2,7 @@
     #Sections 2,3,4 can be used separately with partial DumpBlocks_* file. Only need line 7 variables to run. 
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
     #How to: Set line 8, put gapcoin-cli.exe in $Path directory. Run script from everywhere.
-    #Lines to eventually edit : 8,164
+    #Lines to eventually edit : 8,163
     #Lines to eventually comment/uncomment for a custom output format : 85 to 151
     #Path for gapcoin-cli.exe and outputs
     $Path="C:\Temp\Test\"
