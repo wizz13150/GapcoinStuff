@@ -82,7 +82,7 @@ While($True){
     $Null=Start-Process $Proc -Argumentlist "getblockcount" -RedirectStandardOutput $heightout -Wait -WindowStyle Hidden -PassThru
     $LastHeight=Get-Content $heightout
     Write-Warning "No new block, sleeping for 10 sec."
-    Write-Host "     " -BackgroundColor DarkGreen
+    Write-Host "     " -BackgroundColor DarkYellow
     Start-Sleep -Seconds 10}
     Write-Warning "{CHECK] $($Timer.TotalSeconds) sec ellapsed."} #End measure
 
