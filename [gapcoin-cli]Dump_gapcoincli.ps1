@@ -3,7 +3,7 @@
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
     #How to: Set line 8, put gapcoin-cli.exe in $Path directory. Run script from everywhere.
     #Lines to eventually edit : 8,164
-    #Lines to eventually comment/uncomment for a custom output format : 86 to 152
+    #Lines to eventually comment/uncomment for a custom output format : 85 to 151
     #Path for gapcoin-cli.exe and outputs
     $Path="C:\Temp\Test\"
 
@@ -61,7 +61,6 @@
 
     Write-Warning "Starting Loop..."
 While($True){
-    Write-Warning "First step in loop"
     while([decimal]$LastProcessed -lt [decimal]$LastHeight){
     Write-Host "     " -BackgroundColor DarkGreen
     $LastProcessed=[decimal]$LastProcessed+1
@@ -163,6 +162,7 @@ While($True){
     #Adapt this to selection or swap columns
     ('{0}{1}{2}{3}{4}{5}{6}{7}{8}' -f $height[$c],$Date[$c],$nonce[$c],$adder[$c],$difficulty[$c],$shift[$c],$Merit6[$c],$Gap[$c],$gapstart[$c])|Add-Content "$($Path)$($DumpCustom).csv"}
     Write-Warning "Custom Format Output added to $DumpCustom.csv"
+
 
     
     #4/4 CONVERT CLEAN VARIABLES DATA INTO MERSENNE FORUM SUBMISSON FORMAT
