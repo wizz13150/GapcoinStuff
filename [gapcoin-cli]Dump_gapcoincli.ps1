@@ -74,7 +74,7 @@ While($True){
     $LastHash=$LastHash -replace '    "nextblockhash" : ' -replace '"'
     #Save last processed block height
     $LastProcessed|Set-Content $lastproc
-    Write-Warning "Raw data dumped in $Dump"}
+    Write-Warning "Raw data dumped in $Dump"
     
     
     #2/4 CONVERT RAW DATA INTO VARIABLES
@@ -179,6 +179,7 @@ While($True){
     #If next is edited, no more for submission
     ('{0}C??,{2},Gapcoin,{4}{5},{6}' -f $Gap[$c],'C??,',$Merit6[$c],'Gapcoin,',$Date[$c],$Digits[$c],$gapstart[$c])|Add-Content "$($Path)$($DumpMersenne).csv"}
     Write-Warning "MersenneForum Format Output is '$($Path)$($DumpMersenne).csv'"
+    }#End dumping loop
     
     
     #Loop to check for new blocks or sleep 10 sec
