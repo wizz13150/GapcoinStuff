@@ -188,12 +188,12 @@ While($True){
     ######Custom Format Output from RAW datas######
     ###############################################
     #If Clean DumpBlocks file exist, rename with formatted date
-    If ((Test-Path -Path $DumpCustom -PathType Leaf) -eq $True){
+    If ((Test-Path -Path "$($Path)$($DumpCustom).csv" -PathType Leaf) -eq $True){
     $Null=Rename-Item -Path "$($Path)$($DumpCustom).csv" -NewName "$($DumpCustom)_$($FDate).csv" -Force -ErrorAction Ignore}
     for($c = 0; $c -lt $height.Count; $c++){
     #Adapt this to selection or swap columns
     ('{0}{1}{2}{3}{4}{5}{6}{7}{8}' -f $height[$c],$Date[$c],$nonce[$c],$adder[$c],$difficulty[$c],$shift[$c],$Merit6[$c],$Gap[$c],$gapstart[$c])|Add-Content "$($Path)$($DumpCustom).csv"}
-    Write-Warning "Final Mersenne Output is $DumpCustom"
+    Write-Warning "Final Mersenne Output is '$($Path)$($DumpCustom).csv'"
 
 
     #4/4 CONVERT CLEAN VARIABLES DATA INTO MERSENNE FORUM SUBMISSON FORMAT
@@ -206,4 +206,4 @@ While($True){
     for($c = 0; $c -lt $height.Count; $c++){
     #If next is edited, no more for submission
     ('{0}C??,{2},Gapcoin,{4}{5},{6}' -f $Gap[$c],'C??,',$Merit6[$c],'Gapcoin,',$Date[$c],$Digits[$c],$gapstart[$c])|Add-Content "$($Path)$($DumpMersenne).csv"}
-    Write-Warning "Final MersenneForum Output is $DumpMersenne"
+    Write-Warning "Final MersenneForum Output is '$($Path)$($DumpMersenne).csv'"
