@@ -2,7 +2,7 @@
     #Sections 2,3,4 can be used separately with partial DumpBlocks_* file. Only need line 7 variables to run. 
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
     #How to: Set line 8, put gapcoin-cli.exe in $Path directory. Run script from everywhere.
-    #Lines to eventually edit : 8,163
+    #Lines to eventually edit : 8,164
     #Lines to eventually comment/uncomment for a custom output format : 85 to 151
     #Path for gapcoin-cli.exe and outputs
     $Path="C:\Temp\Test\"
@@ -168,9 +168,10 @@ While($True){
     ###############################################
     ###### Custom Format for Mersenne Forum  ######
     ###############################################
-    #If MersenneForum DumpBlocks file doesn't exist, create with first line
+    #If MersenneForum DumpBlocks file doesn't exist, create it with first line
     If ((Test-Path -Path "$($Path)$($DumpMersenne).csv" -PathType Leaf) -eq $False){
-    $Null=New-Item "$($Path)$($DumpMersenne).csv" |Set-Content "Gap,C??,Merit6,Gapcoin,Date,Digits,Gapstart,"
+    $Null=New-Item "$($Path)$($DumpMersenne).csv"
+    "Gap,C??,Merit6,Gapcoin,Date,Digits,Gapstart,"|Set-Content "$($Path)$($DumpMersenne).csv"
     for($c = 0; $c -lt $height.Count; $c++){
     #If next one is edited, no more for submission
     ('{0}{1}{2}{3}{4}{5}{6}{7}{8}' -f $height[$c],$Date[$c],$nonce[$c],$adder[$c],$difficulty[$c],$shift[$c],$Merit6[$c],$Gap[$c],$gapstart[$c])|Add-Content "$($Path)$($DumpCustom).csv"}
