@@ -2,8 +2,8 @@
     #Sections 2,3,4 can be used separately with partial DumpBlocks_* file. Only need line 7 variables to run. 
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
     #How to: Set line 8, put gapcoin-cli.exe in $Path directory. Run script from everywhere.
-    #Lines to eventually edit : 8,195
-    #Lines to eventually comment/uncomment for a custom output format : 117 to 183
+    #Lines to eventually edit : 8,182
+    #Lines to eventually comment/uncomment for a custom output format : 104 to 170
     #Path for gapcoin-cli.exe and outputs
     $Path="C:\Temp\Test\"
 
@@ -28,8 +28,7 @@
     #Get next hash from Dump_LastBlocks file
     $LastHash=Get-Content -Path $Dump|Where {$_ -match "nextblockhash"}
     $Lasthash=($Lasthash -replace '    "nextblockhash" : ' -replace '"').Split()[-1]
-    Write-Warning "Last proccessed block in Dump file is $LastProcessed"
-    $LastProcessed=[decimal]$LastProcessed+1}
+    Write-Warning "Last proccessed block in Dump file is $LastProcessed"}
     Else{
     Write-Warning "No proccessed block nor hash found, so request new hash" 
     #Ask for starting block
@@ -47,8 +46,7 @@
     $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockout -Wait -WindowStyle Hidden -PassThru
     $Block=Get-Content $blockout
     $Null=New-Item $Dump -ItemType file
-    $Block|Add-Content $Dump
-    $LastProcessed=[decimal]$LastProcessed+1} #}
+    $Block|Add-Content $Dump} #}
 
     #Display numbers of blocks to dump until now
     If(($LastHeight -eq $LastProcessed) -eq $True){
@@ -66,7 +64,8 @@
 
     Write-Warning "Starting Loop..."
 While($True){
-    while($LastProcessed -lt $LastHeight){$Timer=Measure-Command{
+    while($LastProcessed -lt $LastHeight){
+    $LastProcessed=[decimal]$LastProcessed+1
     Write-Host "     " -BackgroundColor DarkGreen
     #Dump block
     Write-Warning "Processing raw data for block $LastProcessed..."
@@ -78,33 +77,21 @@ While($True){
     $LastHash=$LastHash -replace '    "nextblockhash" : ' -replace '"'
     #Save last processed block height
     $LastProcessed|Set-Content $lastproc
-    Write-Warning "Raw data dumped in $Dump"
-    $LastProcessed=[decimal]$LastProcessed+1}} #End measure 
-    Write-Warning "[DUMP] $($Timer.TotalSeconds) sec ellapsed."
-    
-    #Request again for last block height since start processing, if new one, don't sleep
-    Write-Warning "Processing last block height, if new one, don't sleep..."
-    $Null=Start-Process $Proc -Argumentlist "getblockcount" -RedirectStandardOutput $heightout -Wait -WindowStyle Hidden -PassThru
-    $LastHeight=Get-Content $heightout
-    Write-Warning "Last block height is $LastHeight"
-    Write-Warning "Block $LastHeight processed."
-
+    Write-Warning "Raw data dumped in $Dump"}
+    $Previous=$LastHeight
     #Loop to check for new blocks or sleep 10 sec
-    while($LastProcessed -le $LastHeight){$Timer=Measure-Command{
+    while($LastHeight -le $LastProcessed){
     Write-Warning "Check for a new block..."
     $Null=Start-Process $Proc -Argumentlist "getblockcount" -RedirectStandardOutput $heightout -Wait -WindowStyle Hidden -PassThru
     $LastHeight=Get-Content $heightout
-    Write-Warning "No new block, sleeping for 10 sec."
+    If($LastHeight -eq $Previous){
+    Write-Warning "No new block, sleeping for 10 sec. (Current height: $LastHeight)"
     Write-Host "     " -BackgroundColor DarkYellow
-    Start-Sleep -Seconds 10}
-    Write-Warning "{CHECK] $($Timer.TotalSeconds) sec ellapsed."} #End measure
-
-    #Another request for last block height since start processing, if no new one, sleep
-    Write-Warning "Processing last block height..."
-    $Null=Start-Process $Proc -Argumentlist "getblockcount" -RedirectStandardOutput $heightout -Wait -WindowStyle Hidden -PassThru
-    $LastHeight=Get-Content $heightout
-    Write-Warning "Last block height is $LastHeight"
-    Write-Warning "Block $LastHeight processed."
+    Start-Sleep -Seconds 10}Else{Write-Warning "New block found, going forward !"}        
+    }
+    
+    
+    
     }#End Dump Loop
 
 
