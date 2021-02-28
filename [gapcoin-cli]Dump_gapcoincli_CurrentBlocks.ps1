@@ -14,13 +14,14 @@
     $LastHeight=Get-Content $heightout
     Write-Warning "Up to date last block height is $LastHeight"
 
-    #Check if Dump_LastBlocks file already exist
+    #Check if Dump_LastBlocks file already exist                           
     Write-Warning "Search last proccessed block in Dump_LastBlocks file."
     If((Test-Path -Path $Dump -PathType Leaf) -eq $True){
-    #And then get last proccessed block height from it
+    #And then get last proccessed block height from it                             #Trop long, change that for a big file
     $LastProcessed=Get-Content -Path $Dump|Where {$_ -match "height"}
     $LastProcessed=$LastProcessed -replace '    "height" : ' -replace ','
     $LastProcessed=$LastProcessed.split()[-1]
+    $LastProcessed=[decimal]$LastProcessed+1
     $LastProcessed|Set-Content $lastproc
     Write-Warning "Last proccessed block is $LastProcessed found in $Dump"
 
