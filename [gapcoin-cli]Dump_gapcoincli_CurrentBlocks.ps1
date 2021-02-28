@@ -1,4 +1,4 @@
-﻿    #Current Blocks dumper from gapcoin-cli.exe
+    #Current Blocks dumper from gapcoin-cli.exe
     #Path for gapcoin-cli.exe and outputs
     $Path="C:\Temp\Test\"
     #Repeated Variables
@@ -14,30 +14,43 @@
     $LastHeight=Get-Content $heightout
     Write-Warning "Up to date last block height is $LastHeight"
 
-    #Check if Dump_LastBlocks file already exist                           
-    Write-Warning "Search last proccessed block in Dump_LastBlocks file."
+    #Check if Dump_LastBlocks file already exist                                    #Trop long, a changer
+    Write-Warning "Searching for last processed block in Dump_LastBlocks file."
     If((Test-Path -Path $Dump -PathType Leaf) -eq $True){
-    #And then get last proccessed block height from it                             #Trop long, change that for a big file
+    #And then get last proccessed block height and next hash from it
     $LastProcessed=Get-Content -Path $Dump|Where {$_ -match "height"}
     $LastProcessed=$LastProcessed -replace '    "height" : ' -replace ','
-    $LastProcessed=$LastProcessed.split()[-1]
+    $LastProcessed=$LastProcessed.split()[-1]    
     $LastProcessed|Set-Content $lastproc
-    Write-Warning "Last proccessed block is $LastProcessed found in $Dump"
+    #Get next hash from Dump_LastBlocks file
+    $LastHash=Get-Content -Path $Dump|Where {$_ -match "nextblockhash"}
+    $Lasthash=($Lasthash -replace '    "nextblockhash" : ' -replace '"').Split()[-1]
+    Write-Warning "Last proccessed block in Dump file is $LastProcessed"
     $LastProcessed=[decimal]$LastProcessed+1
 
     #Or from lastproc file if exist
     }Else{If((Test-Path -Path $lastproc -PathType Leaf) -eq $True){
-    Write-Warning "Search for the last proccessed block in lastproc file."
+    Write-Warning "Searching for the last proccessed block in lastproc file."
     $LastProcessed=Get-Content -Path $lastproc
-    Write-Warning "Last proccessed block is $LastProcessed found in $lastproc"}
+    Write-Warning "Last proccessed block is $LastProcessed found in $lastproc"
+    #Request hash from last processed block
+    Write-Warning "No hash found, so request hash for block $LastProcessed..." 
+    $Null=Start-Process $Proc -Argumentlist "getblockhash $LastProcessed" -RedirectStandardOutput $hashout -Wait -WindowStyle Hidden -PassThru
+    $LastHash=Get-Content $hashout}
+
     #Else it will Start from current last block height
     Else{
     $LastProcessed=$LastHeight
-    Write-Warning "No proccessed last blocks found, will start from current blocks"}}
+    #Request hash from last processed block
+    Write-Warning "No proccessed last blocks found nor hash, so request hash for block $LastProcessed..." 
+    $Null=Start-Process $Proc -Argumentlist "getblockhash $LastProcessed" -RedirectStandardOutput $hashout -Wait -WindowStyle Hidden -PassThru
+    $LastHash=Get-Content $hashout}}
+
     #Display numbers of blocks to dump until now
     $Diff=$LastHeight-$LastProcessed
-    Write-Warning "$($Diff) blocks to dump from last until up to date block."
-
+    Write-Warning "$($Diff) blocks to dump until up to date."
+    
+    
 
     ###################################################################################
     ###Loop to dump repeatedly from last processed block height until current blocks###
@@ -49,10 +62,10 @@ While($True){
 
     while($LastProcessed -lt $LastHeight){$Timer=Measure-Command{
     Write-Host "     " -BackgroundColor DarkGreen
-    Write-Warning "Processing hash for block $LastProcessed..."    
+    #Write-Warning "Processing hash for block $LastProcessed..."    
     #Request hash from last processed block   
-    $Null=Start-Process $Proc -Argumentlist "getblockhash $LastProcessed" -Wait -RedirectStandardOutput $hashout -WindowStyle Hidden -PassThru
-    $LastHash=Get-Content $hashout
+    #$Null=Start-Process $Proc -Argumentlist "getblockhash $LastProcessed" -Wait -RedirectStandardOutput $hashout -WindowStyle Hidden -PassThru
+    #$LastHash=Get-Content $hashout
 
     #Dump block
     Write-Warning "Processing raw data for block $LastProcessed..."
