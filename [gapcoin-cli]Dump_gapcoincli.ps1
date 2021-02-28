@@ -85,7 +85,7 @@ While($True){
     $Null=Start-Process $Proc -Argumentlist "getblockcount" -RedirectStandardOutput $heightout -Wait -WindowStyle Hidden -PassThru
     $LastHeight=Get-Content $heightout
     If($LastHeight -eq $Previous){
-    Write-Warning "No new block, sleeping for 10 sec. (Current height: $LastHeight)"
+    Write-Warning "No new block, sleep for 10 sec. (Current height: $LastHeight)"
     Write-Host "     " -BackgroundColor DarkYellow
     Start-Sleep -Seconds 10}Else{Write-Warning "New block found, going forward !"}        
     }
