@@ -28,7 +28,7 @@
     Write-Warning "Last proccessed block in Dump file is $LastProcessed"
     $LastProcessed=[decimal]$LastProcessed+1}
     Else{
-    Write-Warning "No proccessed block nor hash found, so request new hash for block $LastProcessed..." 
+    Write-Warning "No proccessed block nor hash found, so request new hash" 
     #Ask for starting block
     $userinput = Read-Host "No Dump file found, enter first block to dump (Default is 1)"
     if(-not($userinput)){$userinput = '1'}#else{Write-output "Input a ete saisi"}
@@ -102,4 +102,4 @@ While($True){
     $LastHeight=Get-Content $heightout
     Write-Warning "Last block height is $LastHeight"
     Write-Warning "Block $LastHeight processed."
-    }#End Dump Loop       
+    }#End Dump Loop
