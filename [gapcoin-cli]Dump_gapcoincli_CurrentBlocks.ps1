@@ -1,8 +1,8 @@
     #1/4 PRODUCE RAW OUTPUT FROM GAPCOIN BLOCKCHAIN
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
     #How to: Set line 7, put gapcoin-cli.exe in $Path directory. Run script from everywhere.
-    #Lines to eventually edit : 7,162
-    #Lines to eventually comment/uncomment for a custom output format : 84 to 150
+    #Lines to eventually edit : 7,164
+    #Lines to eventually comment/uncomment for a custom output format : 84 to 139
     #Path for gapcoin-cli.exe and outputs
     $Path="C:\Temp\"
 
@@ -92,7 +92,6 @@ While($True){
     #$size=@("size,") + $size
     $height=$In|Where{$_ -match "height"}
     $height=$height -replace '    "height" : '
-    $height=@("height,") + $height
     #$version=$In|Where{$_ -match "version"}
     #$version=$version -replace '    "version" : '
     #$version=@("version,") + $version
@@ -107,38 +106,28 @@ While($True){
     $blockdates=ForEach ($ut in $time){
     $origin = New-Object -Type DateTime -ArgumentList 1970, 1, 1, 0, 0, 0, 0
     $origin.AddSeconds($ut).ToString(“dd-MM-yyyy”) + ','}
-    $Date=@("Date,") + $blockdates
     $nonce=$In|Where{$_ -match "nonce"}
     $nonce=$nonce -replace '    "nonce" : '
-    $nonce=@("nonce,") + $nonce
     $difficulty=$In|Where{$_ -match "difficulty"}
     $difficulty=$difficulty -replace '    "difficulty" : '
-    $difficulty=@("difficulty,") + $difficulty
     $shift=$In|Where{$_ -match "shift"}
     $shift=$shift -replace '    "shift" : '
-    $shift=@("shift,") + $shift
     $adder=$In|Where{$_ -match "adder"}
     $adder=$adder -replace '    "adder" : ' -replace '"'
-    $adder=@("adder,") + $adder
     $gapstart=$In|Where{$_ -match "gapstart"}
     $gapstart=$gapstart -replace '    "gapstart" : ' -replace '"' -replace ','    
     $Digits=ForEach($line in $gapstart){
     $measure=$line|Measure-Object -Character
     $gapstartcount=$measure.Characters
     $gapstartcount}    
-    $gapstart=$gapstart|foreach { $_ + ',' }
-    $gapstart=@("Gapstart,") + $gapstart
-    $Digits=@("Digits") + $Digits
     #$gapend=$In|Where{$_ -match "gapend"}
     #$gapend=$gapend -replace '    "gapend" : ' -replace '"'
-    #$gapend=@("gapend,") + $gapend
     $gaplen=$In|Where{$_ -match "gaplen"}
     $gaplen=$gaplen -replace '    "gaplen" : '
-    $Gap=@("Gap,") + $gaplen
     $merit=$In|Where{$_ -match "merit"}
     $merit=$merit -replace '    "merit" : '
     $Merit6=ForEach($long in $merit){$long.Substring(0,$long.length-3)}
-    $Merit6=@("Merit6") + $Merit6
+    $Merit6=$Merit6+','
     #$chainwork=$In|Where{$_ -match "chainwork"}
     #$chainwork=$chainwork -replace '    "chainwork" : ' -replace '"'
     #$chainwork=@("chainwork,") + $chainwork
@@ -154,12 +143,12 @@ While($True){
     ###############################################
     ######Custom Format Output from RAW datas######
     ###############################################
-    #If Clean DumpBlocks file exist, rename with formatted date
-    #If ((Test-Path -Path "$($Path)$($DumpCustom).csv" -PathType Leaf) -eq $True){
-    #$Null=Rename-Item -Path "$($Path)$($DumpCustom).csv" -NewName "$($DumpCustom)_$($FDate).csv" -Force -ErrorAction Ignore}
-    for($c = 0; $c -lt $height.Count; $c++){
+    #If Clean DumpBlocks file doesn't exist, create with headers
+    If ((Test-Path -Path "$($Path)$($DumpCustom).csv" -PathType Leaf) -eq $False){
+    $Null=Add-Content -Path "$($Path)$($DumpCustom).csv" -Value "Height,Date,Nonce,Adder,Difficulty,Shift,Merit,Gap,Gapstart"}
+   #for($c = 0; $c -lt $height.Count; $c++){
     #Adapt this to selection or swap columns
-    ('{0}{1}{2}{3}{4}{5}{6}{7}{8}' -f $height[$c],$Date[$c],$nonce[$c],$adder[$c],$difficulty[$c],$shift[$c],$Merit6[$c],$Gap[$c],$gapstart[$c])|Add-Content "$($Path)$($DumpCustom).csv"}
+    "$height,$Date,$nonce,$adder,$difficulty,$shift,$Merit6,$gaplen,$gapstart"|Add-Content "$($Path)$($DumpCustom).csv"#}
     #Write-Warning "Custom Format Output added to $DumpCustom.csv"
     
     
@@ -167,15 +156,17 @@ While($True){
     ###############################################
     ###### Custom Format for Mersenne Forum  ######
     ###############################################
-    #Adapt variables for loop dump
-    $Gap=$Gap.split()[1] -replace ',';$Merit=$Merit -replace ',';$Date=$Date.split()[1] -replace ','
-    $Digits=[string]$Digits -replace 'Digits ';$gapstart=$gapstart.split()[1] -replace ','
+    
+    #If Clean DumpBlocks file doesn't exist, create with headers
+    If ((Test-Path -Path "$($Path)$($DumpMersenne).csv" -PathType Leaf) -eq $False){
+    $Null=Add-Content -Path "$($Path)$($DumpMersenne).csv" -Value "Gap,C??,Merit6,Gapcoin,Date,Digits,Gapstart,"}
     #If next one is edited, no more for submission
-    "$Gap,C??,$Merit,Gapcoin,$Date,$Digits,$gapstart"|Add-Content "$($Path)$($DumpMersenne).csv"
+    "$gaplenC??,$Merit6,Gapcoin,$blockdates$Digits,$gapstart"|Add-Content "$($Path)$($DumpMersenne).csv"
     #Write-Warning "MersenneForum Format Output added to $DumpMersenne.csv"
         
-    }#End dumping loop, check for new
+    }#End dumping loop, check for new block or sleep
      
+
     #Loop to check for new blocks or sleep 10 sec
     $Previous=$LastHeight
     while($LastHeight -le $LastProcessed){
@@ -188,3 +179,6 @@ While($True){
     Start-Sleep -Seconds 10}Else{Write-Warning "New block found, going forward !"}}   
          
     }#End Big Loop
+
+
+    Add-Content -Path "$($Path)testtest.csv"  -Value '"FirstName","LastName","UserName"'
