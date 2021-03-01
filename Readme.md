@@ -1,10 +1,10 @@
 **Wizz_^**
 
-Gapcoin Stuff
+Gapcoin Noob Stuff - Powershell
 
 ######################################
 
-**Sample files are produced by [gapminer-cli]Dump_gapcoincli_v4.ps1.**
+**Sample files are produced by [gapminer-cli].**
 
 [Sample]DumpBlocks_1-x.csv
 
@@ -32,9 +32,8 @@ Gapcoin Stuff
 
 ######################################
 
-**gapminer-cli produce or clear output from gapminer-cli.**
 
-STABLE - [gapcoin-cli]Dump_gapcoincli_CurrentBlocks.ps1
+**STABLE - [gapcoin-cli]Dump_gapcoincli_CurrentBlocks.ps1**
 
   -Start from scratch will ask wich block to dump first.
   
@@ -48,10 +47,15 @@ STABLE - [gapcoin-cli]Dump_gapcoincli_CurrentBlocks.ps1
   
   + temp files to clean manually
 
-STABLE - [gapcoin-cli]Dump_RawToCustom_Mersenne.ps1
+
+**STABLE - [gapcoin-cli]Dump_RawToCustom_Mersenne.ps1**
+
   -Format data from an existing raw .txt dump file and add to file
+  
   Change gapcoin-cli path and run from everywhere.
+  
   2 output files : Custom or Mersenne Forum submission format
+  
 
 ######################################
 
