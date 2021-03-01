@@ -33,7 +33,7 @@ Gapcoin Noob Stuff - Powershell
 ######################################
 
 
-**STABLE - [gapcoin-cli]Dump_gapcoincli_CurrentBlocks.ps1**
+STABLE - **[gapcoin-cli]Dump_gapcoincli_CurrentBlocks.ps1**
 
   -Start from scratch will ask wich block to dump first.
   
@@ -48,7 +48,7 @@ Gapcoin Noob Stuff - Powershell
   + temp files to clean manually
 
 
-**STABLE - [gapcoin-cli]Dump_RawToCustom_Mersenne.ps1**
+STABLE - **[gapcoin-cli]Dump_RawToCustom_Mersenne.ps1**
 
   -Format data from an existing raw .txt dump file and add to file
   
