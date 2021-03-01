@@ -1,9 +1,10 @@
-#Not the final version
 #Variables: Starting shift +1 (excluded); Last shift; Execution time for each shift, in sec
 $i=$f=25;$Last=31;$Timeout=$Seconds=42
+
 #Gapminer start-batch name (no extension) & dir. $Path is final output dir
 $Name="start-gapminer";$Path="C:\temp\test\"
-#More repeated variables
+
+#Repeated variables
 $FR="$($Path)FinalResult.csv";$TR="$($Path)TempResult.csv";$Output="Shift$($f)-$($Last)_$($Timeout)sec"
 $PO="$Path$Output";$Date=((Get-Date) -replace " ","_" -replace ":" -replace "/")
         #If the Final Output csv file exist, rename with timestamp.
