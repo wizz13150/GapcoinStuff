@@ -22,18 +22,24 @@ Gapcoin Noob Stuff - Powershell
 
 ######################################
 
-**gapminer-cpu produce or clear output from gapminer-cpu.**
 
-[gapminer-cpu]ClearFoundSharesFromGapminer-cpuRawOutput.ps1
+
+STABLE - **[gapminer-cpu]ClearFoundSharesFromGapminer-cpuRawOutput.ps1**
+
+  -Format data from an existing raw .txt output file from gapminer-cpu and add to file.
 
 
 STABLE - **[gapminer-cpu]Gapminer-cpuLauncher_LogRawOutput.ps1**
-  Just a launcher logging output from gapminer-cpu.
+
+  -Just a launcher logging output from gapminer-cpu. Need to use "-e" to log PPS and TESTS. Use "-q" to log Shares only.
+
 
 [gapminer-cpu]RunMultipleShiftsSuccessively.ps1
 
 
+
 ######################################
+
 
 
 STABLE - **[gapcoin-cli]Dump_gapcoincli_CurrentBlocks.ps1**
@@ -53,7 +59,7 @@ STABLE - **[gapcoin-cli]Dump_gapcoincli_CurrentBlocks.ps1**
 
 STABLE - **[gapcoin-cli]Dump_RawToCustom_Mersenne.ps1**
 
-  -Format data from an existing raw .txt dump file and add to file.
+  -Format data from an existing raw .txt dump file (raw blocks) and add to file.
   
   Change gapcoin-cli path and run from everywhere.
   
