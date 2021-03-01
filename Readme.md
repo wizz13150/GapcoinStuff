@@ -26,9 +26,12 @@ Gapcoin Noob Stuff - Powershell
 
 [gapminer-cpu]ClearFoundSharesFromGapminer-cpuRawOutput.ps1
 
-[gapminer-cpu]Gapminer-cpuLauncher_LogRawOutput.ps1
+
+STABLE - **[gapminer-cpu]Gapminer-cpuLauncher_LogRawOutput.ps1**
+  Just a launcher logging output from gapminer-cpu.
 
 [gapminer-cpu]RunMultipleShiftsSuccessively.ps1
+
 
 ######################################
 
@@ -43,18 +46,18 @@ STABLE - **[gapcoin-cli]Dump_gapcoincli_CurrentBlocks.ps1**
   
   Change gapcoin-cli path and run from everywhere.
   
-  3 outputs files : Raw, Custom or Mersenne Forum's submission format
+  3 outputs files : Raw, Custom or Mersenne Forum's submission format.
   
-  + temp files to clean manually
+  + temp files to clean manually.
 
 
 STABLE - **[gapcoin-cli]Dump_RawToCustom_Mersenne.ps1**
 
-  -Format data from an existing raw .txt dump file and add to file
+  -Format data from an existing raw .txt dump file and add to file.
   
   Change gapcoin-cli path and run from everywhere.
   
-  2 output files : Custom or Mersenne Forum submission format
+  2 output files : Custom or Mersenne Forum submission format.
   
 
 ######################################
