@@ -34,7 +34,13 @@ STABLE - **[gapminer-cpu]Gapminer-cpuLauncher_LogRawOutput.ps1**
   -Just a launcher logging output from gapminer-cpu. Need to use "-e" to log PPS and TESTS. Use "-q" to log Shares only.
 
 
-[gapminer-cpu]RunMultipleShiftsSuccessively.ps1
+STABLE - **[gapminer-cpu]RunMultipleShiftsSuccessively.ps1**
+  
+  -Run gapminer-cpu repeatedly from Shift x to Shift y
+  
+  -Format ouput from gapminer-cpu to a single file.
+  
+  -Clean Temp files if it ends correctly.
 
 
 
@@ -54,7 +60,7 @@ STABLE - **[gapcoin-cli]Dump_gapcoincli_CurrentBlocks.ps1**
   
   3 outputs files : Raw, Custom or Mersenne Forum's submission format.
   
-  + temp files to clean manually.
+  & Temp files to clean manually.
 
 
 STABLE - **[gapcoin-cli]Dump_RawToCustom_Mersenne.ps1**
