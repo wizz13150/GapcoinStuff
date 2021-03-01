@@ -1,4 +1,4 @@
-﻿Get-Content "C:\Users\Wizz\Desktop\Output - Copie.txt" | Where { $_ -match "accepted" } | ForEach {
+﻿Get-Content "C:\Temp\Output.txt" | Where { $_ -match "accepted" } | ForEach {
 $stuff = $_ -replace "  =>  accepted" -replace " Found Share:"," ;" -replace "]" -replace "\.",","
 $stuff.Remove(0,1)
-} | Set-Content C:\Users\Wizz\Desktop\Result.txt
+} | Set-Content C:\Temp\Result.txt
