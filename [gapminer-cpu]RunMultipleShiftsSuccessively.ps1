@@ -2,7 +2,7 @@
 $i=$f=25;$Last=31;$Timeout=$Seconds=42
 
 #Gapminer start-batch name (no extension) & dir. $Path is final output dir
-$Name="start-gapminer";$Path="C:\temp\test\"
+$Name="start-gapminer";$Path="C:\Temp\"
 
 #Repeated variables
 $FR="$($Path)FinalResult.csv";$TR="$($Path)TempResult.csv";$Output="Shift$($f)-$($Last)_$($Timeout)sec"
