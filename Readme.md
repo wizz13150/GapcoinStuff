@@ -76,7 +76,7 @@ STABLE - **[gapcoin-cli]Dump_RawToCustom_Mersenne.ps1**
 
 ######################################
 
-Mersenne Forum submissions is a text file with the following data (comma separated): :
+Mersenne Forum submission's format is a text file with the following data (comma separated): :
 26694,C??,25.376337,M.Jansen,29-2-2020,457,1015231*1087#/4830 - 19308
 
 
