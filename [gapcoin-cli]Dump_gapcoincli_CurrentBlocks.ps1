@@ -4,7 +4,7 @@
     #Lines to eventually edit : 7,164
     #Lines to eventually comment/uncomment for a custom output format : 84 to 139
     #Path for gapcoin-cli.exe and outputs
-    $Path="C:\Temp\"
+    $Path="C:\Temp\test\old\"
 
     #Repeated Variables
     $heightout="$($Path)heightout.txt";$hashout="$($Path)hashout.txt";$blockout="$($Path)blockout.txt";$lastproc="$($Path)lastproc.txt"
@@ -84,20 +84,11 @@ While($True){
     #$hash=$In|Where{$_ -match '"hash" :'}
     #$hash=$hash -replace '    "hash" : ' -replace '"'
     #$hash=@("hash,") + $hash
-    #$confirmations=$In|Where{$_ -match '"confirmations" :'}
-    #$confirmations=$confirmations -replace '    "confirmations" : '
-    #$confirmations=@("confirmations,") + $confirmations
     #$size=$In|Where{$_ -match '"size" :'}
     #$size=$size -replace '    "size" : '
     #$size=@("size,") + $size
     $height=$In|Where{$_ -match "height"}
-    $height=$height -replace '    "height" : '
-    #$version=$In|Where{$_ -match "version"}
-    #$version=$version -replace '    "version" : '
-    #$version=@("version,") + $version
-    #$merkleroot=$In|Where{$_ -match "merkleroot"}
-    #$merkleroot=$merkleroot -replace '    "merkleroot" : ' -replace '"'
-    #$merkleroot=@("merkleroot,") + $merkleroot
+    $height=$height -replace '    "height" : ' -replace ','  
     ##$tx=$In|Where{$_ -match "tx"}                                           #Ligne +1 ToDo, doesn't work
     ##$tx=$tx -replace '    "tx" : ' -replace '"'                             #Ligne +1 ToDo, doesn't work
     ##$tx=@("tx,") + $tx                                                      #Ligne +1 ToDo, doesn't work
@@ -105,39 +96,26 @@ While($True){
     $time=$time -replace '    "time" : ' -replace ',' 
     $blockdates=ForEach ($ut in $time){
     $origin = New-Object -Type DateTime -ArgumentList 1970, 1, 1, 0, 0, 0, 0
-    $origin.AddSeconds($ut).ToString(“dd-MM-yyyy”) + ','}
+    $origin.AddSeconds($ut).ToString(“dd-MM-yyyy”)}
     $nonce=$In|Where{$_ -match "nonce"}
-    $nonce=$nonce -replace '    "nonce" : '
+    $nonce=$nonce -replace '    "nonce" : ' -replace ','
     $difficulty=$In|Where{$_ -match "difficulty"}
-    $difficulty=$difficulty -replace '    "difficulty" : '
+    $difficulty=$difficulty -replace '    "difficulty" : ' -replace ',' 
     $shift=$In|Where{$_ -match "shift"}
-    $shift=$shift -replace '    "shift" : '
+    $shift=$shift -replace '    "shift" : ' -replace ',' 
     $adder=$In|Where{$_ -match "adder"}
-    $adder=$adder -replace '    "adder" : ' -replace '"'
+    $adder=$adder -replace '    "adder" : ' -replace '"' -replace ',' 
     $gapstart=$In|Where{$_ -match "gapstart"}
     $gapstart=$gapstart -replace '    "gapstart" : ' -replace '"' -replace ','    
     $Digits=ForEach($line in $gapstart){
     $measure=$line|Measure-Object -Character
     $gapstartcount=$measure.Characters
     $gapstartcount}    
-    #$gapend=$In|Where{$_ -match "gapend"}
-    #$gapend=$gapend -replace '    "gapend" : ' -replace '"'
     $gaplen=$In|Where{$_ -match "gaplen"}
-    $gaplen=$gaplen -replace '    "gaplen" : '
+    $gaplen=$gaplen -replace '    "gaplen" : ' -replace ','  
     $merit=$In|Where{$_ -match "merit"}
     $merit=$merit -replace '    "merit" : '
     $Merit6=ForEach($long in $merit){$long.Substring(0,$long.length-3)}
-    $Merit6=$Merit6+','
-    #$chainwork=$In|Where{$_ -match "chainwork"}
-    #$chainwork=$chainwork -replace '    "chainwork" : ' -replace '"'
-    #$chainwork=@("chainwork,") + $chainwork
-    #$previousblockhash=$In|Where{$_ -match "previousblockhash"}
-    #$previousblockhash=$previousblockhash -replace '    "previousblockhash" : ' -replace '"'
-    #$previousblockhash=@("previousblockhash,") + $previousblockhash
-    #$nextblockhash=$In|Where{$_ -match "nextblockhash"}
-    #$nextblockhash=$nextblockhash -replace '    "nextblockhash" : ' -replace '"'
-    #$nextblockhash=@("nextblockhash,") + $nextblockhash
-
     
     #3/4 CONVERT CLEAN VARIABLES DATA INTO CUSTOM FORMAT
     ###############################################
@@ -148,7 +126,7 @@ While($True){
     $Null=Add-Content -Path "$($Path)$($DumpCustom).csv" -Value "Height,Date,Nonce,Adder,Difficulty,Shift,Merit,Gap,Gapstart"}
    #for($c = 0; $c -lt $height.Count; $c++){
     #Adapt this to selection or swap columns
-    "$height,$Date,$nonce,$adder,$difficulty,$shift,$Merit6,$gaplen,$gapstart"|Add-Content "$($Path)$($DumpCustom).csv"#}
+    "$height,$blockdates,$nonce,$adder,$difficulty,$shift,$Merit6,$gaplen,$gapstart"|Add-Content "$($Path)$($DumpCustom).csv"#}
     #Write-Warning "Custom Format Output added to $DumpCustom.csv"
     
     
@@ -161,7 +139,7 @@ While($True){
     If ((Test-Path -Path "$($Path)$($DumpMersenne).csv" -PathType Leaf) -eq $False){
     $Null=Add-Content -Path "$($Path)$($DumpMersenne).csv" -Value "Gap,C??,Merit6,Gapcoin,Date,Digits,Gapstart,"}
     #If next one is edited, no more for submission
-    "$gaplenC??,$Merit6,Gapcoin,$blockdates$Digits,$gapstart"|Add-Content "$($Path)$($DumpMersenne).csv"
+    "$gaplen,C??,$Merit6,Gapcoin,$blockdates,$Digits,$gapstart"|Add-Content "$($Path)$($DumpMersenne).csv"
     #Write-Warning "MersenneForum Format Output added to $DumpMersenne.csv"
         
     }#End dumping loop, check for new block or sleep
