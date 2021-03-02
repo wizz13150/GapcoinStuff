@@ -4,7 +4,7 @@
     #Lines to eventually edit : 7,128
     #Lines to eventually comment/uncomment for a custom output format : 84 to 118
     #Path for gapcoin-cli.exe and outputs
-    $Path="C:\Temp\test\old\"
+    $Path="C:\Temp\"
 
     #Repeated Variables
     $heightout="$($Path)heightout.txt";$hashout="$($Path)hashout.txt";$blockout="$($Path)blockout.txt";$lastproc="$($Path)lastproc.txt"
