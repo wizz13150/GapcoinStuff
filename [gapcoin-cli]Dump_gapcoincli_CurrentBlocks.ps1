@@ -1,10 +1,10 @@
     #1/4 PRODUCE RAW OUTPUT FROM GAPCOIN BLOCKCHAIN
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
     #How to: Set line 7, put gapcoin-cli.exe in $Path directory. Run script from everywhere.
-    #Lines to eventually edit : 7,128
-    #Lines to eventually comment/uncomment for a custom output format : 84 to 118
+    #Lines to eventually edit : 7,144
+    #Lines to eventually comment/uncomment for a custom output format : 100 to 134
     #Path for gapcoin-cli.exe and outputs
-    $Path="C:\Temp\"
+    $Path="C:\Temp\test\old\"
 
     #Repeated Variables
     $heightout="$($Path)heightout.txt";$hashout="$($Path)hashout.txt";$blockout="$($Path)blockout.txt";$lastproc="$($Path)lastproc.txt"
@@ -40,11 +40,16 @@
     $LastHash=Get-Content $hashout
     Write-Warning "Last hash to use is $LastHash"
     #Dump block
-    Write-Warning "Processing raw data for block $LastProcessed..."
+    Write-Warning "[START]Processing block $LastProcessed..."
     $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockout -Wait -WindowStyle Hidden -PassThru
     $Block=Get-Content $blockout
+
     $Null=New-Item $Dump -ItemType file
-    $Block|Add-Content $Dump} #}
+    $Block|Add-Content $Dump
+    #Get next hash
+    $LastHash=$Block|Select-String -SimpleMatch nextblockhash
+    $LastHash=$LastHash -replace '    "nextblockhash" : ' -replace '"'
+    Write-Warning "Nextblockhash found in block $LastProcessed is $LastHash"}
 
     #Display numbers of blocks to dump until now
     If(($LastHeight -eq $LastProcessed) -eq $True){
@@ -66,11 +71,22 @@ While($True){
     #Dump block
     Write-Warning "Processing block $LastProcessed..."
     $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockout -Wait -WindowStyle Hidden -PassThru
-    $Block=Get-Content $blockout
+
+    #Check if nextblockhash is present, or loop until
+    $ToSleepOrNotToSleep = Get-Content $blockout | Select-String -SimpleMatch nextblockhash
+    While(([String]::IsNullOrWhiteSpace($ToSleepOrNotToSleep)) -eq $True){
+    Write-Warning "Block $LastProcessed doesn't contain 'nextblockhash' yet ! Sleep for 10 sec..."
+    Start-Sleep -Seconds 10
+    $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockout -Wait -WindowStyle Hidden -PassThru
+    $ToSleepOrNotToSleep=Get-Content $blockout|Select-String -SimpleMatch nextblockhash }
+
+    #nextblockhash is present, go on
+    $Block=Get-Content $blockout    
     $Block|Add-Content $Dump
     #Get next hash
     $LastHash=$Block|Select-String -SimpleMatch nextblockhash
     $LastHash=$LastHash -replace '    "nextblockhash" : ' -replace '"'
+    Write-Warning "Nextblockhash found in block $LastProcessed is $LastHash"
     #Save last processed block height
     $LastProcessed|Set-Content $lastproc
     #Write-Warning "Raw data dumped in $Dump"
@@ -136,13 +152,13 @@ While($True){
     
     #If Clean DumpBlocks file doesn't exist, create with headers
     If ((Test-Path -Path "$($Path)$($DumpMersenne).csv" -PathType Leaf) -eq $False){
-    $Null=Add-Content -Path "$($Path)$($DumpMersenne).csv" -Value "Gap,C??,Merit6,Discoverer,Date,Digits,Gapstart,"}
+    $Null=Add-Content -Path "$($Path)$($DumpMersenne).csv" -Value "Gap,C??,Merit6,Discoverer,Date,Digits,Gapstart"}
     #If next one is edited, no more for submission
     "$gaplen,C??,$Merit6,Gapcoin,$blockdates,$Digits,$gapstart"|Add-Content "$($Path)$($DumpMersenne).csv"
     #Write-Warning "MersenneForum Format Output added to $DumpMersenne.csv"
         
     }#End dumping loop, check for new block or sleep
-     
+ 
 
     #Loop to check for new blocks or sleep 10 sec
     $Previous=$LastHeight
