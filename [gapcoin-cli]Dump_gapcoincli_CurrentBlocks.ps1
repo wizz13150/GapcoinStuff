@@ -1,10 +1,10 @@
     #1/4 PRODUCE RAW OUTPUT FROM GAPCOIN BLOCKCHAIN
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
     #How to: Set line 7, put gapcoin-cli.exe in $Path directory. Run script from everywhere.
-    #Lines to eventually edit : 7,145
-    #Lines to eventually comment/uncomment for a custom output format : 101 to 135
+    #Lines to eventually edit : 7,144
+    #Lines to eventually comment/uncomment for a custom output format : 100 to 134
     #Path for gapcoin-cli.exe and outputs
-    $Path="C:\Temp\test\old\"
+    $Path="Z:\Gapcoin\"
 
     #Repeated Variables
     $heightout="$($Path)heightout.txt";$hashout="$($Path)hashout.txt";$blockout="$($Path)blockout.txt";$lastproc="$($Path)lastproc.txt"
@@ -37,7 +37,7 @@
     $LastProcessed=$userinput
     $Null=Start-Process $Proc -Argumentlist "getblockhash $LastProcessed" -RedirectStandardOutput $hashout -Wait -WindowStyle Hidden -PassThru
     $LastHash=Get-Content $hashout
-    Write-Warning "Hash for block $LastProcessed is $LastHash"
+    #Write-Warning "Hash for block $LastProcessed is $LastHash"
     #Dump block
     Write-Warning "[START]Processing block $LastProcessed..."
     $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockout -Wait -WindowStyle Hidden -PassThru
@@ -70,7 +70,7 @@ While($True){
     #Dump block
     Write-Warning "Processing block $LastProcessed..."
     $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockout -Wait -WindowStyle Hidden -PassThru
-    Write-Warning "Block $LastProcessed cached in blockout"
+    #Write-Warning "Block $LastProcessed cached in blockout"
 
     #Check if nextblockhash is present, or loop until
     $ToSleepOrNotToSleep = Get-Content $blockout | Select-String -SimpleMatch nextblockhash
@@ -87,7 +87,7 @@ While($True){
     #Get next hash
     $LastHash=$Block|Select-String -SimpleMatch nextblockhash
     $LastHash=$LastHash -replace '    "nextblockhash" : ' -replace '"'
-    Write-Warning "Nextblockhash found in block $LastProcessed is $LastHash"
+    #Write-Warning "Nextblockhash found in block $LastProcessed is $LastHash"
     #Save last processed block height
     $LastProcessed|Set-Content $lastproc
     #Write-Warning "Raw data dumped in $Dump"
