@@ -6,11 +6,11 @@ Gapcoin Noob Stuff - Powershell
 
 **Sample files are produced by [gapminer-cli].**
 
-[Sample]DumpBlocks_1-x.csv
+[Sample]Dump_LastBlocks.csv
 
-[Sample]DumpBlocks_1-x_Clean.csv
+[Sample]Dump_LastBlocks_Custom.csv
 
-[Sample]DumpBlocks_1-x_MersenneForum.csv
+[Sample]Dump_LastBlocks_Mersenne.csv
 
 ######################################
 
