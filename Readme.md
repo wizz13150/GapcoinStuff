@@ -77,24 +77,24 @@ STABLE - **[gapcoin-cli]Dump_RawToCustom_Mersenne.ps1**
 ######################################
 
 Mersenne Forum submission's format is a text file with the following data (comma separated): :
-26694,C??,25.376337,M.Jansen,29-2-2020,457,1015231*1087#/4830 - 19308
+**26694,C??,25.376337,M.Jansen,29-2-2020,457,1015231*1087#/4830 - 19308**
 
 
 So I ask you to send respectively:
 
-Prime gap (integer value),
+**Prime gap** (integer value),
 
-Rating (C?? is standard for all gaps I receive, so use this to be safe. Thomas also used CFC/CNC/C?C/C?P. The first C stands for conventional, the second character: F=First Occurence, N = not a first occurence, ? = Unknown and the final character has C for Certified, P for Probable or ? for unknown. I cannot (at this moment) certify endpoints, nor can I check gaps over 3500 characters, so untill then all gaps will receive either C?? or C?P (if I can duplicate the gap) as rating),
+**Rating** (C?? is standard for all gaps I receive, so use this to be safe. Thomas also used CFC/CNC/C?C/C?P. The first C stands for conventional, the second character: F=First Occurence, N = not a first occurence, ? = Unknown and the final character has C for Certified, P for Probable or ? for unknown. I cannot (at this moment) certify endpoints, nor can I check gaps over 3500 characters, so untill then all gaps will receive either C?? or C?P (if I can duplicate the gap) as rating),
 
-Merit (in 6 digits, decimal sign is a dot [.]),
+**Merit** (in 6 digits, decimal sign is a dot [.]),
 
-Discoverer (8 characters as you want to attribute yourself or a cooperative effort),
+**Discoverer** (8 characters as you want to attribute yourself or a cooperative effort),
 
-Date (the date you found the gap, if unknown, leave this empty, I will then use the day I received the gap),
+**Date** (the date you found the gap, if unknown, leave this empty, I will then use the day I received the gap),
 
-Digits (the number of digits of the gapstart, which can be calculated as ([Gap]/[Merit])/ln(10) and then round up to the next integer value),
+**Digits** (the number of digits of the gapstart, which can be calculated as ([Gap]/[Merit])/ln(10) and then round up to the next integer value),
 
-GapStart (a text field with the startvalue of the gap, in this case of the form: Multiplier*Primorial#/Divider - integer (note the spaces around the minus!)
+**GapStart** (a text field with the startvalue of the gap, in this case of the form: Multiplier*Primorial#/Divider - integer (note the spaces around the minus!)
 
 ######################################
 
