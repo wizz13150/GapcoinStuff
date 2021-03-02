@@ -4,7 +4,7 @@ Gapcoin Noob Stuff - Powershell
 
 ######################################
 
-**Sample files are produced by [gapminer-cli].**
+**Sample files are produced by [gapcoin-cli]Dump_gapcoincli_CurrentBlocks.ps1**
 
 [Sample]Dump_LastBlocks.csv
 
