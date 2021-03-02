@@ -14,21 +14,12 @@
     #$hash=$In|Where{$_ -match '"hash" :'}
     #$hash=$hash -replace '    "hash" : ' -replace '"'
     #$hash=@("hash,") + $hash
-    #$confirmations=$In|Where{$_ -match '"confirmations" :'}
-    #$confirmations=$confirmations -replace '    "confirmations" : '
-    #$confirmations=@("confirmations,") + $confirmations
     #$size=$In|Where{$_ -match '"size" :'}
     #$size=$size -replace '    "size" : '
     #$size=@("size,") + $size
     $height=$In|Where{$_ -match "height"}
     $height=$height -replace '    "height" : '
     $height=@("height,") + $height
-    #$version=$In|Where{$_ -match "version"}
-    #$version=$version -replace '    "version" : '
-    #$version=@("version,") + $version
-    #$merkleroot=$In|Where{$_ -match "merkleroot"}
-    #$merkleroot=$merkleroot -replace '    "merkleroot" : ' -replace '"'
-    #$merkleroot=@("merkleroot,") + $merkleroot
     ##$tx=$In|Where{$_ -match "tx"}                 #Ligne +1 ToDo, doesn't works
     ##$tx=$tx -replace '    "tx" : ' -replace '"'   #Ligne +1 ToDo, doesn't works
     ##$tx=@("tx,") + $tx                            #Ligne +1 ToDo, doesn't works
@@ -59,26 +50,13 @@
     $gapstart=$gapstart|foreach { $_ + ',' }
     $gapstart=@("Gapstart,") + $gapstart
     $Digits=@("Digits") + $Digits
-    #$gapend=$In|Where{$_ -match "gapend"}
-    #$gapend=$gapend -replace '    "gapend" : ' -replace '"'
-    #$gapend=@("gapend,") + $gapend
     $gaplen=$In|Where{$_ -match "gaplen"}
     $gaplen=$gaplen -replace '    "gaplen" : '
     $Gap=@("Gap,") + $gaplen
     $merit=$In|Where{$_ -match "merit"}
     $merit=$merit -replace '    "merit" : '
-    $Merit6=ForEach($long in $merit){
-    $long.Substring(0,$long.length-3)+','}
+    $Merit6=ForEach($long in $merit){$long.Substring(0,$long.length-3)}
     $Merit6=@("Merit6") + $Merit6
-    #$chainwork=$In|Where{$_ -match "chainwork"}
-    #$chainwork=$chainwork -replace '    "chainwork" : ' -replace '"'
-    #$chainwork=@("chainwork,") + $chainwork
-    #$previousblockhash=$In|Where{$_ -match "previousblockhash"}
-    #$previousblockhash=$previousblockhash -replace '    "previousblockhash" : ' -replace '"'
-    #$previousblockhash=@("previousblockhash,") + $previousblockhash
-    #$nextblockhash=$In|Where{$_ -match "nextblockhash"}
-    #$nextblockhash=$nextblockhash -replace '    "nextblockhash" : ' -replace '"'
-    #$nextblockhash=@("nextblockhash,") + $nextblockhash
 
 
     #2/3 CONVERT CLEAN VARIABLES DATA INTO CUSTOM FORMAT
@@ -90,7 +68,7 @@
     $Null=Rename-Item -Path "$($Path)$($DumpCustom)" -NewName "$($Path)$($DumpMersenne)_$($FDate).csv" -Force -ErrorAction Ignore}
     for($c = 0; $c -lt $height.Count; $c++){
     #Adapt this to selection or swap columns
-    ('{0}{1}{2}{3}{4}{5}{6}{7}{8}' -f $height[$c],$Date[$c],$nonce[$c],$adder[$c],$difficulty[$c],$shift[$c],$Merit6[$c],$Gap[$c],$gapstart[$c])|Add-Content "$($Path)$($DumpCustom)"}
+    ('{0}{1}{2}{3}{4}{5}{6},{7}{8}' -f $height[$c],$Date[$c],$nonce[$c],$adder[$c],$difficulty[$c],$shift[$c],$Merit6[$c],$Gap[$c],$gapstart[$c])|Add-Content "$($Path)$($DumpCustom)"}
     Write-Warning "Final Clean Output path is '$($Path)$($DumpCustom)'"
 
 
