@@ -14,7 +14,7 @@ Gapcoin Noob Stuff - Powershell
 
 ######################################
 
-**Data are produced by gapminer-cpu RawOutput.**
+**Data are produced from 'gapminer-cpu' output.**
 
 [Data]Shift25-99_2HoursEach_PPSTESTS.csv
 
@@ -26,19 +26,19 @@ Gapcoin Noob Stuff - Powershell
 
 STABLE - **[gapminer-cpu]ClearFoundSharesFromGapminer-cpuRawOutput.ps1**
 
-  -Format data from an existing raw .txt output file from gapminer-cpu and add to file.
+  -Format data from an existing raw .txt output file from 'gapminer-cpu' and add to file.
 
 
 STABLE - **[gapminer-cpu]Gapminer-cpuLauncher_LogRawOutput.ps1**
 
-  -Just a launcher logging output from gapminer-cpu. Need to use "-e" to log PPS and TESTS. Use "-q" to log Shares only.
+  -Just a launcher logging output from 'gapminer-cpu'. Need to use "-e" to log PPS and TESTS. Use "-q" to log Shares only.
 
 
 STABLE - **[gapminer-cpu]RunMultipleShiftsSuccessively.ps1**
   
-  -Run gapminer-cpu repeatedly from Shift x to Shift y
+  -Run 'gapminer-cpu' repeatedly from Shift x to Shift y
   
-  -Format ouput from gapminer-cpu to a single file.
+  -Format ouput from 'gapminer-cpu' to a single file.
   
   -Clean Temp files if it ends correctly.
 
@@ -56,7 +56,7 @@ STABLE - **[gapcoin-cli]Dump_gapcoincli_CurrentBlocks.ps1**
   
   -Format data for each block and add to file.
   
-  Change gapcoin-cli path and run from everywhere.
+  Modify 'gapcoin-cli' Path and run from everywhere.
   
   3 outputs files : Raw, Custom or Mersenne Forum's submission format.
   
@@ -67,7 +67,7 @@ STABLE - **[gapcoin-cli]Dump_RawToCustom_Mersenne.ps1**
 
   -Format data from an existing raw .txt dump file (raw blocks) and add to file.
   
-  Change gapcoin-cli path and run from everywhere.
+  Change 'gapcoin-cli' path and run from everywhere.
   
   2 output files : Custom or Mersenne Forum submission format.
   
