@@ -31,7 +31,7 @@
     Else{
     Write-Warning "No proccessed block nor hash found, so request new hash" 
     #Ask for starting block
-    $userinput = Read-Host "No Dump file found, enter first block to dump (Default is block 1)"
+    $userinput = Read-Host "Dump file not found, enter first block to dump (Default is block 1)"
     if(-not($userinput)){$userinput = '1'}
     #Request hash of the asked block
     $LastProcessed=$userinput
