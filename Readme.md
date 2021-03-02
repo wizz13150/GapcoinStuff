@@ -31,12 +31,12 @@ STABLE - **[gapminer-cpu]ClearFoundSharesFromGapminer-cpuRawOutput.ps1**
 
 STABLE - **[gapminer-cpu]Gapminer-cpuLauncher_LogRawOutput.ps1**
 
-  -Just a launcher logging output from 'gapminer-cpu'. Need to use "-e" to log PPS and TESTS. Use "-q" to log Shares only.
+  -Just a launcher for 'gapminer-cpu' logging output. Need to use "-e" to log PPS and TESTS. Use "-q" to log Shares only.
 
 
 STABLE - **[gapminer-cpu]RunMultipleShiftsSuccessively.ps1**
   
-  -Run 'gapminer-cpu' repeatedly from Shift x to Shift y
+  -Starts 'gapminer-cpu' repeatedly from Shift x to Shift y
   
   -Format ouput from 'gapminer-cpu' to a single file.
   
@@ -50,9 +50,11 @@ STABLE - **[gapminer-cpu]RunMultipleShiftsSuccessively.ps1**
 
 STABLE - **[gapcoin-cli]Dump_gapcoincli_CurrentBlocks.ps1**
 
-  -Start from scratch will ask wich block to dump first.
+  -Starts from scratch will ask wich block to dump first.
   
-  -Start with an existing raw .txt dump file will continue this one.
+  -Starts with an existing raw .txt dump file will continue this one.
+  
+  -Starts or ends at the block up to date and loop forever, dumping the blockchain into .txt xD
   
   -Format data for each block and add to file.
   
