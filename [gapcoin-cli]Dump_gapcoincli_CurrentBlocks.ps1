@@ -136,7 +136,7 @@ While($True){
     
     #If Clean DumpBlocks file doesn't exist, create with headers
     If ((Test-Path -Path "$($Path)$($DumpMersenne).csv" -PathType Leaf) -eq $False){
-    $Null=Add-Content -Path "$($Path)$($DumpMersenne).csv" -Value "Gap,C??,Merit6,Gapcoin,Date,Digits,Gapstart,"}
+    $Null=Add-Content -Path "$($Path)$($DumpMersenne).csv" -Value "Gap,C??,Merit6,Discoverer,Date,Digits,Gapstart,"}
     #If next one is edited, no more for submission
     "$gaplen,C??,$Merit6,Gapcoin,$blockdates,$Digits,$gapstart"|Add-Content "$($Path)$($DumpMersenne).csv"
     #Write-Warning "MersenneForum Format Output added to $DumpMersenne.csv"
