@@ -1,8 +1,8 @@
     #1/4 PRODUCE RAW OUTPUT FROM GAPCOIN BLOCKCHAIN
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
     #How to: Set line 7, put gapcoin-cli.exe in $Path directory. Run script from everywhere.
-    #Lines to eventually edit : 7,144
-    #Lines to eventually comment/uncomment for a custom output format : 100 to 134
+    #Lines to eventually edit : 7,145
+    #Lines to eventually comment/uncomment for a custom output format : 101 to 135
     #Path for gapcoin-cli.exe and outputs
     $Path="C:\Temp\test\old\"
 
@@ -33,24 +33,23 @@
     #Ask for starting block
     $userinput = Read-Host "No Dump file found, enter first block to dump (Default is block 1)"
     if(-not($userinput)){$userinput = '1'}
+    #Request hash of the asked block
     $LastProcessed=$userinput
-    
-    #Request hash from last processed block
     $Null=Start-Process $Proc -Argumentlist "getblockhash $LastProcessed" -RedirectStandardOutput $hashout -Wait -WindowStyle Hidden -PassThru
     $LastHash=Get-Content $hashout
-    Write-Warning "Last hash to use is $LastHash"
+    Write-Warning "Hash for block $LastProcessed is $LastHash"
     #Dump block
     Write-Warning "[START]Processing block $LastProcessed..."
     $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockout -Wait -WindowStyle Hidden -PassThru
+    Write-Warning "[START]Block $LastProcessed cached in blockout.txt"
     $Block=Get-Content $blockout
-
     $Null=New-Item $Dump -ItemType file
     $Block|Add-Content $Dump
     #Get next hash
     $LastHash=$Block|Select-String -SimpleMatch nextblockhash
     $LastHash=$LastHash -replace '    "nextblockhash" : ' -replace '"'
     Write-Warning "Nextblockhash found in block $LastProcessed is $LastHash"}
-
+    
     #Display numbers of blocks to dump until now
     If(($LastHeight -eq $LastProcessed) -eq $True){
     $Diff=$LastHeight
@@ -66,11 +65,12 @@
     Write-Warning "Starting Loop..."
 While($True){
     while([decimal]$LastProcessed -lt [decimal]$LastHeight){
-    #Write-Host "     " -BackgroundColor DarkGreen
+    #Write-Host " "
     $LastProcessed=[decimal]$LastProcessed+1
     #Dump block
     Write-Warning "Processing block $LastProcessed..."
     $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockout -Wait -WindowStyle Hidden -PassThru
+    Write-Warning "Block $LastProcessed cached in blockout"
 
     #Check if nextblockhash is present, or loop until
     $ToSleepOrNotToSleep = Get-Content $blockout | Select-String -SimpleMatch nextblockhash
@@ -78,6 +78,7 @@ While($True){
     Write-Warning "Block $LastProcessed doesn't contain 'nextblockhash' yet ! Sleep for 10 sec..."
     Start-Sleep -Seconds 10
     $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockout -Wait -WindowStyle Hidden -PassThru
+    Write-Warning "Block $LastProcessed cached in blockout.txt"
     $ToSleepOrNotToSleep=Get-Content $blockout|Select-String -SimpleMatch nextblockhash }
 
     #nextblockhash is present, go on
