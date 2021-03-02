@@ -16,10 +16,6 @@ Gapcoin Noob Stuff - Powershell
 
 **Data are produced from 'gapminer-cpu' output.**
 
-[Data]Shift25-99_2HoursEach_PPSTESTS.csv
-
-[Data]PPSDrop_Shift64Blue-65Red.png
-
 ######################################
 
 
