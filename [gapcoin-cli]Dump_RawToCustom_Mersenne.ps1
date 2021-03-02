@@ -1,7 +1,7 @@
     #Line to eventually edit : 4,5,128.
     #Line to eventually comment/uncomment for a custom format : 14 to 80.
     #Dir and Files paths
-    $Path="C:\Temp\test\old\";$Raw="Dump_LastBlocks.csv"
+    $Path="C:\Temp\";$Raw="Dump_LastBlocks.csv"
     $DumpMersenne="Dump_LastBlocks_Mersenne.csv";$DumpCustom="Dump_LastBlocks_Custom.csv"
     $FDate=((Get-Date) -replace " ","_" -replace ":" -replace "/")
       
