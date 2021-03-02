@@ -1,8 +1,8 @@
     #1/4 PRODUCE RAW OUTPUT FROM GAPCOIN BLOCKCHAIN
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
     #How to: Set line 7, put gapcoin-cli.exe in $Path directory. Run script from everywhere.
-    #Lines to eventually edit : 7,164
-    #Lines to eventually comment/uncomment for a custom output format : 84 to 139
+    #Lines to eventually edit : 7,128
+    #Lines to eventually comment/uncomment for a custom output format : 84 to 118
     #Path for gapcoin-cli.exe and outputs
     $Path="C:\Temp\test\old\"
 
@@ -124,7 +124,6 @@ While($True){
     #If Clean DumpBlocks file doesn't exist, create with headers
     If ((Test-Path -Path "$($Path)$($DumpCustom).csv" -PathType Leaf) -eq $False){
     $Null=Add-Content -Path "$($Path)$($DumpCustom).csv" -Value "Height,Date,Nonce,Adder,Difficulty,Shift,Merit,Gap,Gapstart"}
-   #for($c = 0; $c -lt $height.Count; $c++){
     #Adapt this to selection or swap columns
     "$height,$blockdates,$nonce,$adder,$difficulty,$shift,$Merit6,$gaplen,$gapstart"|Add-Content "$($Path)$($DumpCustom).csv"#}
     #Write-Warning "Custom Format Output added to $DumpCustom.csv"
@@ -157,6 +156,3 @@ While($True){
     Start-Sleep -Seconds 10}Else{Write-Warning "New block found, going forward !"}}   
          
     }#End Big Loop
-
-
-    Add-Content -Path "$($Path)testtest.csv"  -Value '"FirstName","LastName","UserName"'
