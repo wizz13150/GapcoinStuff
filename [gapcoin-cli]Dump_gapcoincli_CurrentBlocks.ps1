@@ -1,8 +1,8 @@
     #1/4 PRODUCE RAW OUTPUT FROM GAPCOIN BLOCKCHAIN
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
     #How to: Set line 7, put gapcoin-cli.exe in $Path directory. Run script from everywhere.
-    #Lines to eventually edit : 7,144
-    #Lines to eventually comment/uncomment for a custom output format : 100 to 134
+    #Lines to eventually edit : 7,145
+    #Lines to eventually comment/uncomment for a custom output format : 100 to 135
     #Path for gapcoin-cli.exe and outputs
     $Path="Z:\Gapcoin\"
 
