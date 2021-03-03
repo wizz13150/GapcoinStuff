@@ -54,7 +54,7 @@ STABLE - **[gapcoin-cli]Dump_gapcoincli_CurrentBlocks.ps1**
   
   -Format data for each block and add to file.
   
-  Modify 'gapcoin-cli' Path and run from everywhere.
+  LiteTouch script. Just modify 'gapcoin-cli' dir path and run from everywhere.
   
   3 outputs files : Raw, Custom or Mersenne Forum's submission format.
   
