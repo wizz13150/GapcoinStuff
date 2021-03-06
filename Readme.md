@@ -46,13 +46,13 @@ STABLE - **[gapminer-cpu]RunMultipleShiftsSuccessively.ps1**
 
 STABLE - **[gapcoin-cli]Dump_gapcoincli_CurrentBlocks.ps1**
 
-  -Starts from scratch will ask wich block to dump first.
+  -Starts from scratch will ask which block to dump first.
   
   -Starts with an existing raw .txt dump file will continue this one.
   
   -Starts or ends at the block up to date and loop forever, dumping the blockchain into .txt xD
   
-  -Format data for each block and add to file.
+  -Format data for each block and add to files.
   
   LiteTouch script. Just modify 'gapcoin-cli' dir path and run from everywhere.
   
