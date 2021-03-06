@@ -44,7 +44,7 @@ STABLE - **[gapminer-cpu]RunMultipleShiftsSuccessively.ps1**
 
 
 
-STABLE - **[gapcoin-cli]Dump_gapcoincli_CurrentBlocks.ps1**
+STABLE - **[gapcoin-cli]Dump.ps1**
 
   -Starts from scratch will ask which block to dump first.
   
@@ -61,7 +61,7 @@ STABLE - **[gapcoin-cli]Dump_gapcoincli_CurrentBlocks.ps1**
   & Temp files to clean manually.
 
 
-STABLE - **[gapcoin-cli]Dump_RawToCustom_Mersenne.ps1**
+To Check/Do - **[gapcoin-cli]Format_RawToCustom_Mersenne.ps1**
 
   -Format data from an existing raw .txt dump file (raw blocks) and add to file.
   
