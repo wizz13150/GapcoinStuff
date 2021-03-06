@@ -1,8 +1,8 @@
     #1/5 PRODUCE RAW OUTPUT FROM GAPCOIN BLOCKCHAIN
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
     #How to: Set line 7, put gapcoin-cli.exe in $Path directory. Run script from everywhere.
-    #Lines to eventually edit : 7,146
-    #Lines to eventually comment/uncomment for a custom output format : 101 to 135
+    #Lines to eventually edit : 7,148
+    #Lines to eventually comment/uncomment for a custom output format : 103 to 137
     #Path for gapcoin-cli.exe and outputs
     $Path="C:\Temp\"
 
@@ -15,18 +15,20 @@
     $Null=Start-Process $Proc -Argumentlist "getblockcount" -RedirectStandardOutput $heightout -Wait -WindowStyle Hidden -PassThru
     $LastHeight=Get-Content $heightout
     Write-Warning "Up to date last block height is $LastHeight"
-
+    
     #Check if Dump_LastBlocks file already exist                                        
     Write-Warning "Searching for last processed block in Dump_LastBlocks file."
     If((Test-Path -Path $Dump -PathType Leaf) -eq $True){
-    #And then get last proccessed block height and next hash from it                     #Looong for big files, need to change that
-    $LastProcessed=Get-Content -Path $Dump|Where {$_ -match "height"}
+    #And then get last proccessed blockheight and nextblockhash from it  
+    $n=1;$LP=Get-Content $Dump -tail $n
+    While(($LP[0] -match "\{")-eq $false){$n++
+    $LP=Get-Content $Dump -tail $n}
+    $LastProcessed=$LP|Where {$_ -match "height"}
     $LastProcessed=$LastProcessed -replace '    "height" : ' -replace ','
     $LastProcessed=$LastProcessed.split()[-1]
     $LastProcessed|Set-Content $lastproc
-    #Get next hash from Dump_LastBlocks file
-    $LastHash=Get-Content -Path $Dump|Where {$_ -match "nextblockhash"}
-    $Lasthash=($Lasthash -replace '    "nextblockhash" : ' -replace '"').Split()[-1]
+    $LastHash=$LP|Where{$_ -match "nextblockhash"}
+    $LastHash=$LastHash -replace '    "nextblockhash" : ' -replace '"'
     Write-Warning "Last proccessed block in Dump file is $LastProcessed"}
     Else{
     Write-Warning "No proccessed block nor hash found, so request new hash" 
