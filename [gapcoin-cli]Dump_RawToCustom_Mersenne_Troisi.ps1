@@ -1,7 +1,7 @@
     #Line to eventually edit : 4,5,128.
     #Line to eventually comment/uncomment for a custom format : 14 to 80.
     #Dir and Files paths
-    $Path="C:\Temp\";$Raw="Dump_LastBlocks.csv"
+    $Path="C:\Temp\test\old\";$Raw="Dump_LastBlocks.csv"
     $DumpMersenne="Dump_LastBlocks_Mersenne.csv";$DumpCustom="Dump_LastBlocks_Custom.csv"
     $FDate=((Get-Date) -replace " ","_" -replace ":" -replace "/")
       
@@ -83,3 +83,15 @@
     #If next is edited, no more for submission
     ('{0}C??,{2},Gapcoin,{4}{5},{6}' -f $Gap[$c],'C??,',$Merit6[$c],'Gapcoin,',$Date[$c],$Digits[$c],$gapstart[$c])|Add-Content "$($Path)$($DumpMersenne)"}
     Write-Warning "Final MersenneForum Output path is '$($Path)$($DumpMersenne)'"
+
+
+    #5/5 CONVERT CLEAN VARIABLES DATA INTO S.Troisi SUBMISSION FORMAT
+    ###############################################
+    ##### Custom Format for S.Troisi AutoSub  #####
+    ###############################################
+    #If Clean DumpBlocks file doesn't exist, create with headers
+    If ((Test-Path -Path "$($Path)$($DumpTroisi).csv" -PathType Leaf) -eq $False){
+    $Null=Add-Content -Path "$($Path)$($DumpTroisi).csv" -Value "Gap Date Discoverer Merit6 Gapstart"}
+    #If next one is edited, no more for submission
+    "$gaplen $blockdates Gapcoin $Merit6 $gapstart"|Add-Content "$($Path)$($DumpTroisi).csv"
+    #Write-Warning "S.Troisi Format Output added to $DumpTroisi.csv"
