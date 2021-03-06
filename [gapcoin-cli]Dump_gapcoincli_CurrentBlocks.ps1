@@ -165,7 +165,7 @@ While($True){
     ###############################################
     #If Clean DumpBlocks file doesn't exist, create with headers
     If ((Test-Path -Path "$($Path)$($DumpTroisi).csv" -PathType Leaf) -eq $False){
-    $Null=Add-Content -Path "$($Path)$($DumpTroisi).csv" -Value "Gap Date Discoverer Merit6 Gapstart"}
+    $Null=Add-Content -Path "$($Path)$($DumpTroisi).csv" -Value "Gap Date Discoverer Merit6 Digits Gapstart"}
     #If next one is edited, no more for submission
     "$gaplen $blockdates Gapcoin $Merit6 $Digits $gapstart"|Add-Content "$($Path)$($DumpTroisi).csv"
     #Write-Warning "S.Troisi Format Output added to $DumpTroisi.csv"
