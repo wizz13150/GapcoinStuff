@@ -1,14 +1,14 @@
-    #1/4 PRODUCE RAW OUTPUT FROM GAPCOIN BLOCKCHAIN
+    #1/5 PRODUCE RAW OUTPUT FROM GAPCOIN BLOCKCHAIN
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
     #How to: Set line 7, put gapcoin-cli.exe in $Path directory. Run script from everywhere.
-    #Lines to eventually edit : 7,145
-    #Lines to eventually comment/uncomment for a custom output format : 100 to 135
+    #Lines to eventually edit : 7,146
+    #Lines to eventually comment/uncomment for a custom output format : 101 to 135
     #Path for gapcoin-cli.exe and outputs
-    $Path="Z:\Gapcoin\"
+    $Path="C:\Temp\"
 
     #Repeated Variables
     $heightout="$($Path)heightout.txt";$hashout="$($Path)hashout.txt";$blockout="$($Path)blockout.txt";$lastproc="$($Path)lastproc.txt"
-    $Dump="$($Path)Dump_LastBlocks.csv";$Proc="$($Path)gapcoin-cli.exe";$DumpMersenne="Dump_LastBlocks_Mersenne"
+    $Dump="$($Path)Dump_LastBlocks.csv";$Proc="$($Path)gapcoin-cli.exe";$DumpMersenne="Dump_LastBlocks_Mersenne";$DumpTroisi="Dump_LastBlocks_Troisi"
     $DumpCustom="Dump_LastBlocks_Custom";$FDate=((Get-Date) -replace " ","_" -replace ":" -replace "/")
 
     #First Request for last block height value
@@ -93,7 +93,7 @@ While($True){
     #Write-Warning "Raw data dumped in $Dump"
     
     
-    #2/4 CONVERT RAW DATA INTO VARIABLES
+    #2/5 CONVERT RAW DATA INTO VARIABLES
     ###############################################
     ######Custom Format Output from RAW datas######
     ###############################################
@@ -133,8 +133,9 @@ While($True){
     $merit=$In|Where{$_ -match "merit"}
     $merit=$merit -replace '    "merit" : '
     $Merit6=ForEach($long in $merit){$long.Substring(0,$long.length-3)}
+
     
-    #3/4 CONVERT CLEAN VARIABLES DATA INTO CUSTOM FORMAT
+    #3/5 CONVERT CLEAN VARIABLES DATA INTO CUSTOM FORMAT
     ###############################################
     ######Custom Format Output from RAW datas######
     ###############################################
@@ -146,17 +147,29 @@ While($True){
     #Write-Warning "Custom Format Output added to $DumpCustom.csv"
     
     
-    #4/4 CONVERT CLEAN VARIABLES DATA INTO MERSENNE FORUM SUBMISSON FORMAT
+    #4/5 CONVERT CLEAN VARIABLES DATA INTO MERSENNE FORUM SUBMISSON FORMAT
     ###############################################
     ###### Custom Format for Mersenne Forum  ######
     ###############################################
-    
     #If Clean DumpBlocks file doesn't exist, create with headers
     If ((Test-Path -Path "$($Path)$($DumpMersenne).csv" -PathType Leaf) -eq $False){
     $Null=Add-Content -Path "$($Path)$($DumpMersenne).csv" -Value "Gap,C??,Merit6,Discoverer,Date,Digits,Gapstart"}
     #If next one is edited, no more for submission
     "$gaplen,C??,$Merit6,Gapcoin,$blockdates,$Digits,$gapstart"|Add-Content "$($Path)$($DumpMersenne).csv"
     #Write-Warning "MersenneForum Format Output added to $DumpMersenne.csv"
+
+
+    #5/5 CONVERT CLEAN VARIABLES DATA INTO S.Troisi SUBMISSION FORMAT
+    ###############################################
+    ##### Custom Format for S.Troisi AutoSub  #####
+    ###############################################
+    #If Clean DumpBlocks file doesn't exist, create with headers
+    If ((Test-Path -Path "$($Path)$($DumpTroisi).csv" -PathType Leaf) -eq $False){
+    $Null=Add-Content -Path "$($Path)$($DumpTroisi).csv" -Value "Gap Date Discoverer Merit6 Gapstart"}
+    #If next one is edited, no more for submission
+    "$gaplen $blockdates Gapcoin $Merit6 $Digits $gapstart"|Add-Content "$($Path)$($DumpTroisi).csv"
+    #Write-Warning "S.Troisi Format Output added to $DumpTroisi.csv"
+
         
     }#End dumping loop, check for new block or sleep
  
@@ -167,6 +180,10 @@ While($True){
     Write-Warning "Check for a new block..."
     $Null=Start-Process $Proc -Argumentlist "getblockcount" -RedirectStandardOutput $heightout -Wait -WindowStyle Hidden -PassThru
     $LastHeight=Get-Content $heightout
+
+    # If #LastHeight est plus grand que current block, alors quelque chose de va pas, copier dernier block de DumpRaw vers DumpBadBlocks et reprendre
+
+
     If($LastHeight -eq $Previous){
     Write-Warning "No new block, sleep for 10 sec. (Current height: $LastHeight)"
     #Write-Host "     " -BackgroundColor DarkYellow
