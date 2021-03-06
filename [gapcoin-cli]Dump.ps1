@@ -8,14 +8,14 @@
 
     #Repeated Variables
     $heightout="$($Path)heightout.txt";$hashout="$($Path)hashout.txt";$blockout="$($Path)blockout.txt";$lastproc="$($Path)lastproc.txt"
-    $Dump="$($Path)Dump_LastBlocks.csv";$Proc="$($Path)gapcoin-cli.exe";$DumpMersenne="Dump_LastBlocks_Mersenne";$DumpTroisi="Dump_LastBlocks_Troisi"
-    $DumpCustom="Dump_LastBlocks_Custom";$FDate=((Get-Date) -replace " ","_" -replace ":" -replace "/")
+    $Dump="$($Path)Dump_LastBlocks.csv";$Proc="$($Path)gapcoin-cli.exe";$DumpMersenne="$($Path)Dump_LastBlocks_Mersenne.csv";$DumpTroisi="$($Path)Dump_LastBlocks_Troisi.csv"
+    $DumpCustom="$($Path)Dump_LastBlocks_Custom.csv";$FDate=((Get-Date) -replace " ","_" -replace ":" -replace "/")
 
     #First Request for last block height value
     $Null=Start-Process $Proc -Argumentlist "getblockcount" -RedirectStandardOutput $heightout -Wait -WindowStyle Hidden -PassThru
     $LastHeight=Get-Content $heightout
     Write-Warning "Up to date last block height is $LastHeight"
-    
+
     #Check if Dump_LastBlocks file already exist                                        
     Write-Warning "Searching for last processed block in Dump_LastBlocks file."
     If((Test-Path -Path $Dump -PathType Leaf) -eq $True){
@@ -142,11 +142,10 @@ While($True){
     ######Custom Format Output from RAW datas######
     ###############################################
     #If Clean DumpBlocks file doesn't exist, create with headers
-    If ((Test-Path -Path "$($Path)$($DumpCustom).csv" -PathType Leaf) -eq $False){
-    $Null=Add-Content -Path "$($Path)$($DumpCustom).csv" -Value "Height,Date,Nonce,Adder,Difficulty,Shift,Merit,Gap,Gapstart"}
+    If ((Test-Path -Path $DumpCustom -PathType Leaf) -eq $False){
+    $Null=Add-Content -Path $DumpCustom -Value "Height,Date,Nonce,Adder,Difficulty,Shift,Merit,Gap,Gapstart"}
     #Adapt this to selection or swap columns
-    "$height,$blockdates,$nonce,$adder,$difficulty,$shift,$Merit6,$gaplen,$gapstart"|Add-Content "$($Path)$($DumpCustom).csv"#}
-    #Write-Warning "Custom Format Output added to $DumpCustom.csv"
+    "$height,$blockdates,$nonce,$adder,$difficulty,$shift,$Merit6,$gaplen,$gapstart"|Add-Content $DumpCustom
     
     
     #4/5 CONVERT CLEAN VARIABLES DATA INTO MERSENNE FORUM SUBMISSON FORMAT
@@ -154,11 +153,10 @@ While($True){
     ###### Custom Format for Mersenne Forum  ######
     ###############################################
     #If Clean DumpBlocks file doesn't exist, create with headers
-    If ((Test-Path -Path "$($Path)$($DumpMersenne).csv" -PathType Leaf) -eq $False){
-    $Null=Add-Content -Path "$($Path)$($DumpMersenne).csv" -Value "Gap,C??,Merit6,Discoverer,Date,Digits,Gapstart"}
+    If ((Test-Path -Path $DumpMersenne -PathType Leaf) -eq $False){
+    $Null=Add-Content -Path $DumpMersenne -Value "Gap,C??,Merit6,Discoverer,Date,Digits,Gapstart"}
     #If next one is edited, no more for submission
-    "$gaplen,C??,$Merit6,Gapcoin,$blockdates,$Digits,$gapstart"|Add-Content "$($Path)$($DumpMersenne).csv"
-    #Write-Warning "MersenneForum Format Output added to $DumpMersenne.csv"
+    "$gaplen,C??,$Merit6,Gapcoin,$blockdates,$Digits,$gapstart"|Add-Content $DumpMersenne
 
 
     #5/5 CONVERT CLEAN VARIABLES DATA INTO S.Troisi SUBMISSION FORMAT
@@ -166,25 +164,19 @@ While($True){
     ##### Custom Format for S.Troisi AutoSub  #####
     ###############################################
     #If Clean DumpBlocks file doesn't exist, create with headers
-    If ((Test-Path -Path "$($Path)$($DumpTroisi).csv" -PathType Leaf) -eq $False){
-    $Null=Add-Content -Path "$($Path)$($DumpTroisi).csv" -Value "Gap Date Discoverer Merit6 Digits Gapstart"}
+    If ((Test-Path -Path $DumpTroisi -PathType Leaf) -eq $False){
+    $Null=Add-Content -Path $DumpTroisi -Value "Gap Date Discoverer Merit6 Gapstart"}
     #If next one is edited, no more for submission
-    "$gaplen $blockdates Gapcoin $Merit6 $Digits $gapstart"|Add-Content "$($Path)$($DumpTroisi).csv"
-    #Write-Warning "S.Troisi Format Output added to $DumpTroisi.csv"
-
+    "$gaplen $blockdates Gapcoin $Merit6 $gapstart"|Add-Content $DumpTroisi
         
     }#End dumping loop, check for new block or sleep
  
-
     #Loop to check for new blocks or sleep 10 sec
     $Previous=$LastHeight
     while($LastHeight -le $LastProcessed){
     Write-Warning "Check for a new block..."
     $Null=Start-Process $Proc -Argumentlist "getblockcount" -RedirectStandardOutput $heightout -Wait -WindowStyle Hidden -PassThru
     $LastHeight=Get-Content $heightout
-
-    # If #LastHeight est plus grand que current block, alors quelque chose de va pas, copier dernier block de DumpRaw vers DumpBadBlocks et reprendre
-
 
     If($LastHeight -eq $Previous){
     Write-Warning "No new block, sleep for 10 sec. (Current height: $LastHeight)"
