@@ -56,7 +56,7 @@ STABLE - **[gapcoin-cli]Dump_gapcoincli_CurrentBlocks.ps1**
   
   LiteTouch script. Just modify 'gapcoin-cli' dir path and run from everywhere.
   
-  3 outputs files : Raw, Custom or Mersenne Forum's submission format.
+  4 outputs files : Raw, Custom, Mersenne Forum and S.Troisi's submission format.
   
   & Temp files to clean manually.
 
