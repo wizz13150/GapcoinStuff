@@ -67,7 +67,7 @@ STABLE - **[gapcoin-cli]Dump_RawToCustom_Mersenne.ps1**
   
   Change 'gapcoin-cli' path and run from everywhere.
   
-  2 output files : Custom or Mersenne Forum submission format.
+  3 output files : Custom, Mersenne Forum and S.Troisi submission format.
   
 
 ######################################
