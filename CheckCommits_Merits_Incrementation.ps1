@@ -11,7 +11,7 @@ cd C:\Users\Wizz\Documents\GitHub\prime-gap-list
 $Commits=git log --oneline |Select-String merit
 #Start Loop
 $Changes=Foreach($line in $Commits){
-$line=$line -split ' ' #|Where{$_ -match "shift"}
+$line=$line -split ' '
 $Tag=$line[0]
 #Commit content
 $com=(git show $Tag --pretty=format:%b $COMMIT)
