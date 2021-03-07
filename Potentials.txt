@@ -1,18 +1,23 @@
 Potential error at Gap 2800 in commit 'b63c932', introducted merit: 30.0057 < 30.010000000000001563 (Existing) Check:'(git show b63c932 --pretty=format:%b b63c932)'
 Introducted line: +INSERT INTO gaps VALUES(2800,0,'C','?','C','RobSmith',2018,30.0057,41,'33605034158176104758909467448415311978803');
 Previous line: -INSERT INTO gaps VALUES(2800,0,'C','?','C','RobSmith',2018,30.010000000000001563,41,'33605034158176104758909467448415311978803');
+
 Potential error at Gap 25036 in commit '49488ef', introducted merit: 24.346 < 27.375 (Existing) Check:'(git show 49488ef --pretty=format:%b 49488ef)'
 Introducted line: +INSERT INTO gaps VALUES(25036,0,'C','?','P','M.Jansen',2020,24.346,447,'3339159*1051#/210-16358');
 Previous line: -INSERT INTO gaps VALUES(25036,0,'C','?','P','S.Troisi',2020,27.375,398,'133650607*941#/7#-8232');
+
 Potential error at Gap 23824 in commit '9b0fcab', introducted merit: 23.889 < 23.895 (Existing) Check:'(git show 9b0fcab --pretty=format:%b 9b0fcab)'
 Introducted line: +INSERT INTO gaps VALUES(23824,0,'C','?','P','S.Troisi',2020,23.889,434,'130581523*1021#/7#-15076');
 Previous line: -INSERT INTO gaps VALUES(23824,0,'C','?','P','S.Troisi',2020,23.895,434,'102842317*1021#/7#-10042');
+
 Potential error at Gap 23830 in commit '9b0fcab', introducted merit: 24.756 < 25.679 (Existing) Check:'(git show 9b0fcab --pretty=format:%b 9b0fcab)'
 Introducted line: +INSERT INTO gaps VALUES(23830,0,'C','?','P','S.Troisi',2020,24.756,419,'120134747*991#/7#-5040');
 Previous line: -INSERT INTO gaps VALUES(23830,0,'C','?','P','S.Troisi',2020,25.679,404,'101627971*953#/7#-15852');
+
 Potential error at Gap 25162 in commit '9b0fcab', introducted merit: 25.952 < 26.331 (Existing) Check:'(git show 9b0fcab --pretty=format:%b 9b0fcab)'
 Introducted line: +INSERT INTO gaps VALUES(25162,0,'C','?','P','S.Troisi',2020,25.952,422,'126276917*997#/7#-15120');
 Previous line: -INSERT INTO gaps VALUES(25162,0,'C','?','P','S.Troisi',2020,26.331,416,'108455513*983#/7#-5040');
+
 Potential error at Gap 25254 in commit '9b0fcab', introducted merit: 24.975 < 25.154 (Existing) Check:'(git show 9b0fcab --pretty=format:%b 9b0fcab)'
 Introducted line: +INSERT INTO gaps VALUES(25254,0,'C','?','P','S.Troisi',2020,24.975,440,'134236687*1033#/7#-5426');
 Previous line: -INSERT INTO gaps VALUES(25254,0,'C','?','P','S.Troisi',2020,25.154,437,'101597767*1031#/7#-12602');
