@@ -1,0 +1,6 @@
+Potential error Gap 2800 in commit 'b63c932', le merite introduit: 30.0057 < 30.010000000000001563 (Existing) '(git show b63c932 --pretty=format:%b b63c932)'
+Potential error Gap 25036 in commit '49488ef', le merite introduit: 24.346 < 27.375 (Existing) '(git show 49488ef --pretty=format:%b 49488ef)'
+Potential error Gap 23824 in commit '9b0fcab', le merite introduit: 23.889 < 23.895 (Existing) '(git show 9b0fcab --pretty=format:%b 9b0fcab)'
+Potential error Gap 23830 in commit '9b0fcab', le merite introduit: 24.756 < 25.679 (Existing) '(git show 9b0fcab --pretty=format:%b 9b0fcab)'
+Potential error Gap 25162 in commit '9b0fcab', le merite introduit: 25.952 < 26.331 (Existing) '(git show 9b0fcab --pretty=format:%b 9b0fcab)'
+Potential error Gap 25254 in commit '9b0fcab', le merite introduit: 24.975 < 25.154 (Existing) '(git show 9b0fcab --pretty=format:%b 9b0fcab)'
