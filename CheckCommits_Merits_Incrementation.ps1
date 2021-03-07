@@ -1,5 +1,5 @@
-#Script to check Commits validity
-#Git is required. If all commits content isn't wanted, comment line 5
+#Script to check Commits incrementation.
+#Git is required. Dump all commits (matching 'merit') content and Potentials errors.
 #Output files
 $file="C:\Temp\Test\TestCheckCommits\Potentials.txt"
 $all="C:\Temp\Test\TestCheckCommits\Commits.txt"
