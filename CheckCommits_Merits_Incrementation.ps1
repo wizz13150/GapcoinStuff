@@ -34,7 +34,8 @@ If(($merit -lt $previousmerit)-eq $True){
 Write-Host "Potential error at Gap $Gap in commit '$Tag', introducted merit: $merit < $previousmerit (Existing) Check:'(git show $Tag --pretty=format:%b $Tag)'"
 "Potential error at Gap $Gap in commit '$Tag', introducted merit: $merit < $previousmerit (Existing) Check:'(git show $Tag --pretty=format:%b $Tag)'"|Add-Content $file
 "Introducted line: $entry"|Add-Content $file
-"Previous line: $previousline"|Add-Content $file }
+"Previous line: $previousline"|Add-Content $file
+" "|Add-Content $file }
 Else{
 #Saul Goodman
 Write-Host "Gap $Gap correctly incremented from $previousmerit to $merit"}}
