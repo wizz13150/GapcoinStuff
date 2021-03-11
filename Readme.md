@@ -41,7 +41,9 @@ STABLE - **[gapminer-cpu]RunMultipleShiftsSuccessively.ps1**
 
 STABLE - **[gapminer-cpu]RunCRTMultipleShiftsSuccessively.ps1**
   
-  -Starts 'gapminer-cpu' repeatedly from Shift x to Shift y
+  -Initial batch's first line is ":: gapminer-cpu.exe -o ..."
+  
+  -Starts 'gapminer-cpu' with ChineseRT repeatedly from Shift x to Shift y, custom settings allowed
   
   -Format ouput from 'gapminer-cpu' to a single file.
   
