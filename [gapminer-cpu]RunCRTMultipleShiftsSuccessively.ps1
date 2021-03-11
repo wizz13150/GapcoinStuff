@@ -1,4 +1,4 @@
-﻿#Variables: Starting shift ; Last shift +1 (excluded); Execution time for each shift, in sec
+﻿#Variables: Starting shift; Last shift +1 (excluded); Execution time for each shift, in sec
 [int]$i=1;$Last=31;$Timeout=$Seconds=42
 
 #Gapminer start-batch name (no extension) & dir. $Path is final output dir
