@@ -70,7 +70,7 @@ STABLE - **[gapcoin-cli]Dump.ps1**
   & Temp files to clean manually.
 
 
-To Check/Do - **[gapcoin-cli]Format_RawToCustom_Mersenne.ps1**
+To Check/Do - **[gapcoin-cli]Format_RawToCustom_Mersenne_Troisi.ps1**
 
   -Format data from an existing raw .txt dump file (raw blocks) and add to file.
   
