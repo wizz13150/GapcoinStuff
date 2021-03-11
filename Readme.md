@@ -39,6 +39,15 @@ STABLE - **[gapminer-cpu]RunMultipleShiftsSuccessively.ps1**
   -Clean Temp files if it ends correctly.
 
 
+STABLE - **[gapminer-cpu]RunCRTMultipleShiftsSuccessively.ps1**
+  
+  -Starts 'gapminer-cpu' repeatedly from Shift x to Shift y
+  
+  -Format ouput from 'gapminer-cpu' to a single file.
+  
+  -Clean Temp files if it ends correctly.
+
+
 
 ######################################
 
@@ -69,6 +78,7 @@ To Check/Do - **[gapcoin-cli]Format_RawToCustom_Mersenne.ps1**
   
   3 output files : Custom, Mersenne Forum and S.Troisi submission format.
   
+
 
 ######################################
 
