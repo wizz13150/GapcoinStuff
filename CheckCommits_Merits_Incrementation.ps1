@@ -31,7 +31,7 @@ Write-Host "Gap: $gap ; Merit: $merit"
 If ($Gap -eq $previousgap){
 #Check if current merit is smaller than previous, if yes dump infos
 If(($merit -lt $previousmerit)-eq $True){
-Write-Host "Potential error at Gap $Gap in commit '$Tag', introducted merit: $merit < $previousmerit (Existing) Check:'(git show $Tag --pretty=format:%b $Tag)'"
+Write-Warning "Potential error at Gap $Gap in commit '$Tag', introducted merit: $merit < $previousmerit (Existing) Check:'(git show $Tag --pretty=format:%b $Tag)'"
 "Potential error at Gap $Gap in commit '$Tag', introducted merit: $merit < $previousmerit (Existing) Check:'(git show $Tag --pretty=format:%b $Tag)'"|Add-Content $file
 "Introducted line: $entry"|Add-Content $file
 "Previous line: $previousline"|Add-Content $file
