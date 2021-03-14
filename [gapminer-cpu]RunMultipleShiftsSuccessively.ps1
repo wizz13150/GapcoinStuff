@@ -53,5 +53,5 @@ $CO="$($Path)CleanOutput$($i).csv";$OS="$($Path)OutputShift$($i).txt";$NS="$($Na
         }
         $i++
 }
-Remove-Item -Path $TR -Force
-Rename-Item -Path $FR -NewName "$Output.csv" -Force
+#Remove-Item -Path $TR -Force
+#Rename-Item -Path $FR -NewName "$Output.csv" -Force
