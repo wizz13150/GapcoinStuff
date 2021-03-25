@@ -193,7 +193,7 @@
 ::-o gap.suprnova.cc -p 2433 -u worker.worker -x pwd --stratum
 ::
 ::Standard miner, choose a non-overmined shift
-::gapminer-cpu.exe -o gap.suprnova.cc -p 2433 -u Wizz.CPU -x 1609 --stratum --shift 29 --threads 12 -q
+::gapminer-cpu.exe -o gap.suprnova.cc -p 2433 -u worker.worker -x pwd --stratum --shift 29 --threads 12 -q
 ::gapminer-cpu.exe -o 127.0.0.1 -p 31397 -u user -x pwd --threads 10 
 ::
 
