@@ -251,7 +251,7 @@
 :::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x pwd --shift 608 --crt crt/crt-22m-608s.txt --threads 7 --fermat-threads 6 --sieve-primes 110000  #ok max 570 gaps/s 90K tests/s 0.060% t7 ft6
 
 :::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x pwd --shift 640 --crt crt/crt-22m-640s.txt --threads 12 --fermat-threads 11 --sieve-primes 42500  #ok max 1250 gaps/s 550K tests/s 0.18% t12 ft11 sp42500
-:::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u wizz -x pwd --shift 640 --crt crt/crt-22m-640s.txt --threads 7 --fermat-threads 6 --sieve-primes 110000  #ok max 530 gaps/s 85K tests/s 0.060% t7 ft6
+:::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x pwd --shift 640 --crt crt/crt-22m-640s.txt --threads 7 --fermat-threads 6 --sieve-primes 110000  #ok max 530 gaps/s 85K tests/s 0.060% t7 ft6
 
 ::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x pwd --shift 672 --crt crt/crt-22m-672s.txt --threads 12 --fermat-threads 11 --sieve-primes 47000  #ok max 1150 gaps/s 550K tests/s 0.19% t12 ft11 sp47000
 :::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x pwd --shift 672 --crt crt/crt-22m-672s.txt --threads 7 --fermat-threads 6 --sieve-primes 110000  #ok max 430 gaps/s 65K tests/s 0.060% t7 ft6
