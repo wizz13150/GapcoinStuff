@@ -60,7 +60,7 @@
 :: You can't touch:  --ctr-fixed ; --ctr-bits
 ::
 ::
-::gapminer-cpu-log.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 150000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 14 -t 15 --ctr-file crt-file-m22-s64.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 150000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 14 -t 15 --ctr-file crt-file-m22-s64.txt
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 150000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 15 -t 15 --ctr-file crt-file-m22-s70.txt
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 150000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 16 -t 15 --ctr-file crt-file-m22-s77.txt
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 150000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 17 -t 15 --ctr-file crt-file-m22-s83.txt
