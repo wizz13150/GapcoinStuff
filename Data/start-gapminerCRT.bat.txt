@@ -213,7 +213,7 @@
 ::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x pwd --shift 109 --crt crt-file-m22-s109.txt --threads 12 --fermat-threads 10 --sieve-primes 5000
 ::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x pwd --shift 115 --crt crt-file-m22-s115.txt --threads 12 --fermat-threads 10 --sieve-primes 5000
 ::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x pwd --shift 122 --crt crt-file-m22-s122.txt --threads 12 --fermat-threads 10 --sieve-primes 5000
-gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x pwd --shift 128 --crt crt-file-m22-s128.txt --threads 12 --fermat-threads 10 --sieve-primes 7500  #ok max 22500 gaps/s 4.2M tests/s 0.052% t12 ft10 sp 7500 
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x pwd --shift 128 --crt crt-file-m22-s128.txt --threads 12 --fermat-threads 10 --sieve-primes 7500  #ok max 22500 gaps/s 4.2M tests/s 0.052% t12 ft10 sp 7500 
 ::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x pwd --shift 134 --crt crt-file-m22-s134.txt --threads 12 --fermat-threads 10 --sieve-primes 7500
 ::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x pwd --shift 141 --crt crt-file-m22-s141.txt --threads 12 --fermat-threads 10 --sieve-primes 7500
 ::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x pwd --shift 147 --crt crt-file-m22-s147.txt --threads 12 --fermat-threads 10 --sieve-primes 7500
