@@ -322,7 +322,7 @@
 ::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x pwd --shift 1013 --crt crt-file-m22-s1013.txt --threads 12 --fermat-threads 11 --sieve-primes 85000
 ::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x pwd --shift 1024 --crt crt-file-m22-s1024.txt --threads 12 --fermat-threads 11 --sieve-primes 90000 #ok max 340 gaps/s 135K tests/s 0.14% t12 ft11 sp90000
 
-pause
+::pause
 
 
 ::Legend:
