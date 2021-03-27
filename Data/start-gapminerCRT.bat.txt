@@ -198,8 +198,8 @@
 ::CRT using Wizz's files:
 ::ToDo: Adjust --sieve-primes
 ::
-:: 1 - Set --fermat-threads = --threads minus one.
-:: 2 - Set --sieve-primes for a controlled gaplist. Ideally to stay between 100-9000. No more than 1-2 Million (between two 'new target').
+:: 1 - Set --fermat-threads = Physical cores, HyperThreading or not.
+:: 2 - Set --sieve-primes 
 :: 3 - Miners should use a random/different shift when starting CRT miner, choose a non-overmined shift.
 :: You can mine in --shift 510, using the crt file 'crt-22m-512s.txt'.
 ::
