@@ -74,7 +74,7 @@
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 25 -t 15 --ctr-file weak/crt-22m-0134s-wizz.txt
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 26 -t 15 --ctr-file weak/crt-22m-0141s-wizz.txt
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 27 -t 15 --ctr-file weak/crt-22m-0147s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 3000 --ctr-range 0 --ctr-bits 13 --ctr-primes 28 -t 15 --ctr-file weak/crt-22m-0154s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 28 -t 15 --ctr-file weak/crt-22m-0154s-wizz.txt
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 29 -t 15 --ctr-file weak/crt-22m-0160s-wizz.txt
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 30 -t 15 --ctr-file weak/crt-22m-0166s-wizz.txt
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 31 -t 15 --ctr-file weak/crt-22m-0173s-wizz.txt
