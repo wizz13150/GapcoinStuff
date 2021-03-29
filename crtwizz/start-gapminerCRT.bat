@@ -60,9 +60,9 @@
 :: You can't touch:  --ctr-fixed ; --ctr-bits
 ::
 ::
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 14 -t 16 --ctr-file m25/crt-22m-0064s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 14 -t 16 --ctr-file m25/crt-25m-0064s-wizz.txt
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 15 -t 16 --ctr-file m25/crt-25m-0070s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 16 -t 16 --ctr-file crt-22m-0077s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 16 -t 16 --ctr-file m25/crt-25m-0077s-wizz.txt
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 17 -t 16 --ctr-file m25/crt-25m-0083s-wizz.txt
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 18 -t 16 --ctr-file m25/crt-25m-0090s-wizz.txt
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 19 -t 16 --ctr-file m25/crt-25m-0096s-wizz.txt
@@ -71,7 +71,7 @@
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 22 -t 16 --ctr-file m25/crt-25m-0115s-wizz.txt
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 23 -t 16 --ctr-file m25/crt-25m-0122s-wizz.txt
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 24 -t 16 --ctr-file m25/crt-25m-0128s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 23 -t 16 --ctr-file m25/crt-25m-0134s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 25 -t 16 --ctr-file m25/crt-25m-0134s-wizz.txt
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 26 -t 16 --ctr-file m25/crt-25m-0141s-wizz.txt
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 27 -t 16 --ctr-file m25/crt-25m-0147s-wizz.txt
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 28 -t 16 --ctr-file m25/crt-25m-0154s-wizz.txt
@@ -205,89 +205,89 @@
 :: You can mine in --shift 510, using the crt file 'crt-22m-512s.txt'.
 ::
 ::
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 64 --crt crtwizz/crt-22m-0064s.txt --threads 12 --fermat-threads 9 --sieve-primes 4400
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 70 --crt crtwizz/crt-22m-0070s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 4500
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 77 --crt crtwizz/crt-22m-0077s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 4600
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 83 --crt crtwizz/crt-22m-0083s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 4700
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 90 --crt crtwizz/crt-22m-0090s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 4800
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 96 --crt crtwizz/crt-22m-0096s.txt --threads 12 --fermat-threads 10 --sieve-primes 4900
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 102 --crt crtwizz/crt-22m-0102s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 5000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 109 --crt crtwizz/crt-22m-0109s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 5000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 115 --crt crtwizz/crt-22m-0115s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 5000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 122 --crt crtwizz/crt-22m-0122s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 5000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 128 --crt crtwizz/crt-22m-0128s-benxy031.txt --threads 12 --fermat-threads 10 --sieve-primes 8000  #22700 gaps/s 6.7M PPS 4.3M tests/s 0.08% t12 ft11 sp8000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 134 --crt crtwizz/crt-22m-0134s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 10000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 141 --crt crtwizz/crt-22m-0141s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 4500
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 147 --crt crtwizz/crt-22m-0147s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 4600 
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 154 --crt crtwizz/crt-22m-0154s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 4700
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 160 --crt crtwizz/crt-22m-0160s.txt --threads 12 --fermat-threads 11 --sieve-primes 5000  #16450 gaps/s 6.2M PPS 3.7M tests/s 0.07% t12 ft11 sp5000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 166 --crt crtwizz/crt-22m-0166s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 5000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 173 --crt crtwizz/crt-22m-0173s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 6000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 179 --crt crtwizz/crt-22m-0179s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 6000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 186 --crt crtwizz/crt-22m-0186s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 6000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 192 --crt crtwizz/crt-22m-0192s.txt --threads 12 --fermat-threads 11 --sieve-primes 6000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 200 --crt crtwizz/crt-22m-0200s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 6000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 208 --crt crtwizz/crt-22m-0208s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 7000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 216 --crt crtwizz/crt-22m-0216s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 7000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 224 --crt crtwizz/crt-22m-0224s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 8000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 232 --crt crtwizz/crt-22m-0232s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 8000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 240 --crt crtwizz/crt-22m-0240s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 8000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 248 --crt crtwizz/crt-22m-0248s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 8000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 256 --crt crtwizz/crt-22m-0256s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 11000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 264 --crt crtwizz/crt-22m-0264s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 11000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 272 --crt crtwizz/crt-22m-0272s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 11000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 280 --crt crtwizz/crt-22m-0280s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 11000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 288 --crt crtwizz/crt-22m-0288s.txt --threads 12 --fermat-threads 11 --sieve-primes 13000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 296 --crt crtwizz/crt-22m-0296s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 13000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 304 --crt crtwizz/crt-22m-0304s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 13000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 312 --crt crtwizz/crt-22m-0312s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 13000#fail
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 320 --crt crtwizz/crt-22m-0320s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 15000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 326 --crt crtwizz/crt-22m-0326s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 15000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 333 --crt crtwizz/crt-22m-0333s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 15000  #5000 gaps/s 14.2M PPS 1.9M tests/s 0.17% t12 ft11 sp15000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 339 --crt crtwizz/crt-22m-0339s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 15000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 346 --crt crtwizz/crt-22m-0346s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 15000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 352 --crt crtwizz/crt-22m-0352s.txt --threads 12 --fermat-threads 11 --sieve-primes 16000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 362 --crt crtwizz/crt-22m-0362s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 16000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 373 --crt crtwizz/crt-22m-0373s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 16000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 384 --crt crtwizz/crt-22m-0384s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 20000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 392 --crt crtwizz/crt-22m-0392s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 20000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 400 --crt crtwizz/crt-22m-0400s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 20000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 408 --crt crtwizz/crt-22m-0408s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 20000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 416 --crt crtwizz/crt-22m-0416s-pdazzl.txt --threads 12 --fermat-threads 11 --sieve-primes 23000  
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 424 --crt crtwizz/crt-22m-0424s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 23000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 432 --crt crtwizz/crt-22m-0432s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 23000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 440 --crt crtwizz/crt-22m-0440s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 23000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 448 --crt crtwizz/crt-22m-0448s.txt --threads 12 --fermat-threads 11 --sieve-primes 27000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 456 --crt crtwizz/crt-22m-0456s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 27000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 464 --crt crtwizz/crt-22m-0464s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 27000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 472 --crt crtwizz/crt-22m-0472s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 27000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 480 --crt crtwizz/crt-22m-0480s-pdazzl.txt --threads 12 --fermat-threads 11 --sieve-primes 32000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 488 --crt crtwizz/crt-22m-0488s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 32000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 496 --crt crtwizz/crt-22m-0496s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 32000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 504 --crt crtwizz/crt-22m-0504s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 32000  
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 512 --crt crtwizz/crt-22m-0512s-pdazzl.txt --threads 12 --fermat-threads 11 --sieve-primes 34000  #2330 gaps/s 27.5M PPS 1.1M tests/s 0.32% t12 ft11 sp34000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 520 --crt crtwizz/crt-22m-0520s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 34000  #1960 gaps/s 19.7M PPS 900K tests/s 0.23% t12 ft11 sp34000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 528 --crt crtwizz/crt-22m-0528s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 34000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 536 --crt crtwizz/crt-22m-0536s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 34000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 544 --crt crtwizz/crt-22m-0544s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 35000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 555 --crt crtwizz/crt-22m-0555s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 35000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 565 --crt crtwizz/crt-22m-0565s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 35000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 576 --crt crtwizz/crt-22m-0576s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 35000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 584 --crt crtwizz/crt-22m-0584s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 36000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 64 --crt crtwizz/crt-22m-0064s.txt --threads 12 --fermat-threads 10 --sieve-primes 4400
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 70 --crt crtwizz/crt-22m-0070s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 4500
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 77 --crt crtwizz/crt-22m-0077s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 4600
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 83 --crt crtwizz/crt-22m-0083s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 4700
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 90 --crt crtwizz/crt-22m-0090s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 4800
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 96 --crt crtwizz/crt-22m-0096s.txt --threads 12 --fermat-threads 10 --sieve-primes 4900
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 102 --crt crtwizz/crt-22m-0102s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 5000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 109 --crt crtwizz/crt-22m-0109s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 5000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 115 --crt crtwizz/crt-22m-0115s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 5000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 122 --crt crtwizz/crt-22m-0122s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 5000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 128 --crt crtwizz/crt-22m-0128s-benxy031.txt --threads 12 --fermat-threads 10 --sieve-primes 8000  #22700 gaps/s 6.7M PPS 4.3M tests/s 0.08% t12 ft11 sp8000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 134 --crt crtwizz/crt-22m-0134s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 10000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 141 --crt crtwizz/crt-22m-0141s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 4500
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 147 --crt crtwizz/crt-22m-0147s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 4600 
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 154 --crt crtwizz/crt-22m-0154s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 4700
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 160 --crt crtwizz/crt-22m-0160s.txt --threads 12 --fermat-threads 11 --sieve-primes 5000  #16450 gaps/s 6.2M PPS 3.7M tests/s 0.07% t12 ft11 sp5000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 166 --crt crtwizz/crt-22m-0166s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 5000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 173 --crt crtwizz/crt-22m-0173s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 6000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 179 --crt crtwizz/crt-22m-0179s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 6000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 186 --crt crtwizz/crt-22m-0186s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 6000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 192 --crt crtwizz/crt-22m-0192s.txt --threads 12 --fermat-threads 11 --sieve-primes 6000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 200 --crt crtwizz/crt-22m-0200s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 6000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 208 --crt crtwizz/crt-22m-0208s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 7000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 216 --crt crtwizz/crt-22m-0216s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 7000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 224 --crt crtwizz/crt-22m-0224s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 8000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 232 --crt crtwizz/crt-22m-0232s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 8000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 240 --crt crtwizz/crt-22m-0240s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 8000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 248 --crt crtwizz/crt-22m-0248s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 8000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 256 --crt crtwizz/crt-22m-0256s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 11000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 264 --crt crtwizz/crt-22m-0264s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 11000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 272 --crt crtwizz/crt-22m-0272s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 11000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 280 --crt crtwizz/crt-22m-0280s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 11000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 288 --crt crtwizz/crt-22m-0288s.txt --threads 12 --fermat-threads 11 --sieve-primes 13000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 296 --crt crtwizz/crt-22m-0296s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 13000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 304 --crt crtwizz/crt-22m-0304s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 13000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 312 --crt crtwizz/crt-22m-0312s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 13000#fail
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 320 --crt crtwizz/crt-22m-0320s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 15000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 326 --crt crtwizz/crt-22m-0326s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 15000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 333 --crt crtwizz/crt-22m-0333s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 15000  #5000 gaps/s 14.2M PPS 1.9M tests/s 0.17% t12 ft11 sp15000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 339 --crt crtwizz/crt-22m-0339s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 15000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 346 --crt crtwizz/crt-22m-0346s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 15000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 352 --crt crtwizz/crt-22m-0352s.txt --threads 12 --fermat-threads 11 --sieve-primes 16000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 362 --crt crtwizz/crt-22m-0362s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 16000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 373 --crt crtwizz/crt-22m-0373s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 16000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 384 --crt crtwizz/crt-22m-0384s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 20000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 392 --crt crtwizz/crt-22m-0392s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 20000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 400 --crt crtwizz/crt-22m-0400s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 20000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 408 --crt crtwizz/crt-22m-0408s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 20000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 416 --crt crtwizz/crt-22m-0416s-pdazzl.txt --threads 12 --fermat-threads 11 --sieve-primes 23000  
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 424 --crt crtwizz/crt-22m-0424s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 23000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 432 --crt crtwizz/crt-22m-0432s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 23000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 440 --crt crtwizz/crt-22m-0440s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 23000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 448 --crt crtwizz/crt-22m-0448s.txt --threads 12 --fermat-threads 11 --sieve-primes 27000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 456 --crt crtwizz/crt-22m-0456s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 27000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 464 --crt crtwizz/crt-22m-0464s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 27000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 472 --crt crtwizz/crt-22m-0472s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 27000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 480 --crt crtwizz/crt-22m-0480s-pdazzl.txt --threads 12 --fermat-threads 11 --sieve-primes 32000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 488 --crt crtwizz/crt-22m-0488s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 32000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 496 --crt crtwizz/crt-22m-0496s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 32000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 504 --crt crtwizz/crt-22m-0504s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 32000  
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 512 --crt crtwizz/crt-22m-0512s-pdazzl.txt --threads 12 --fermat-threads 11 --sieve-primes 34000  #2330 gaps/s 27.5M PPS 1.1M tests/s 0.32% t12 ft11 sp34000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 520 --crt crtwizz/crt-22m-0520s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 34000  #1960 gaps/s 19.7M PPS 900K tests/s 0.23% t12 ft11 sp34000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 528 --crt crtwizz/crt-22m-0528s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 34000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 536 --crt crtwizz/crt-22m-0536s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 34000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 544 --crt crtwizz/crt-22m-0544s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 35000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 555 --crt crtwizz/crt-22m-0555s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 35000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 565 --crt crtwizz/crt-22m-0565s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 35000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 576 --crt crtwizz/crt-22m-0576s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 35000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 584 --crt crtwizz/crt-22m-0584s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 36000
 ::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 592 --crt crtwizz/crt-22m-0592s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 36000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 600 --crt crtwizz/s600.txt --threads 12 --fermat-threads 11 --sieve-primes 36000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 600 --crt crtwizz/crt-22m-0600s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 36000
 :::::::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 608 --crt crtwizz/crt-22m-0608s.txt --threads 12 --fermat-threads 11 --sieve-primes 37500
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 619 --crt crtwizz/s619.txt --threads 12 --fermat-threads 11 --sieve-primes 37500
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 629 --crt crtwizz/s629.txt --threads 12 --fermat-threads 11 --sieve-primes 37500
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 619 --crt crtwizz/crt-22m-0619s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 37500
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 629 --crt crtwizz/crt-22m-0629s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 37500
 :::::::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 640 --crt crtwizz/crt-22m-0640s.txt --threads 12 --fermat-threads 11 --sieve-primes 42500
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 648 --crt crtwizz/s648.txt --threads 12 --fermat-threads 11 --sieve-primes 42500
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 656 --crt crtwizz/s656.txt --threads 12 --fermat-threads 11 --sieve-primes 42500
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 664 --crt crtwizz/s664.txt --threads 12 --fermat-threads 11 --sieve-primes 42500
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 648 --crt crtwizz/crt-22m-0648s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 42500
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 656 --crt crtwizz/crt-22m-0656s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 42500
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 664 --crt crtwizz/crt-22m-0664s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 42500
 :::::::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 672 --crt crtwizz/crt-22m-0672s.txt --threads 12 --fermat-threads 11 --sieve-primes 47000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 680 --crt crtwizz/s680.txt --threads 12 --fermat-threads 11 --sieve-primes 47000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 688 --crt crtwizz/s688.txt --threads 12 --fermat-threads 11 --sieve-primes 47000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 696 --crt crtwizz/s696.txt --threads 12 --fermat-threads 11 --sieve-primes 47000
-:::::::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 704 --crt crtwizz/crt-22m-0704s.txt --threads 12 --fermat-threads 11 --sieve-primes 50000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 680 --crt crtwizz/crt-22m-0680s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 47000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 688 --crt crtwizz/crt-22m-0688s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 47000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 696 --crt crtwizz/crt-22m-0696s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 47000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 704 --crt crtwizz/crt-22m-0704s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 50000
 ::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 715 --crt crtwizz/s715.txt --threads 12 --fermat-threads 11 --sieve-primes 50000
 ::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 725 --crt crtwizz/s725.txt --threads 12 --fermat-threads 11 --sieve-primes 50000
 :::::::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 736 --crt crtwizz/crt-22m-0736s.txt --threads 12 --fermat-threads 11 --sieve-primes 55000
@@ -408,20 +408,20 @@
 ::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 565 --crt crtwizz/crt-22m-0565s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 17000
 ::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 576 --crt crtwizz/crt-22m-0576s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 18000
 ::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 584 --crt crtwizz/crt-22m-0584s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 18000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 592 --crt crtwizz/s592.txt --threads 12 --fermat-threads 10 --sieve-primes 18000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 600 --crt crtwizz/s600.txt --threads 12 --fermat-threads 10 --sieve-primes 18000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 592 --crt crtwizz/crt-22m-0592s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 18000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 600 --crt crtwizz/crt-22m-0600s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 18000
 :::::::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 608 --crt crtwizz/crt-22m-0608s.txt --threads 12 --fermat-threads 10 --sieve-primes 19000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 619 --crt crtwizz/s619.txt --threads 12 --fermat-threads 10 --sieve-primes 19000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 629 --crt crtwizz/s629.txt --threads 12 --fermat-threads 10 --sieve-primes 19000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 619 --crt crtwizz/crt-22m-0619s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 19000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 629 --crt crtwizz/crt-22m-0629s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 19000
 :::::::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 640 --crt crtwizz/crt-22m-0640s.txt --threads 12 --fermat-threads 10 --sieve-primes 21000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 648 --crt crtwizz/s648.txt --threads 12 --fermat-threads 10 --sieve-primes 21000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 656 --crt crtwizz/s656.txt --threads 12 --fermat-threads 10 --sieve-primes 21000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 664 --crt crtwizz/s664.txt --threads 12 --fermat-threads 10 --sieve-primes 21000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 648 --crt crtwizz/crt-22m-0648s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 21000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 656 --crt crtwizz/crt-22m-0656s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 21000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 664 --crt crtwizz/crt-22m-0664s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 21000
 :::::::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 672 --crt crtwizz/crt-22m-0672s.txt --threads 12 --fermat-threads 10 --sieve-primes 23000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 680 --crt crtwizz/s680.txt --threads 12 --fermat-threads 10 --sieve-primes 23000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 688 --crt crtwizz/s688.txt --threads 12 --fermat-threads 10 --sieve-primes 23000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 696 --crt crtwizz/s696.txt --threads 12 --fermat-threads 10 --sieve-primes 23000
-:::::::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 704 --crt crtwizz/crt-22m-0704s.txt --threads 12 --fermat-threads 10 --sieve-primes 25000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 680 --crt crtwizz/crt-22m-0680s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 23000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 688 --crt crtwizz/crt-22m-0688s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 23000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 696 --crt crtwizz/crt-22m-0696s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 23000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 704 --crt crtwizz/crt-22m-0704s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 25000
 ::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 715 --crt crtwizz/s715.txt --threads 12 --fermat-threads 10 --sieve-primes 25000
 ::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 725 --crt crtwizz/s725.txt --threads 12 --fermat-threads 10 --sieve-primes 25000
 :::::::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 736 --crt crtwizz/crt-22m-0736s.txt --threads 12 --fermat-threads 10 --sieve-primes 27000
