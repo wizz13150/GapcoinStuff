@@ -70,7 +70,7 @@
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 21 -t 16 --ctr-file m25/crt-25m-0109s-wizz.txt
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 22 -t 16 --ctr-file m25/crt-25m-0115s-wizz.txt
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 23 -t 16 --ctr-file m25/crt-25m-0122s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 24 -t 16 --ctr-file m25/crt-25m-0128s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 24 -t 16 --ctr-file m25/crt-25m-0128s-wizz.txt
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 23 -t 16 --ctr-file m25/crt-25m-0134s-wizz.txt
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 26 -t 16 --ctr-file m25/crt-25m-0141s-wizz.txt
 ::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 27 -t 16 --ctr-file m25/crt-25m-0147s-wizz.txt
