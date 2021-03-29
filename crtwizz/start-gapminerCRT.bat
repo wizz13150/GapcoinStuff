@@ -56,7 +56,7 @@
 ::
 ::
 :: Example settings which were used to calculate the current ctr files:
-:: You can touch: --ctr-strength ; --ctr-merit ; --ctr-ivs ; --ctr-range ; -t ; --ctr-file
+:: You can touch: --ctr-strength ; --ctr-merit (decimal allowed); --ctr-ivs ; --ctr-range ; -t ; --ctr-file
 :: You can't touch:  --ctr-fixed ; --ctr-bits
 ::
 ::
