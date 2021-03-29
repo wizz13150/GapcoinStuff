@@ -60,130 +60,130 @@
 :: You can't touch:  --ctr-fixed ; --ctr-bits
 ::
 ::
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 14 -t 15 --ctr-file weak/crt-22m-0064s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 15 -t 15 --ctr-file weak/crt-22m-0070s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 16 -t 15 --ctr-file weak/crt-22m-0077s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 17 -t 15 --ctr-file weak/crt-22m-0083s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 18 -t 15 --ctr-file weak/crt-22m-0090s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 19 -t 15 --ctr-file weak/crt-22m-0096s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 20 -t 15 --ctr-file weak/crt-22m-0102s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 21 -t 15 --ctr-file weak/crt-22m-0109s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 22 -t 15 --ctr-file weak/crt-22m-0115s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 23 -t 15 --ctr-file weak/crt-22m-0122s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 24 -t 15 --ctr-file weak/crt-22m-0128s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 23 -t 15 --ctr-file weak/crt-22m-0134s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 26 -t 15 --ctr-file weak/crt-22m-0141s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 27 -t 15 --ctr-file weak/crt-22m-0147s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 28 -t 15 --ctr-file weak/crt-22m-0154s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 29 -t 15 --ctr-file weak/crt-22m-0160s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 30 -t 15 --ctr-file weak/crt-22m-0166s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 31 -t 15 --ctr-file weak/crt-22m-0173s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 32 -t 15 --ctr-file weak/crt-22m-0179s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 33 -t 15 --ctr-file weak/crt-22m-0186s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 9 --ctr-primes 34 -t 15 --ctr-file weak/crt-22m-0192s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 35 -t 15 --ctr-file weak/crt-22m-0200s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 36 -t 15 --ctr-file weak/crt-22m-0208s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 37 -t 15 --ctr-file weak/crt-22m-0216s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 38 -t 15 --ctr-file weak/crt-22m-0224s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 39 -t 15 --ctr-file weak/crt-22m-0232s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 40 -t 15 --ctr-file weak/crt-22m-0240s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 41 -t 15 --ctr-file weak/crt-22m-0248s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 42 -t 15 --ctr-file weak/crt-22m-0256s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 15 --ctr-primes 43 -t 15 --ctr-file weak/crt-22m-0264s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 15 --ctr-primes 44 -t 15 --ctr-file weak/crt-22m-0272s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 45 -t 15 --ctr-file weak/crt-22m-0280s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 15 --ctr-primes 46 -t 15 --ctr-file weak/crt-22m-0288s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 47 -t 15 --ctr-file weak/crt-22m-0296s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 48 -t 15 --ctr-file weak/crt-22m-0304s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 17 --ctr-primes 49 -t 15 --ctr-file weak/crt-22m-0312s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 50 -t 15 --ctr-file weak/crt-22m-0320s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 15 --ctr-primes 51 -t 15 --ctr-file weak/crt-22m-0326s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 52 -t 15 --ctr-file weak/crt-22m-0333s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 53 -t 15 --ctr-file weak/crt-22m-0339s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 54 -t 15 --ctr-file weak/crt-22m-0346s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 9 --ctr-primes 55 -t 15 --ctr-file weak/crt-22m-0352s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 56 -t 15 --ctr-file weak/crt-22m-0362s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 57 -t 15 --ctr-file weak/crt-22m-0373s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 58 -t 15 --ctr-file weak/crt-22m-0384s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 17 --ctr-primes 59 -t 15 --ctr-file weak/crt-22m-0392s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 17 --ctr-primes 60 -t 15 --ctr-file weak/crt-22m-0400s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 61 -t 15 --ctr-file weak/crt-22m-0408s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 62 -t 15 --ctr-file weak/crt-22m-0416s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 63 -t 15 --ctr-file weak/crt-22m-0424s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 64 -t 15 --ctr-file weak/crt-22m-0432s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 65 -t 15 --ctr-file weak/crt-22m-0440s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 15 --ctr-primes 66 -t 15 --ctr-file weak/crt-22m-0448s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 15 --ctr-primes 67 -t 15 --ctr-file weak/crt-22m-0456s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 68 -t 15 --ctr-file weak/crt-22m-0464s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 69 -t 15 --ctr-file weak/crt-22m-0472s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 70 -t 15 --ctr-file weak/crt-22m-0480s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 71 -t 15 --ctr-file weak/crt-22m-0488s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 72 -t 15 --ctr-file weak/crt-22m-0496s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 73 -t 15 --ctr-file weak/crt-22m-0504s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 74 -t 15 --ctr-file weak/crt-22m-0512s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 75 -t 15 --ctr-file weak/crt-22m-0520s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 76 -t 15 --ctr-file weak/crt-22m-0528s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 77 -t 15 --ctr-file weak/crt-22m-0536s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 9 --ctr-primes 78 -t 15 --ctr-file weak/crt-22m-0544s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 79 -t 15 --ctr-file weak/crt-22m-0555s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 80 -t 15 --ctr-file weak/crt-22m-0565s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 15 --ctr-primes 81 -t 15 --ctr-file weak/crt-22m-0576s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 82 -t 15 --ctr-file weak/crt-22m-0584s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 83 -t 15 --ctr-file weak/crt-22m-0592s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 84 -t 15 --ctr-file weak/crt-22m-0600s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 85 -t 15 --ctr-file weak/crt-22m-0608s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 86 -t 15 --ctr-file weak/crt-22m-0619s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 87 -t 15 --ctr-file weak/crt-22m-0629s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 17 --ctr-primes 88 -t 15 --ctr-file weak/crt-22m-0640s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 17 --ctr-primes 89 -t 15 --ctr-file weak/crt-22m-0648s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 90 -t 15 --ctr-file weak/crt-22m-0656s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 15 --ctr-primes 91 -t 15 --ctr-file weak/crt-22m-0664s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 92 -t 15 --ctr-file weak/crt-22m-0672s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 93 -t 15 --ctr-file weak/crt-22m-0680s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 94 -t 15 --ctr-file weak/crt-22m-0688s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 95 -t 15 --ctr-file weak/crt-22m-0696s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 96 -t 15 --ctr-file weak/crt-22m-0704s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 97 -t 15 --ctr-file weak/crt-22m-0715s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 98 -t 15 --ctr-file weak/crt-22m-0725s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 15 --ctr-primes 99 -t 15 --ctr-file weak/crt-22m-0736s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 100 -t 15 --ctr-file weak/crt-22m-0744s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 101 -t 15 --ctr-file weak/crt-22m-0752s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 102 -t 15 --ctr-file weak/crt-22m-0760s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 103 -t 15 --ctr-file weak/crt-22m-0768s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 104 -t 15 --ctr-file weak/crt-22m-0779s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 105 -t 15 --ctr-file weak/crt-22m-0789s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 15 --ctr-primes 106 -t 15 --ctr-file weak/crt-22m-0800s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 107 -t 15 --ctr-file weak/crt-22m-0808s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 108 -t 15 --ctr-file weak/crt-22m-0816s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 109 -t 15 --ctr-file weak/crt-22m-0824s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 110 -t 15 --ctr-file weak/crt-22m-0832s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 111 -t 15 --ctr-file weak/crt-22m-0843s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 112 -t 15 --ctr-file weak/crt-22m-0853s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 113 -t 15 --ctr-file weak/crt-22m-0864s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 114 -t 15 --ctr-file weak/crt-22m-0872s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 115 -t 15 --ctr-file weak/crt-22m-0880s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 116 -t 15 --ctr-file weak/crt-22m-0888s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 117 -t 15 --ctr-file weak/crt-22m-0896s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 118 -t 15 --ctr-file weak/crt-22m-0907s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 119 -t 15 --ctr-file weak/crt-22m-0917s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 15 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 120 -t 15 --ctr-file weak/crt-22m-0928s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 15 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 121 -t 15 --ctr-file weak/crt-22m-0938s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 15 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 122 -t 15 --ctr-file weak/crt-22m-0949s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 15 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 123 -t 15 --ctr-file weak/crt-22m-0956s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 15 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 124 -t 15 --ctr-file weak/crt-22m-0965s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 15 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 125 -t 15 --ctr-file weak/crt-22m-0974s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 15 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 126 -t 15 --ctr-file weak/crt-22m-0983s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 15 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 127 -t 15 --ctr-file weak/crt-22m-0992s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 15 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 128 -t 15 --ctr-file weak/crt-22m-01003s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 15 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 129 -t 15 --ctr-file weak/crt-22m-01013s-wizz.txt
-::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 15 --ctr-strength 15000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 15 --ctr-primes 130 -t 15 --ctr-file weak/crt-22m-01024s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 14 -t 16 --ctr-file m25/crt-22m-0064s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 15 -t 16 --ctr-file m25/crt-25m-0070s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 16 -t 16 --ctr-file crt-22m-0077s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 17 -t 16 --ctr-file m25/crt-25m-0083s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 18 -t 16 --ctr-file m25/crt-25m-0090s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 19 -t 16 --ctr-file m25/crt-25m-0096s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 20 -t 16 --ctr-file m25/crt-25m-0102s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 21 -t 16 --ctr-file m25/crt-25m-0109s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 22 -t 16 --ctr-file m25/crt-25m-0115s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 8 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 23 -t 16 --ctr-file m25/crt-25m-0122s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 24 -t 16 --ctr-file m25/crt-25m-0128s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 23 -t 16 --ctr-file m25/crt-25m-0134s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 26 -t 16 --ctr-file m25/crt-25m-0141s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 27 -t 16 --ctr-file m25/crt-25m-0147s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 28 -t 16 --ctr-file m25/crt-25m-0154s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 29 -t 16 --ctr-file m25/crt-25m-0160s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 30 -t 16 --ctr-file m25/crt-25m-0166s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 31 -t 16 --ctr-file m25/crt-25m-0173s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 32 -t 16 --ctr-file m25/crt-25m-0179s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 10 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 33 -t 16 --ctr-file m25/crt-25m-0186s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 9 --ctr-primes 34 -t 16 --ctr-file m25/crt-25m-0192s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 35 -t 16 --ctr-file m25/crt-25m-0200s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 36 -t 16 --ctr-file m25/crt-25m-0208s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 37 -t 16 --ctr-file m25/crt-25m-0216s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 38 -t 16 --ctr-file m25/crt-25m-0224s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 39 -t 16 --ctr-file m25/crt-25m-0232s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 40 -t 16 --ctr-file m25/crt-25m-0240s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 41 -t 16 --ctr-file m25/crt-25m-0248s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 42 -t 16 --ctr-file m25/crt-25m-0256s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 15 --ctr-primes 43 -t 16 --ctr-file m25/crt-25m-0264s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 15 --ctr-primes 44 -t 16 --ctr-file m25/crt-25m-0272s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 45 -t 16 --ctr-file m25/crt-25m-0280s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 15 --ctr-primes 46 -t 16 --ctr-file m25/crt-25m-0288s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 47 -t 16 --ctr-file m25/crt-25m-0296s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 48 -t 16 --ctr-file m25/crt-25m-0304s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 11 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 17 --ctr-primes 49 -t 16 --ctr-file m25/crt-25m-0312s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 50 -t 16 --ctr-file m25/crt-25m-0320s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 15 --ctr-primes 51 -t 16 --ctr-file m25/crt-25m-0326s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 52 -t 16 --ctr-file m25/crt-25m-0333s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 53 -t 16 --ctr-file m25/crt-25m-0339s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 54 -t 16 --ctr-file m25/crt-25m-0346s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 9 --ctr-primes 55 -t 16 --ctr-file m25/crt-25m-0352s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 56 -t 16 --ctr-file m25/crt-25m-0362s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 57 -t 16 --ctr-file m25/crt-25m-0373s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 58 -t 16 --ctr-file m25/crt-25m-0384s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 17 --ctr-primes 59 -t 16 --ctr-file m25/crt-25m-0392s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 17 --ctr-primes 60 -t 16 --ctr-file m25/crt-25m-0400s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 61 -t 16 --ctr-file m25/crt-25m-0408s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 62 -t 16 --ctr-file m25/crt-25m-0416s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 63 -t 16 --ctr-file m25/crt-25m-0424s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 64 -t 16 --ctr-file m25/crt-25m-0432s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 65 -t 16 --ctr-file m25/crt-25m-0440s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 15 --ctr-primes 66 -t 16 --ctr-file m25/crt-25m-0448s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 15 --ctr-primes 67 -t 16 --ctr-file m25/crt-25m-0456s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 68 -t 16 --ctr-file m25/crt-25m-0464s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 69 -t 16 --ctr-file m25/crt-25m-0472s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 70 -t 16 --ctr-file m25/crt-25m-0480s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 71 -t 16 --ctr-file m25/crt-25m-0488s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 72 -t 16 --ctr-file m25/crt-25m-0496s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 12 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 73 -t 16 --ctr-file m25/crt-25m-0504s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 10000 --ctr-merit 25 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 74 -t 16 --ctr-file m25/crt-25m-0512s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 75 -t 16 --ctr-file weak/crt-22m-0520s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 76 -t 16 --ctr-file weak/crt-22m-0528s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 77 -t 16 --ctr-file weak/crt-22m-0536s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 9 --ctr-primes 78 -t 16 --ctr-file weak/crt-22m-0544s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 79 -t 16 --ctr-file weak/crt-22m-0555s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 80 -t 16 --ctr-file weak/crt-22m-0565s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 15 --ctr-primes 81 -t 16 --ctr-file weak/crt-22m-0576s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 82 -t 16 --ctr-file weak/crt-22m-0584s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 83 -t 16 --ctr-file weak/crt-22m-0592s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 84 -t 16 --ctr-file weak/crt-22m-0600s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 85 -t 16 --ctr-file weak/crt-22m-0608s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 86 -t 16 --ctr-file weak/crt-22m-0619s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 87 -t 16 --ctr-file weak/crt-22m-0629s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 17 --ctr-primes 88 -t 16 --ctr-file weak/crt-22m-0640s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 17 --ctr-primes 89 -t 16 --ctr-file weak/crt-22m-0648s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 90 -t 16 --ctr-file weak/crt-22m-0656s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 15 --ctr-primes 91 -t 16 --ctr-file weak/crt-22m-0664s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 92 -t 16 --ctr-file weak/crt-22m-0672s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 93 -t 16 --ctr-file weak/crt-22m-0680s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 94 -t 16 --ctr-file weak/crt-22m-0688s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 13 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 95 -t 16 --ctr-file weak/crt-22m-0696s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 96 -t 16 --ctr-file weak/crt-22m-0704s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 97 -t 16 --ctr-file weak/crt-22m-0715s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 98 -t 16 --ctr-file weak/crt-22m-0725s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 15 --ctr-primes 99 -t 16 --ctr-file weak/crt-22m-0736s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 100 -t 16 --ctr-file weak/crt-22m-0744s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 101 -t 16 --ctr-file weak/crt-22m-0752s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 102 -t 16 --ctr-file weak/crt-22m-0760s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 103 -t 16 --ctr-file weak/crt-22m-0768s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 104 -t 16 --ctr-file weak/crt-22m-0779s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 105 -t 16 --ctr-file weak/crt-22m-0789s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 15 --ctr-primes 106 -t 16 --ctr-file weak/crt-22m-0800s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 107 -t 16 --ctr-file weak/crt-22m-0808s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 108 -t 16 --ctr-file weak/crt-22m-0816s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 109 -t 16 --ctr-file weak/crt-22m-0824s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 110 -t 16 --ctr-file weak/crt-22m-0832s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 111 -t 16 --ctr-file weak/crt-22m-0843s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 112 -t 16 --ctr-file weak/crt-22m-0853s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 113 -t 16 --ctr-file weak/crt-22m-0864s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 114 -t 16 --ctr-file weak/crt-22m-0872s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 115 -t 16 --ctr-file weak/crt-22m-0880s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 116 -t 16 --ctr-file weak/crt-22m-0888s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 10 --ctr-primes 117 -t 16 --ctr-file weak/crt-22m-0896s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 118 -t 16 --ctr-file weak/crt-22m-0907s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 14 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 119 -t 16 --ctr-file weak/crt-22m-0917s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 15 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 120 -t 16 --ctr-file weak/crt-22m-0928s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 15 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 121 -t 16 --ctr-file weak/crt-22m-0938s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 15 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 16 --ctr-primes 122 -t 16 --ctr-file weak/crt-22m-0949s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 15 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 123 -t 16 --ctr-file weak/crt-22m-0956s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 15 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 124 -t 16 --ctr-file weak/crt-22m-0965s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 15 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 125 -t 16 --ctr-file weak/crt-22m-0974s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 15 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 12 --ctr-primes 126 -t 16 --ctr-file weak/crt-22m-0983s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 15 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 11 --ctr-primes 127 -t 16 --ctr-file weak/crt-22m-0992s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 15 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 13 --ctr-primes 128 -t 16 --ctr-file weak/crt-22m-01003s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 15 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 14 --ctr-primes 129 -t 16 --ctr-file weak/crt-22m-01013s-wizz.txt
+::gapminer-cpu.exe --calc-ctr --ctr-evolution --ctr-fixed 15 --ctr-strength 10000 --ctr-merit 22 --ctr-ivs 1000 --ctr-range 0 --ctr-bits 15 --ctr-primes 130 -t 16 --ctr-file weak/crt-22m-01024s-wizz.txt
 ::
 ::pause
 ::
 
 ::
 ::Stratum parameters
-::-o gap.suprnova.cc -p 2433 -u worker.worker -x user --stratum
+::-o gap.suprnova.cc -p 2433 -u worker.worker -x pwd --stratum
 ::
 
 ::
@@ -205,76 +205,76 @@
 :: You can mine in --shift 510, using the crt file 'crt-22m-512s.txt'.
 ::
 ::
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 64 --crt crtwizz/crt-22m-0064s-wizz.txt --threads 12 --fermat-threads 9 --sieve-primes 4400
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 70 --crt crtwizz/crt-22m-0070s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 4500
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 77 --crt crtwizz/crt-22m-0077s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 4600
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 83 --crt crtwizz/crt-22m-0083s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 4700
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 90 --crt crtwizz/crt-22m-0090s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 4800
-:::::::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 96 --crt crtwizz/crt-22m-0096s.txt --threads 12 --fermat-threads 10 --sieve-primes 4900
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 102 --crt crtwizz/crt-22m-0102s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 5000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 109 --crt crtwizz/crt-22m-0109s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 5000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 115 --crt crtwizz/crt-22m-0115s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 5000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 122 --crt crtwizz/crt-22m-0122s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 5000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 128 --crt crtwizz/crt-22m-0128s-benxy031.txt --threads 12 --fermat-threads 10 --sieve-primes 8000  #22700 gaps/s 6.7M PPS 4.3M tests/s 0.08% t12 ft11 sp8000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 134 --crt crtwizz/crt-22m-0134s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 10000  #chinese fail
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 141 --crt crtwizz/crt-22m-0141s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 4750  #chinese fail
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 147 --crt crtwizz/crt-22m-0147s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 4750 
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 154 --crt crtwizz/crt-22m-0154s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 4750
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 160 --crt crtwizz/crt-22m-0160s.txt --threads 12 --fermat-threads 11 --sieve-primes 5000  #16450 gaps/s 6.2M PPS 3.7M tests/s 0.07% t12 ft11 sp5000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 166 --crt crtwizz/crt-22m-0166s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 5000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 173 --crt crtwizz/crt-22m-0173s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 6000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 179 --crt crtwizz/crt-22m-0179s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 6000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 186 --crt crtwizz/crt-22m-0186s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 6000
-:::::::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 192 --crt crtwizz/crt-22m-0192s.txt --threads 12 --fermat-threads 11 --sieve-primes 6000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 200 --crt crtwizz/crt-22m-0200s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 6000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 208 --crt crtwizz/crt-22m-0208s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 7000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 216 --crt crtwizz/crt-22m-0216s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 7000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 224 --crt crtwizz/crt-22m-0224s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 8000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 232 --crt crtwizz/crt-22m-0232s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 8000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 240 --crt crtwizz/crt-22m-0240s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 8000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 248 --crt crtwizz/crt-22m-0248s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 8000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 256 --crt crtwizz/crt-22m-0256s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 11000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 264 --crt crtwizz/crt-22m-0264s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 11000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 272 --crt crtwizz/crt-22m-0272s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 11000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 280 --crt crtwizz/crt-22m-0280s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 11000
-:::::::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 288 --crt crtwizz/crt-22m-0288s.txt --threads 12 --fermat-threads 11 --sieve-primes 13000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 296 --crt crtwizz/crt-22m-0296s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 13000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 304 --crt crtwizz/crt-22m-0304s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 13000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 312 --crt crtwizz/crt-22m-0312s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 13000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 320 --crt crtwizz/crt-22m-0320s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 15000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 326 --crt crtwizz/crt-22m-0326s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 15000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 333 --crt crtwizz/crt-22m-0333s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 15000  #5000 gaps/s 14.2M PPS 1.9M tests/s 0.17% t12 ft11 sp15000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 339 --crt crtwizz/crt-22m-0339s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 15000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 346 --crt crtwizz/crt-22m-0346s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 15000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 352 --crt crtwizz/crt-22m-0352s.txt --threads 12 --fermat-threads 11 --sieve-primes 16000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 362 --crt crtwizz/crt-22m-0362s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 16000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 373 --crt crtwizz/crt-22m-0373s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 16000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 384 --crt crtwizz/crt-22m-0384s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 20000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 392 --crt crtwizz/crt-22m-0392s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 20000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 400 --crt crtwizz/crt-22m-0400s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 20000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 408 --crt crtwizz/crt-22m-0408s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 20000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 415 --crt crtwizz/crt-22m-0416s-pdazzl.txt --threads 12 --fermat-threads 11 --sieve-primes 23000  
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 424 --crt crtwizz/crt-22m-0424s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 23000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 432 --crt crtwizz/crt-22m-0432s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 23000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 440 --crt crtwizz/crt-22m-0440s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 23000
-:::::::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 448 --crt crtwizz/crt-22m-0448s.txt --threads 12 --fermat-threads 11 --sieve-primes 27000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 456 --crt crtwizz/crt-22m-0456s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 27000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 464 --crt crtwizz/crt-22m-0464s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 27000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 472 --crt crtwizz/crt-22m-0472s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 27000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 480 --crt crtwizz/crt-22m-0480s-pdazzl.txt --threads 12 --fermat-threads 11 --sieve-primes 32000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 488 --crt crtwizz/crt-22m-0488s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 32000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 496 --crt crtwizz/crt-22m-0496s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 32000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 504 --crt crtwizz/crt-22m-0504s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 32000  
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 512 --crt crtwizz/crt-22m-0512s-pdazzl.txt --threads 12 --fermat-threads 11 --sieve-primes 34000  #2330 gaps/s 27.5M PPS 1.1M tests/s 0.32% t12 ft11 sp34000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 520 --crt crtwizz/crt-22m-0520s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 34000  #1960 gaps/s 19.7M PPS 900K tests/s 0.23% t12 ft11 sp34000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 528 --crt crtwizz/crt-22m-0528s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 34000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 536 --crt crtwizz/crt-22m-0536s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 34000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 544 --crt crtwizz/crt-22m-0544s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 35000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 555 --crt crtwizz/crt-22m-0555s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 35000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 565 --crt crtwizz/crt-22m-0565s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 35000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 576 --crt crtwizz/crt-22m-0576s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 35000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 584 --crt crtwizz/crt-22m-0584s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 36000
-::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 592 --crt crtwizz/s592.txt --threads 12 --fermat-threads 11 --sieve-primes 36000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 64 --crt crtwizz/crt-22m-0064s.txt --threads 12 --fermat-threads 9 --sieve-primes 4400
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 70 --crt crtwizz/crt-22m-0070s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 4500
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 77 --crt crtwizz/crt-22m-0077s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 4600
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 83 --crt crtwizz/crt-22m-0083s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 4700
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 90 --crt crtwizz/crt-22m-0090s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 4800
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 96 --crt crtwizz/crt-22m-0096s.txt --threads 12 --fermat-threads 10 --sieve-primes 4900
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 102 --crt crtwizz/crt-22m-0102s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 5000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 109 --crt crtwizz/crt-22m-0109s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 5000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 115 --crt crtwizz/crt-22m-0115s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 5000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 122 --crt crtwizz/crt-22m-0122s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 5000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 128 --crt crtwizz/crt-22m-0128s-benxy031.txt --threads 12 --fermat-threads 10 --sieve-primes 8000  #22700 gaps/s 6.7M PPS 4.3M tests/s 0.08% t12 ft11 sp8000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 134 --crt crtwizz/crt-22m-0134s-wizz.txt --threads 12 --fermat-threads 10 --sieve-primes 10000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 141 --crt crtwizz/crt-22m-0141s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 4500
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 147 --crt crtwizz/crt-22m-0147s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 4600 
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 154 --crt crtwizz/crt-22m-0154s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 4700
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 160 --crt crtwizz/crt-22m-0160s.txt --threads 12 --fermat-threads 11 --sieve-primes 5000  #16450 gaps/s 6.2M PPS 3.7M tests/s 0.07% t12 ft11 sp5000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 166 --crt crtwizz/crt-22m-0166s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 5000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 173 --crt crtwizz/crt-22m-0173s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 6000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 179 --crt crtwizz/crt-22m-0179s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 6000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 186 --crt crtwizz/crt-22m-0186s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 6000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 192 --crt crtwizz/crt-22m-0192s.txt --threads 12 --fermat-threads 11 --sieve-primes 6000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 200 --crt crtwizz/crt-22m-0200s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 6000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 208 --crt crtwizz/crt-22m-0208s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 7000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 216 --crt crtwizz/crt-22m-0216s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 7000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 224 --crt crtwizz/crt-22m-0224s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 8000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 232 --crt crtwizz/crt-22m-0232s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 8000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 240 --crt crtwizz/crt-22m-0240s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 8000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 248 --crt crtwizz/crt-22m-0248s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 8000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 256 --crt crtwizz/crt-22m-0256s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 11000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 264 --crt crtwizz/crt-22m-0264s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 11000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 272 --crt crtwizz/crt-22m-0272s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 11000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 280 --crt crtwizz/crt-22m-0280s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 11000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 288 --crt crtwizz/crt-22m-0288s.txt --threads 12 --fermat-threads 11 --sieve-primes 13000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 296 --crt crtwizz/crt-22m-0296s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 13000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 304 --crt crtwizz/crt-22m-0304s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 13000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 312 --crt crtwizz/crt-22m-0312s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 13000#fail
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 320 --crt crtwizz/crt-22m-0320s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 15000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 326 --crt crtwizz/crt-22m-0326s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 15000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 333 --crt crtwizz/crt-22m-0333s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 15000  #5000 gaps/s 14.2M PPS 1.9M tests/s 0.17% t12 ft11 sp15000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 339 --crt crtwizz/crt-22m-0339s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 15000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 346 --crt crtwizz/crt-22m-0346s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 15000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 352 --crt crtwizz/crt-22m-0352s.txt --threads 12 --fermat-threads 11 --sieve-primes 16000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 362 --crt crtwizz/crt-22m-0362s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 16000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 373 --crt crtwizz/crt-22m-0373s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 16000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 384 --crt crtwizz/crt-22m-0384s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 20000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 392 --crt crtwizz/crt-22m-0392s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 20000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 400 --crt crtwizz/crt-22m-0400s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 20000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 408 --crt crtwizz/crt-22m-0408s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 20000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 416 --crt crtwizz/crt-22m-0416s-pdazzl.txt --threads 12 --fermat-threads 11 --sieve-primes 23000  
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 424 --crt crtwizz/crt-22m-0424s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 23000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 432 --crt crtwizz/crt-22m-0432s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 23000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 440 --crt crtwizz/crt-22m-0440s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 23000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 448 --crt crtwizz/crt-22m-0448s.txt --threads 12 --fermat-threads 11 --sieve-primes 27000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 456 --crt crtwizz/crt-22m-0456s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 27000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 464 --crt crtwizz/crt-22m-0464s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 27000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 472 --crt crtwizz/crt-22m-0472s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 27000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 480 --crt crtwizz/crt-22m-0480s-pdazzl.txt --threads 12 --fermat-threads 11 --sieve-primes 32000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 488 --crt crtwizz/crt-22m-0488s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 32000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 496 --crt crtwizz/crt-22m-0496s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 32000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 504 --crt crtwizz/crt-22m-0504s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 32000  
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 512 --crt crtwizz/crt-22m-0512s-pdazzl.txt --threads 12 --fermat-threads 11 --sieve-primes 34000  #2330 gaps/s 27.5M PPS 1.1M tests/s 0.32% t12 ft11 sp34000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 520 --crt crtwizz/crt-22m-0520s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 34000  #1960 gaps/s 19.7M PPS 900K tests/s 0.23% t12 ft11 sp34000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 528 --crt crtwizz/crt-22m-0528s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 34000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 536 --crt crtwizz/crt-22m-0536s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 34000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 544 --crt crtwizz/crt-22m-0544s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 35000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 555 --crt crtwizz/crt-22m-0555s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 35000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 565 --crt crtwizz/crt-22m-0565s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 35000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 576 --crt crtwizz/crt-22m-0576s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 35000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31398 -u user -x toto --shift 584 --crt crtwizz/crt-22m-0584s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 36000
+::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 592 --crt crtwizz/crt-22m-0592s-wizz.txt --threads 12 --fermat-threads 11 --sieve-primes 36000
 ::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 600 --crt crtwizz/s600.txt --threads 12 --fermat-threads 11 --sieve-primes 36000
 :::::::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 608 --crt crtwizz/crt-22m-0608s.txt --threads 12 --fermat-threads 11 --sieve-primes 37500
 ::gapminer-cpu.exe -o http://127.0.0.1 -p 31397 -u user -x toto --shift 619 --crt crtwizz/s619.txt --threads 12 --fermat-threads 11 --sieve-primes 37500
