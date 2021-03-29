@@ -1,0 +1,7 @@
+|== ChineseSet ==|
+n_primes:     22
+size:         7207
+n_candidates: 833
+offset:       102358507750982104281081307684
+
+
