@@ -12,7 +12,7 @@ Merit22:
 22;115;640
 23;122;640
 24;128;637 benxy031-1
-25;134;642
+25;134;638 benxy031-4 	
 26;141;636
 27;147;637
 28;154;647
@@ -362,7 +362,7 @@ Merit28:
 Originals:
 
 
-crt-22m-64s.txt:n_candidates: 650
+crt-22m-64s.txt:n_candidates: 657
 crt-22m-96s.txt:n_candidates: 643
 crt-22m-128s.txt:n_candidates: 638
 crt-22m-160s.txt:n_candidates: 638
