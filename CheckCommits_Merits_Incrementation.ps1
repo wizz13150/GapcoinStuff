@@ -31,7 +31,7 @@ Foreach($entry in $modcom){
 $gap=[decimal](($entry -split ' '|Select-String VALUES).ToString().Split(',')[0]).Split('(')[1]
 #Merit
 $merit=[decimal]($entry -split ' '|Select-String VALUES).ToString().Split(',')[7]
-Write-Host "Gap: $gap ; Merit: $merit"
+#Write-Host "Gap: $gap ; Merit: $merit"
 If($Gap -eq $previousgap){
 #Check if current merit is smaller than previous, if yes dump infos
 If(($merit -lt $previousmerit)-eq $True){
@@ -42,11 +42,11 @@ Write-Host "Potential error at Gap $Gap in commit '$Tag', introducted merit: $me
 "Introducted line: $entry"|Add-Content $file
 "Previous line: $previousline"|Add-Content $file
 "Current Record: $current"|Add-Content $file
-" "|Add-Content $file
-Start-Sleep 1}
+" "|Add-Content $file}
 Else{
 #Saul Goodman
-Write-Host "Gap $Gap correctly incremented from $previousmerit to $merit"}}
+#Write-Host "Gap $Gap correctly incremented from $previousmerit to $merit"
+}}
 ElseIf($Gap -eq $previousgap2){
 #Check if current merit is smaller than the 2nd previous, if yes dump infos
 If(($merit -lt $previousmerit2)-eq $True){
@@ -57,11 +57,11 @@ Write-Host "Potential error2 at Gap $Gap in commit '$Tag', introducted merit: $m
 "Introducted line2: $entry"|Add-Content $file
 "Previous line2: $previousline2"|Add-Content $file
 "Current Record2: $current2"|Add-Content $file
-" "|Add-Content $file
-Start-Sleep 1}
+" "|Add-Content $file}
 Else{
 #Saul Goodman
-Write-Host "Gap $Gap correctly incremented from $previousmerit2 to $merit"}
+#Write-Host "Gap $Gap correctly incremented from $previousmerit2 to $merit"
+}
 }
 ElseIf($Gap -eq $previousgap3){
 #Check if current merit is smaller than the 3rd previous, if yes dump infos
@@ -73,31 +73,32 @@ Write-Host "Potential error3 at Gap $Gap in commit '$Tag', introducted merit: $m
 "Introducted line3: $entry"|Add-Content $file
 "Previous line3: $previousline3"|Add-Content $file
 "Current Record3: $current3"|Add-Content $file
-" "|Add-Content $file
-Start-Sleep 1}
+" "|Add-Content $file}
 Else{
 #Saul Goodman
-Write-Host "Gap $Gap correctly incremented from $previousmerit2 to $merit"}
+#Write-Host "Gap $Gap correctly incremented from $previousmerit2 to $merit"
+}
 }
 ElseIf($Gap -eq $previousgap4){
 #Check if current merit is smaller than the 4th previous, if yes dump infos
 If(($merit -lt $previousmerit4)-eq $True){
 #Get current gap record
-$current3=Get-Content $pglist|Select-String -SimpleMatch "VALUES($($Gap),"
+$current4=Get-Content $pglist|Select-String -SimpleMatch "VALUES($($Gap),"
 Write-Host "Potential error4 at Gap $Gap in commit '$Tag', introducted merit: $merit < $previousmerit4 (Existing) Check:'(git show $Tag --pretty=format:%b $Tag)'"
 "Potential error4 at Gap $Gap in commit '$Tag', introducted merit: $merit < $previousmerit4 (Existing) Check:'(git show $Tag --pretty=format:%b $Tag)'"|Add-Content $file
 "Introducted line4: $entry"|Add-Content $file
 "Previous line4: $previousline4"|Add-Content $file
 "Current Record4: $current4"|Add-Content $file
-" "|Add-Content $file
-Start-Sleep 1}
+" "|Add-Content $file}
 Else{
 #Saul Goodman
-Write-Host "Gap $Gap correctly incremented from $previousmerit2 to $merit"}
+#Write-Host "Gap $Gap correctly incremented from $previousmerit2 to $merit"
+}
 }
 #Current to previous for next one
 $previousgap4=$previousgap3;$previousmerit4=$previousmerit3;$previousline4=$previousline3;$previoustag4=$previoustag3
 $previousgap3=$previousgap2;$previousmerit3=$previousmerit2;$previousline3=$previousline2;$previoustag3=$previoustag2
 $previousgap2=$previousgap;$previousmerit2=$previousmerit;$previousline2=$previousline;$previoustag2=$previoustag
 $previousgap=$gap;$previousmerit=$merit;$previousline=$entry;$previoustag=$tag}
-Write-Warning "Commit $line END, NEXT"}
+#Write-Warning "Commit $line END, NEXT"
+}
