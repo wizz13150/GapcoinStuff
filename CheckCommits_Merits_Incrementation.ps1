@@ -1,4 +1,4 @@
-﻿#Script to check Commits incrementation.
+#Script to check Commits incrementation.
 #Git is required. Dump all commits (matching 'merit') content and Potentials errors with infos.
 #Output files
 $file="D:\Temp\Test\TestCheckCommits\Potentials.txt"
@@ -63,7 +63,41 @@ Else{
 #Saul Goodman
 Write-Host "Gap $Gap correctly incremented from $previousmerit2 to $merit"}
 }
+ElseIf($Gap -eq $previousgap3){
+#Check if current merit is smaller than the 3rd previous, if yes dump infos
+If(($merit -lt $previousmerit3)-eq $True){
+#Get current gap record
+$current3=Get-Content $pglist|Select-String -SimpleMatch "VALUES($($Gap),"
+Write-Host "Potential error3 at Gap $Gap in commit '$Tag', introducted merit: $merit < $previousmerit3 (Existing) Check:'(git show $Tag --pretty=format:%b $Tag)'"
+"Potential error3 at Gap $Gap in commit '$Tag', introducted merit: $merit < $previousmerit3 (Existing) Check:'(git show $Tag --pretty=format:%b $Tag)'"|Add-Content $file
+"Introducted line3: $entry"|Add-Content $file
+"Previous line3: $previousline3"|Add-Content $file
+"Current Record3: $current3"|Add-Content $file
+" "|Add-Content $file
+Start-Sleep 1}
+Else{
+#Saul Goodman
+Write-Host "Gap $Gap correctly incremented from $previousmerit2 to $merit"}
+}
+ElseIf($Gap -eq $previousgap4){
+#Check if current merit is smaller than the 4th previous, if yes dump infos
+If(($merit -lt $previousmerit4)-eq $True){
+#Get current gap record
+$current3=Get-Content $pglist|Select-String -SimpleMatch "VALUES($($Gap),"
+Write-Host "Potential error4 at Gap $Gap in commit '$Tag', introducted merit: $merit < $previousmerit4 (Existing) Check:'(git show $Tag --pretty=format:%b $Tag)'"
+"Potential error4 at Gap $Gap in commit '$Tag', introducted merit: $merit < $previousmerit4 (Existing) Check:'(git show $Tag --pretty=format:%b $Tag)'"|Add-Content $file
+"Introducted line4: $entry"|Add-Content $file
+"Previous line4: $previousline4"|Add-Content $file
+"Current Record4: $current4"|Add-Content $file
+" "|Add-Content $file
+Start-Sleep 1}
+Else{
+#Saul Goodman
+Write-Host "Gap $Gap correctly incremented from $previousmerit2 to $merit"}
+}
 #Current to previous for next one
+$previousgap4=$previousgap3;$previousmerit4=$previousmerit3;$previousline4=$previousline3;$previoustag4=$previoustag3
+$previousgap3=$previousgap2;$previousmerit3=$previousmerit2;$previousline3=$previousline2;$previoustag3=$previoustag2
 $previousgap2=$previousgap;$previousmerit2=$previousmerit;$previousline2=$previousline;$previoustag2=$previoustag
 $previousgap=$gap;$previousmerit=$merit;$previousline=$entry;$previoustag=$tag}
 Write-Warning "Commit $line END, NEXT"}
