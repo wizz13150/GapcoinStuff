@@ -1,23 +1,75 @@
+Potential error2 at Gap 2484 in commit 'b63c932', introducted merit: 27.1086 < 27.109999999999999432 (Existing) Check:'(git show b63c932 --pretty=format:%b b63c932)'
+Introducted line2: +INSERT INTO gaps VALUES(2484,0,'C','?','C','Spielaur',2012,27.1086,40,'6238068149043817037811040064591534229763');
+Previous line2: -INSERT INTO gaps VALUES(2484,0,'C','?','C','Spielaur',2012,27.109999999999999432,40,'6238068149043817037811040064591534229763');
+Current Record2: INSERT INTO gaps VALUES(2484,0,'C','?','C','Spielaur',2012,27.1086,40,'6238068149043817037811040064591534229763');
+ 
+Potential error2 at Gap 2592 in commit 'b63c932', introducted merit: 28.1769 < 28.179999999999999714 (Existing) Check:'(git show b63c932 --pretty=format:%b b63c932)'
+Introducted line2: +INSERT INTO gaps VALUES(2592,0,'C','?','C','Spielaur',2011,28.1769,40,'8931068149049477037411041152677826967611');
+Previous line2: -INSERT INTO gaps VALUES(2592,0,'C','?','C','Spielaur',2011,28.179999999999999714,40,'8931068149049477037411041152677826967611');
+Current Record2: INSERT INTO gaps VALUES(2592,0,'C','?','C','Spielaur',2011,28.1769,40,'8931068149049477037411041152677826967611');
+ 
+Potential error2 at Gap 2612 in commit 'b63c932', introducted merit: 28.2100 < 28.210000000000000851 (Existing) Check:'(git show b63c932 --pretty=format:%b b63c932)'
+Introducted line2: +INSERT INTO gaps VALUES(2612,0,'C','?','C','RobSmith',2018,28.2100,41,'16285972352861924581830053145918929394779');
+Previous line2: -INSERT INTO gaps VALUES(2612,0,'C','?','C','RobSmith',2018,28.210000000000000851,41,'16285972352861924581830053145918929394779');
+Current Record2: INSERT INTO gaps VALUES(2612,0,'C','?','C','RobSmith',2018,28.2100,41,'16285972352861924581830053145918929394779');
+ 
+Potential error2 at Gap 2668 in commit 'b63c932', introducted merit: 26.4159 < 26.420000000000001705 (Existing) Check:'(git show b63c932 --pretty=format:%b b63c932)'
+Introducted line2: +INSERT INTO gaps VALUES(2668,0,'C','?','C','Spielaur',2015,26.4159,44,'73055535311537226732226383044083042885205761');
+Previous line2: -INSERT INTO gaps VALUES(2668,0,'C','?','C','Spielaur',2015,26.420000000000001705,44,'73055535311537226732226383044083042885205761');
+Current Record2: INSERT INTO gaps VALUES(2668,0,'C','?','P','Loizides',2021,26.9120,44,'42508691423*83#/1+11413');
+ 
+Potential error2 at Gap 2706 in commit 'b63c932', introducted merit: 26.8297 < 26.829999999999998294 (Existing) Check:'(git show b63c932 --pretty=format:%b b63c932)'
+Introducted line2: +INSERT INTO gaps VALUES(2706,0,'C','?','C','Spielaur',2015,26.8297,44,'63433353167849049230360326044188484981923701');
+Previous line2: -INSERT INTO gaps VALUES(2706,0,'C','?','C','Spielaur',2015,26.829999999999998294,44,'63433353167849049230360326044188484981923701');
+Current Record2: INSERT INTO gaps VALUES(2706,0,'C','?','P','Loizides',2021,27.3255,44,'38094391080*83#/1+15581');
+ 
+Potential error2 at Gap 2708 in commit 'b63c932', introducted merit: 26.7777 < 26.780000000000001136 (Existing) Check:'(git show b63c932 --pretty=format:%b b63c932)'
+Introducted line2: +INSERT INTO gaps VALUES(2708,0,'C','?','C','Spielaur',2013,26.7777,44,'83133153027249049230760326044064538733967599');
+Previous line2: -INSERT INTO gaps VALUES(2708,0,'C','?','C','Spielaur',2013,26.780000000000001136,44,'83133153027249049230760326044064538733967599');
+Current Record2: INSERT INTO gaps VALUES(2708,0,'C','?','C','Spielaur',2013,26.7777,44,'83133153027249049230760326044064538733967599');
+ 
+Potential error2 at Gap 2714 in commit 'b63c932', introducted merit: 26.9369 < 26.940000000000001278 (Existing) Check:'(git show b63c932 --pretty=format:%b b63c932)'
+Introducted line2: +INSERT INTO gaps VALUES(2714,0,'C','?','C','Spielaur',2015,26.9369,44,'57138158224249049235760326044195387768173877');
+Previous line2: -INSERT INTO gaps VALUES(2714,0,'C','?','C','Spielaur',2015,26.940000000000001278,44,'57138158224249049235760326044195387768173877');
+Current Record2: INSERT INTO gaps VALUES(2714,0,'C','?','C','Spielaur',2015,26.9369,44,'57138158224249049235760326044195387768173877');
+ 
 Potential error at Gap 2800 in commit 'b63c932', introducted merit: 30.0057 < 30.010000000000001563 (Existing) Check:'(git show b63c932 --pretty=format:%b b63c932)'
 Introducted line: +INSERT INTO gaps VALUES(2800,0,'C','?','C','RobSmith',2018,30.0057,41,'33605034158176104758909467448415311978803');
 Previous line: -INSERT INTO gaps VALUES(2800,0,'C','?','C','RobSmith',2018,30.010000000000001563,41,'33605034158176104758909467448415311978803');
-
+Current Record: INSERT INTO gaps VALUES(2800,0,'C','?','C','RobSmith',2018,30.0057,41,'33605034158176104758909467448415311978803');
+ 
 Potential error at Gap 25036 in commit '49488ef', introducted merit: 24.346 < 27.375 (Existing) Check:'(git show 49488ef --pretty=format:%b 49488ef)'
 Introducted line: +INSERT INTO gaps VALUES(25036,0,'C','?','P','M.Jansen',2020,24.346,447,'3339159*1051#/210-16358');
 Previous line: -INSERT INTO gaps VALUES(25036,0,'C','?','P','S.Troisi',2020,27.375,398,'133650607*941#/7#-8232');
-
+Current Record: INSERT INTO gaps VALUES(25036,0,'C','?','P','M.Jansen',2021,28.0622,388,'718271*929#/6870-15258');
+ 
 Potential error at Gap 23824 in commit '9b0fcab', introducted merit: 23.889 < 23.895 (Existing) Check:'(git show 9b0fcab --pretty=format:%b 9b0fcab)'
 Introducted line: +INSERT INTO gaps VALUES(23824,0,'C','?','P','S.Troisi',2020,23.889,434,'130581523*1021#/7#-15076');
 Previous line: -INSERT INTO gaps VALUES(23824,0,'C','?','P','S.Troisi',2020,23.895,434,'102842317*1021#/7#-10042');
-
+Current Record: INSERT INTO gaps VALUES(23824,0,'C','?','P','M.Jansen',2020,26.1419,396,'58027217*941#/2310-11340');
+ 
 Potential error at Gap 23830 in commit '9b0fcab', introducted merit: 24.756 < 25.679 (Existing) Check:'(git show 9b0fcab --pretty=format:%b 9b0fcab)'
 Introducted line: +INSERT INTO gaps VALUES(23830,0,'C','?','P','S.Troisi',2020,24.756,419,'120134747*991#/7#-5040');
 Previous line: -INSERT INTO gaps VALUES(23830,0,'C','?','P','S.Troisi',2020,25.679,404,'101627971*953#/7#-15852');
-
+Current Record: INSERT INTO gaps VALUES(23830,0,'C','?','P','S.Troisi',2020,25.6788,404,'101627971*953#/7#-15852');
+ 
+Potential error2 at Gap 24744 in commit '9b0fcab', introducted merit: 25.705 < 26.273 (Existing) Check:'(git show 9b0fcab --pretty=format:%b 9b0fcab)'
+Introducted line2: +INSERT INTO gaps VALUES(24744,0,'C','?','P','S.Troisi',2020,25.705,419,'120156067*991#/7#-14082');
+Previous line2: -INSERT INTO gaps VALUES(24744,0,'C','?','P','S.Troisi',2020,26.273,410,'106461343*971#/7#-7962');
+Current Record2: INSERT INTO gaps VALUES(24744,0,'C','?','P','M.Jansen',2021,26.9547,399,'105343*953#/4890-13466');
+ 
+Potential error2 at Gap 24762 in commit '9b0fcab', introducted merit: 25.003 < 25.544 (Existing) Check:'(git show 9b0fcab --pretty=format:%b 9b0fcab)'
+Introducted line2: +INSERT INTO gaps VALUES(24762,0,'C','?','P','S.Troisi',2020,25.003,431,'129957491*1019#/7#-12014');
+Previous line2: -INSERT INTO gaps VALUES(24762,0,'C','?','P','S.Troisi',2020,25.544,422,'107742011*997#/7#-12770');
+Current Record2: INSERT INTO gaps VALUES(24762,0,'C','?','P','S.Troisi',2021,26.2664,410,'259191899*977#/198870-16118');
+ 
 Potential error at Gap 25162 in commit '9b0fcab', introducted merit: 25.952 < 26.331 (Existing) Check:'(git show 9b0fcab --pretty=format:%b 9b0fcab)'
 Introducted line: +INSERT INTO gaps VALUES(25162,0,'C','?','P','S.Troisi',2020,25.952,422,'126276917*997#/7#-15120');
 Previous line: -INSERT INTO gaps VALUES(25162,0,'C','?','P','S.Troisi',2020,26.331,416,'108455513*983#/7#-5040');
-
+Current Record: INSERT INTO gaps VALUES(25162,0,'C','?','P','S.Troisi',2020,26.3312,416,'108455513*983#/7#-5040');
+ 
 Potential error at Gap 25254 in commit '9b0fcab', introducted merit: 24.975 < 25.154 (Existing) Check:'(git show 9b0fcab --pretty=format:%b 9b0fcab)'
 Introducted line: +INSERT INTO gaps VALUES(25254,0,'C','?','P','S.Troisi',2020,24.975,440,'134236687*1033#/7#-5426');
 Previous line: -INSERT INTO gaps VALUES(25254,0,'C','?','P','S.Troisi',2020,25.154,437,'101597767*1031#/7#-12602');
+Current Record: INSERT INTO gaps VALUES(25254,0,'C','?','P','S.Troisi',2020,25.1543,437,'101597767*1031#/7#-12602');
+ 
