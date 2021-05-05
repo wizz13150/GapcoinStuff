@@ -1,15 +1,15 @@
     #1/5 PRODUCE RAW OUTPUT FROM GAPCOIN BLOCKCHAIN
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
     #How to: Set line 7, put gapcoin-cli.exe in $Path directory. Run script from everywhere.
-    #Lines to eventually edit : 7,148
-    #Lines to eventually comment/uncomment for a custom output format : 103 to 137
+    #Lines to eventually edit : 7,144
+    #Lines to eventually comment/uncomment for a custom output format : 100 to 134
     #Path for gapcoin-cli.exe and outputs
     $Path="C:\Temp\"
 
     #Repeated Variables
     $heightout="$($Path)heightout.txt";$hashout="$($Path)hashout.txt";$blockout="$($Path)blockout.txt";$lastproc="$($Path)lastproc.txt"
-    $Dump="$($Path)Dump_LastBlocks.csv";$Proc="$($Path)gapcoin-cli.exe";$DumpMersenne="$($Path)Dump_LastBlocks_Mersenne.csv";$DumpTroisi="$($Path)Dump_LastBlocks_Troisi.csv"
-    $DumpCustom="$($Path)Dump_LastBlocks_Custom.csv";$FDate=((Get-Date) -replace " ","_" -replace ":" -replace "/")
+    $Dump="$($Path)Dump.csv";$Proc="$($Path)gapcoin-cli.exe";$DumpMersenne="Dump_Mersenne";$DumpTroisi="Dump_Troisi";$DumpBadBlocks="$($Path)DumpBadBlocks.txt"
+    $DumpCustom="Dump_Custom";$blockouttemp="$($Path)blockouttemp.txt";$FDate=((Get-Date) -replace " ","_" -replace ":" -replace "/");$s=0
 
     #First Request for last block height value
     $Null=Start-Process $Proc -Argumentlist "getblockcount" -RedirectStandardOutput $heightout -Wait -WindowStyle Hidden -PassThru
@@ -17,7 +17,7 @@
     Write-Warning "Up to date last block height is $LastHeight"
 
     #Check if Dump_LastBlocks file already exist                                        
-    Write-Warning "Searching for last processed block in Dump_LastBlocks file."
+    Write-Warning "Searching for last processed block in Dump file."
     If((Test-Path -Path $Dump -PathType Leaf) -eq $True){
     #And then get last proccessed blockheight and nextblockhash from it  
     $n=1;$LP=Get-Content $Dump -tail $n
@@ -42,9 +42,9 @@
     #Write-Warning "Hash for block $LastProcessed is $LastHash"
     #Dump block
     Write-Warning "[START]Processing block $LastProcessed..."
-    $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockout -Wait -WindowStyle Hidden -PassThru
-    Write-Warning "[START]Block $LastProcessed cached in blockout.txt"
-    $Block=Get-Content $blockout
+    $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockouttemp -Wait -WindowStyle Hidden -PassThru
+    Write-Warning "[START]Block $LastProcessed cached in blockouttemp.txt"
+    $Block=Get-Content $blockouttemp
     $Null=New-Item $Dump -ItemType file
     $Block|Add-Content $Dump
     #Get next hash
@@ -67,23 +67,58 @@
     Write-Warning "Starting Loop..."
 While($True){
     while([decimal]$LastProcessed -lt [decimal]$LastHeight){
-    #Write-Host " "
-    $LastProcessed=[decimal]$LastProcessed+1
+    $LastProcessed=[decimal]$LastProcessed+1;$s=0
     #Dump block
     Write-Warning "Processing block $LastProcessed..."
-    $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockout -Wait -WindowStyle Hidden -PassThru
-    #Write-Warning "Block $LastProcessed cached in blockout"
+    $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockouttemp -Wait -WindowStyle Hidden -PassThru
+    #Write-Warning "Block $LastProcessed cached in blockouttemp" 
 
     #Check if nextblockhash is present, or loop until
-    $ToSleepOrNotToSleep = Get-Content $blockout | Select-String -SimpleMatch nextblockhash
+    $ToSleepOrNotToSleep = Get-Content $blockouttemp | Select-String -SimpleMatch nextblockhash
     While(([String]::IsNullOrWhiteSpace($ToSleepOrNotToSleep)) -eq $True){
-    Write-Warning "Block $LastProcessed doesn't contain 'nextblockhash' yet ! Sleep for 10 sec..."
-    Start-Sleep -Seconds 10
-    $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockout -Wait -WindowStyle Hidden -PassThru
-    Write-Warning "Block $LastProcessed cached in blockout.txt"
-    $ToSleepOrNotToSleep=Get-Content $blockout|Select-String -SimpleMatch nextblockhash }
+    #CheckNewtBlockHash count
+    $s++
+    Write-Warning "Block $LastProcessed/$LastHeight doesn't contain 'nextblockhash' yet! ($s)"
+    #Start-Sleep -Seconds 2
+    $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockouttemp -Wait -WindowStyle Hidden -PassThru
+    #Write-Warning "Block $LastProcessed cached in blockouttemp.txt"
+    $ToSleepOrNotToSleep=Get-Content $blockouttemp|Select-String -SimpleMatch nextblockhash
+   
+    #Check LastBlockHeight
+    $Null=Start-Process $Proc -Argumentlist "getblockcount" -RedirectStandardOutput $heightout -Wait -WindowStyle Hidden -PassThru
+    $LastHeight=Get-Content $heightout
+        
+    #If $LastHeight -gt $LastProcessed+1, we are potentially stuck, so dump the potential bad block
+    If($LastHeight -gt $LastProcessed+1){
+    Write-Warning "Last Processed is $LastProcessed, Last Block is $LastHeight. Dump the potential Bad Block and continue from last."
+    #Read end of file until we see '{', start of last block (May vary with tx)
+    $n=1;$Bad= Get-Content $Dump -tail $n
+    While(($Bad[0] -match "\{")-eq $false){$n++
+    $Bad=Get-Content $Dump -tail $n}
+    #Complete Last Block, dump in BadBlocks file
+    $Bad|Add-Content $DumpBadBlocks
+    #Read all lines
+    $LinesInFile = [System.IO.File]::ReadAllLines($Dump)
+    #Write all lines, except for the bad block, back to the file
+    [System.IO.File]::WriteAllLines("$Dump",$LinesInFile[0..($LinesInFile.Count-$n-1)])
 
-    #nextblockhash is present, go on
+    #Get Last Block from Dump file after cut
+    $n=1;$LP=Get-Content $Dump -tail $n
+    While(($LP[0] -match "\{")-eq $false){$n++
+    $LP=Get-Content $Dump -tail $n}
+    $LastProcessed=$LP|Where {$_ -match "height"}
+    $LastProcessed=$LastProcessed -replace '    "height" : ' -replace ','
+    $LastProcessed=$LastProcessed.split()[-1]
+    $LastProcessed|Set-Content $lastproc
+    $LastHash=$LP|Where{$_ -match "nextblockhash"}
+    $LastHash=$LastHash -replace '    "nextblockhash" : ' -replace '"'
+    Write-Warning "Last proccessed block in Dump file is $LastProcessed"
+    
+    #Clean CheckNewtBlockHash count
+    $s=0}}
+
+    #Nextblockhash is present, go on
+    (Get-Content $blockouttemp)|Set-Content $blockout
     $Block=Get-Content $blockout    
     $Block|Add-Content $Dump
     #Get next hash
@@ -111,7 +146,7 @@ While($True){
     ##$tx=$In|Where{$_ -match "tx"}                                           #Ligne +1 ToDo, doesn't work
     ##$tx=$tx -replace '    "tx" : ' -replace '"'                             #Ligne +1 ToDo, doesn't work
     ##$tx=@("tx,") + $tx                                                      #Ligne +1 ToDo, doesn't work
-    $time=$In|Where{$_ -match "time"}
+    $time=$In|Where{$_ -match '"time"'}
     $time=$time -replace '    "time" : ' -replace ',' 
     $blockdates=ForEach ($ut in $time){
     $origin = New-Object -Type DateTime -ArgumentList 1970, 1, 1, 0, 0, 0, 0
@@ -141,46 +176,51 @@ While($True){
     ###############################################
     ######Custom Format Output from RAW datas######
     ###############################################
-    #If Clean DumpBlocks file doesn't exist, create with headers
-    If ((Test-Path -Path $DumpCustom -PathType Leaf) -eq $False){
-    $Null=Add-Content -Path $DumpCustom -Value "Height,Date,Nonce,Adder,Difficulty,Shift,Merit,Gap,Gapstart"}
+    #If Clean Dump file doesn't exist, create with headers
+    If ((Test-Path -Path "$($Path)$($DumpCustom).csv" -PathType Leaf) -eq $False){
+    $Null=Add-Content -Path "$($Path)$($DumpCustom).csv" -Value "Height,Date,Nonce,Adder,Difficulty,Shift,Merit,Gap,Gapstart"}
     #Adapt this to selection or swap columns
-    "$height,$blockdates,$nonce,$adder,$difficulty,$shift,$Merit6,$gaplen,$gapstart"|Add-Content $DumpCustom
+    "$height,$blockdates,$nonce,$adder,$difficulty,$shift,$Merit6,$gaplen,$gapstart"|Add-Content "$($Path)$($DumpCustom).csv"#}
+    #Write-Warning "Custom Format Output added to $DumpCustom.csv"
     
     
     #4/5 CONVERT CLEAN VARIABLES DATA INTO MERSENNE FORUM SUBMISSON FORMAT
     ###############################################
     ###### Custom Format for Mersenne Forum  ######
     ###############################################
-    #If Clean DumpBlocks file doesn't exist, create with headers
-    If ((Test-Path -Path $DumpMersenne -PathType Leaf) -eq $False){
-    $Null=Add-Content -Path $DumpMersenne -Value "Gap,C??,Merit6,Discoverer,Date,Digits,Gapstart"}
+    #If Clean Dump file doesn't exist, create with headers
+    If ((Test-Path -Path "$($Path)$($DumpMersenne).csv" -PathType Leaf) -eq $False){
+    $Null=Add-Content -Path "$($Path)$($DumpMersenne).csv" -Value "Gap,C??,Merit6,Discoverer,Date,Digits,Gapstart"}
     #If next one is edited, no more for submission
-    "$gaplen,C??,$Merit6,Gapcoin,$blockdates,$Digits,$gapstart"|Add-Content $DumpMersenne
+    "$gaplen,C??,$Merit6,Gapcoin,$blockdates,$Digits,$gapstart"|Add-Content "$($Path)$($DumpMersenne).csv"
+    #Write-Warning "MersenneForum Format Output added to $DumpMersenne.csv"
 
 
     #5/5 CONVERT CLEAN VARIABLES DATA INTO S.Troisi SUBMISSION FORMAT
     ###############################################
     ##### Custom Format for S.Troisi AutoSub  #####
     ###############################################
-    #If Clean DumpBlocks file doesn't exist, create with headers
-    If ((Test-Path -Path $DumpTroisi -PathType Leaf) -eq $False){
-    $Null=Add-Content -Path $DumpTroisi -Value "Gap Date Discoverer Merit6 Gapstart"}
+    #If Clean Dump file doesn't exist, create with headers
+    If ((Test-Path -Path "$($Path)$($DumpTroisi).csv" -PathType Leaf) -eq $False){
+    $Null=Add-Content -Path "$($Path)$($DumpTroisi).csv" -Value "Gap Date Discoverer Merit6 Gapstart"}
     #If next one is edited, no more for submission
-    "$gaplen $blockdates Gapcoin $Merit6 $gapstart"|Add-Content $DumpTroisi
-        
+    "$gaplen $blockdates Gapcoin $Merit6 $gapstart"|Add-Content "$($Path)$($DumpTroisi).csv"
+    #Write-Warning "S.Troisi Format Output added to $DumpTroisi.csv"
     }#End dumping loop, check for new block or sleep
  
-    #Loop to check for new blocks or sleep 10 sec
+    #Loop to check for a new block
     $Previous=$LastHeight
     while($LastHeight -le $LastProcessed){
-    Write-Warning "Check for a new block..."
+    Write-Warning "Check for a new block since last request..."
     $Null=Start-Process $Proc -Argumentlist "getblockcount" -RedirectStandardOutput $heightout -Wait -WindowStyle Hidden -PassThru
     $LastHeight=Get-Content $heightout
 
     If($LastHeight -eq $Previous){
-    Write-Warning "No new block, sleep for 10 sec. (Current height: $LastHeight)"
+    Write-Warning "No new block, sleep for 2 sec. (Current height: $LastHeight)"
     #Write-Host "     " -BackgroundColor DarkYellow
-    Start-Sleep -Seconds 10}Else{Write-Warning "New block found, going forward !"}}   
-         
+    Start-Sleep -Seconds 2
+    }Else{
+    Write-Warning "New block found, going forward !"
+    #Reset sleep count
+    }}            
     }#End Big Loop
