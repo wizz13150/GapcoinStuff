@@ -1,8 +1,8 @@
     #1/5 PRODUCE RAW OUTPUT FROM GAPCOIN BLOCKCHAIN
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
     #How to: Set line 7, put gapcoin-cli.exe in $Path directory. Run script from everywhere.
-    #Lines to eventually edit : 7,183
-    #Lines to eventually comment/uncomment for a custom output format : 133 to 172
+    #Lines to eventually edit : 7,182
+    #Lines to eventually comment/uncomment for a custom output format : 132 to 171
     #Path for gapcoin-cli.exe and outputs
     $Path="C:\Temp\"
 
@@ -112,8 +112,7 @@ While($True){
     $LastProcessed|Set-Content $lastproc
     $LastHash=$LP|Where{$_ -match "nextblockhash"}
     $LastHash=$LastHash -replace '    "nextblockhash" : ' -replace '"'
-    Write-Warning "Last proccessed block in Dump file is $LastProcessed"
-    
+    Write-Warning "Last proccessed block in Dump file is $LastProcessed"    
     #Clean CheckNewtBlockHash count
     $s=0}}
 
