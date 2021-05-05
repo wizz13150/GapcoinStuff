@@ -76,7 +76,7 @@ While($True){
     #Check if nextblockhash is present, or loop until
     $ToSleepOrNotToSleep = Get-Content $blockouttemp | Select-String -SimpleMatch nextblockhash
     While(([String]::IsNullOrWhiteSpace($ToSleepOrNotToSleep)) -eq $True){
-    #CheckNewtBlockHash count
+    #CheckNewBlockHash count
     $s++
     Write-Warning "Block $LastProcessed/$LastHeight doesn't contain 'nextblockhash' yet! ($s)"
     #Start-Sleep -Seconds 2
@@ -113,7 +113,7 @@ While($True){
     $LastHash=$LP|Where{$_ -match "nextblockhash"}
     $LastHash=$LastHash -replace '    "nextblockhash" : ' -replace '"'
     Write-Warning "Last proccessed block in Dump file is $LastProcessed"    
-    #Clean CheckNewtBlockHash count
+    #Clean CheckNewBlockHash count
     $s=0}}
 
     #Nextblockhash is present, go on
