@@ -1,10 +1,10 @@
     #1/5 PRODUCE RAW OUTPUT FROM GAPCOIN BLOCKCHAIN
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
     #How to: Set line 7, put gapcoin-cli.exe in $Path directory. Run script from everywhere.
-    #Lines to eventually edit : 7,182
-    #Lines to eventually comment/uncomment for a custom output format : 132 to 171
+    #Lines to eventually edit : 7,187
+    #Lines to eventually comment/uncomment for a custom output format : 137 to 176
     #Path for gapcoin-cli.exe and outputs
-    $Path="C:\Temp\"
+    $Path="Z:\Gapcoin\Live Dump\test\"
 
     #Repeated Variables
     $heightout="$($Path)heightout.txt";$hashout="$($Path)hashout.txt";$blockout="$($Path)blockout.txt";$lastproc="$($Path)lastproc.txt"
@@ -76,7 +76,7 @@ While($True){
     #Check if nextblockhash is present, or loop until
     $ToSleepOrNotToSleep = Get-Content $blockouttemp | Select-String -SimpleMatch nextblockhash
     While(([String]::IsNullOrWhiteSpace($ToSleepOrNotToSleep)) -eq $True){
-    #CheckNewBlockHash count
+    #CheckNewtBlockHash count
     $s++
     Write-Warning "Block $LastProcessed/$LastHeight doesn't contain 'nextblockhash' yet! ($s)"
     #Start-Sleep -Seconds 2
@@ -102,7 +102,7 @@ While($True){
     #Write all lines, except for the bad block, back to the file
     [System.IO.File]::WriteAllLines("$Dump",$LinesInFile[0..($LinesInFile.Count-$n-1)])
 
-    #Get Last Block from Dump file after cut
+    #Get Last Block Height from Dump file, after cut
     $n=1;$LP=Get-Content $Dump -tail $n
     While(($LP[0] -match "\{")-eq $false){$n++
     $LP=Get-Content $Dump -tail $n}
@@ -113,8 +113,13 @@ While($True){
     $LastHash=$LP|Where{$_ -match "nextblockhash"}
     $LastHash=$LastHash -replace '    "nextblockhash" : ' -replace '"'
     Write-Warning "Last proccessed block in Dump file is $LastProcessed"    
-    #Clean CheckNewBlockHash count
-    $s=0}}
+    #Clean CheckNewtBlockHash count
+    $s=0}
+    
+    #Dump block
+    $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockouttemp -Wait -WindowStyle Hidden -PassThru
+    #Write-Warning "Block $LastProcessed cached in blockouttemp"
+    }
 
     #Nextblockhash is present, go on
     (Get-Content $blockouttemp)|Set-Content $blockout
