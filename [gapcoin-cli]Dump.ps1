@@ -1,8 +1,8 @@
     #1/5 PRODUCE RAW OUTPUT FROM GAPCOIN BLOCKCHAIN
     #NB: Output from gapcoin-cli.exe takes 2 sec to come and I need to wait for it, need to find a way to be way faster.
     #How to: Set line 7, put gapcoin-cli.exe in $Path directory. Run script from everywhere.
-    #Lines to eventually edit : 7,187
-    #Lines to eventually comment/uncomment for a custom output format : 137 to 176
+    #Lines to eventually edit : 7,176
+    #Lines to eventually comment/uncomment for a custom output format : 130 to 165
     #Path for gapcoin-cli.exe and outputs
     $Path="C:\Temp\"
 
@@ -28,14 +28,38 @@
     $LastProcessed=$LastProcessed.split()[-1]
     $LastProcessed|Set-Content $lastproc
     $LastHash=$LP|Where{$_ -match "nextblockhash"}
-    $LastHash=$LastHash -replace '    "nextblockhash" : ' -replace '"'
+    $LastHash=$LastHash -replace '    "nextblockhash" : ' -replace '"'    
+    #If no Last Hash in last block of dump file, then dump the bad block(s)
+    While([String]::IsNullOrWhiteSpace($LastHash)){
+    #Read end of file until we see '{', start of last block (May vary with tx)
+    $n=1;$Bad= Get-Content $Dump -tail $n
+    While(($Bad[0] -match "\{")-eq $false){$n++
+    $Bad=Get-Content $Dump -tail $n}
+    #Complete Last Block, dump in BadBlocks file
+    $Bad|Add-Content $DumpBadBlocks
+    #Read all lines
+    $LinesInFile = [System.IO.File]::ReadAllLines($Dump)
+    #Write all lines, except for the bad block, back to the file
+    [System.IO.File]::WriteAllLines("$Dump",$LinesInFile[0..($LinesInFile.Count-$n-1)])
+    Write-Warning "Last proccessed block had no NextBlockHash, Block dumped"
+    #And then get last proccessed blockheight and nextblockhash from it  
+    $n=1;$LP=Get-Content $Dump -tail $n
+    While(($LP[0] -match "\{")-eq $false){$n++
+    $LP=Get-Content $Dump -tail $n}
+    $LastProcessed=$LP|Where {$_ -match "height"}
+    $LastProcessed=$LastProcessed -replace '    "height" : ' -replace ','
+    $LastProcessed=$LastProcessed.split()[-1]
+    $LastProcessed|Set-Content $lastproc
+    $LastHash=$LP|Where{$_ -match "nextblockhash"}
+    $LastHash=$LastHash -replace '    "nextblockhash" : ' -replace '"'}
     Write-Warning "Last proccessed block in Dump file is $LastProcessed"}
+    
     Else{
     Write-Warning "No proccessed block nor hash found, so request new hash" 
     #Ask for starting block
     $userinput = Read-Host "Dump file not found, enter first block to dump (Default is block 1)"
     if(-not($userinput)){$userinput = '1'}
-    #Request hash of the asked block
+    #Request hash
     $LastProcessed=$userinput
     $Null=Start-Process $Proc -Argumentlist "getblockhash $LastProcessed" -RedirectStandardOutput $hashout -Wait -WindowStyle Hidden -PassThru
     $LastHash=Get-Content $hashout
@@ -65,61 +89,26 @@
     ###################################################################################
 
     Write-Warning "Starting Loop..."
+    $ToSleepOrNotToSleep="1"    
 While($True){
-    while([decimal]$LastProcessed -lt [decimal]$LastHeight){
+    While([decimal]$LastProcessed -lt [decimal]$LastHeight){
     $LastProcessed=[decimal]$LastProcessed+1;$s=0
-    #Dump block
-    Write-Warning "Processing block $LastProcessed..."
-    $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockouttemp -Wait -WindowStyle Hidden -PassThru
-    #Write-Warning "Block $LastProcessed cached in blockouttemp" 
+    If ((Test-Path -Path $blockout -PathType Leaf) -eq $True){
+    $ToSleepOrNotToSleep = Get-Content $blockout | Select-String -SimpleMatch nextblockhash}
 
+    #Dump block
+    Write-Warning "Requesting block $LastProcessed..."
+    $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockouttemp -Wait -WindowStyle Hidden -PassThru
+    
+    While(([String]::IsNullOrWhiteSpace($ToSleepOrNotToSleep)) -eq $True){
+    $Null=Start-Process $Proc -Argumentlist "getblockhash $LastProcessed" -RedirectStandardOutput $hashout -Wait -WindowStyle Hidden -PassThru
+    $LastHash=Get-Content $hashout
+    #Dump block
+    Write-Warning "Waiting for nextblockhash in block $LastProcessed...($s)"
+    $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockouttemp -Wait -WindowStyle Hidden -PassThru
     #Check if nextblockhash is present, or loop until
     $ToSleepOrNotToSleep = Get-Content $blockouttemp | Select-String -SimpleMatch nextblockhash
-    While(([String]::IsNullOrWhiteSpace($ToSleepOrNotToSleep)) -eq $True){
-    #CheckNewtBlockHash count
-    $s++
-    Write-Warning "Block $LastProcessed/$LastHeight doesn't contain 'nextblockhash' yet! ($s)"
-    #Start-Sleep -Seconds 2
-    $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockouttemp -Wait -WindowStyle Hidden -PassThru
-    #Write-Warning "Block $LastProcessed cached in blockouttemp.txt"
-    $ToSleepOrNotToSleep=Get-Content $blockouttemp|Select-String -SimpleMatch nextblockhash
-   
-    #Check LastBlockHeight
-    $Null=Start-Process $Proc -Argumentlist "getblockcount" -RedirectStandardOutput $heightout -Wait -WindowStyle Hidden -PassThru
-    $LastHeight=Get-Content $heightout
-        
-    #If $LastHeight -gt $LastProcessed+1, we are potentially stuck, so dump the potential bad block
-    If($LastHeight -gt $LastProcessed+1){
-    Write-Warning "Last Processed is $LastProcessed, Last Block is $LastHeight. Dump the potential Bad Block and continue from last."
-    #Read end of file until we see '{', start of last block (May vary with tx)
-    $n=1;$Bad= Get-Content $Dump -tail $n
-    While(($Bad[0] -match "\{")-eq $false){$n++
-    $Bad=Get-Content $Dump -tail $n}
-    #Complete Last Block, dump in BadBlocks file
-    $Bad|Add-Content $DumpBadBlocks
-    #Read all lines
-    $LinesInFile = [System.IO.File]::ReadAllLines($Dump)
-    #Write all lines, except for the bad block, back to the file
-    [System.IO.File]::WriteAllLines("$Dump",$LinesInFile[0..($LinesInFile.Count-$n-1)])
-
-    #Get Last Block Height from Dump file, after cut
-    $n=1;$LP=Get-Content $Dump -tail $n
-    While(($LP[0] -match "\{")-eq $false){$n++
-    $LP=Get-Content $Dump -tail $n}
-    $LastProcessed=$LP|Where {$_ -match "height"}
-    $LastProcessed=$LastProcessed -replace '    "height" : ' -replace ','
-    $LastProcessed=$LastProcessed.split()[-1]
-    $LastProcessed|Set-Content $lastproc
-    $LastHash=$LP|Where{$_ -match "nextblockhash"}
-    $LastHash=$LastHash -replace '    "nextblockhash" : ' -replace '"'
-    Write-Warning "Last proccessed block in Dump file is $LastProcessed"    
-    #Clean CheckNewtBlockHash count
-    $s=0}
-    
-    #Dump block
-    $Null=Start-Process $Proc -Argumentlist "getblock $LastHash" -RedirectStandardOutput $blockouttemp -Wait -WindowStyle Hidden -PassThru
-    #Write-Warning "Block $LastProcessed cached in blockouttemp"
-    }
+    $s++}
 
     #Nextblockhash is present, go on
     (Get-Content $blockouttemp)|Set-Content $blockout
@@ -209,22 +198,6 @@ While($True){
     $Null=Add-Content -Path "$($Path)$($DumpTroisi).csv" -Value "Gap Date Discoverer Merit6 Gapstart"}
     #If next one is edited, no more for submission
     "$gaplen $blockdates Gapcoin $Merit6 $gapstart"|Add-Content "$($Path)$($DumpTroisi).csv"
-    #Write-Warning "S.Troisi Format Output added to $DumpTroisi.csv"
-    }#End dumping loop, check for new block or sleep
- 
-    #Loop to check for a new block
-    $Previous=$LastHeight
-    while($LastHeight -le $LastProcessed){
-    Write-Warning "Check for a new block since last request..."
-    $Null=Start-Process $Proc -Argumentlist "getblockcount" -RedirectStandardOutput $heightout -Wait -WindowStyle Hidden -PassThru
-    $LastHeight=Get-Content $heightout
-
-    If($LastHeight -eq $Previous){
-    Write-Warning "No new block, sleep for 2 sec. (Current height: $LastHeight)"
-    #Write-Host "     " -BackgroundColor DarkYellow
-    Start-Sleep -Seconds 2
-    }Else{
-    Write-Warning "New block found, going forward !"
-    #Reset sleep count
-    }}            
+    #Write-Warning "S.Troisi Format Output added to $DumpTroisi.csv"    
+    }#End Dumping Loop
     }#End Big Loop
