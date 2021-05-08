@@ -8,7 +8,7 @@ $Path="Z:\Gapcoin\Live Dump"
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/primegap-list-project/prime-gap-list/master/allgaps.sql" -OutFile "$Path\LastPrimeGapList.txt"
 $PrimeGapList=Get-Content "$Path\LastPrimeGapList.txt"
 #Get Dump to Compare
-$ToCompare=Get-Content "$Path\Dump_Mersenne.csv"|Select-Object -skip 1    #End of the file only. "-skip 1" for all except first line.
+$ToCompare=Get-Content "$Path\Dump_Mersenne.csv"|Select-Object -skip 1    #End of the file only. "-skip 1" for all except first line. "-last 100" for the last 100 lines.
 #Create the PtentialRecords.txt, if doesn't exist
 If ((Test-Path -Path "$Path\PotentialRecords.txt" -PathType Leaf) -eq $False){
 $Null=Set-Content -Path "$Path\PotentialRecords.txt" -Value "Potential Gapcoin Records"}
@@ -32,7 +32,7 @@ $Diffe=$MerittoCompare - $Merit
 Write-Warning "Le Gap $Gapsize est un Record potentiel avec un Mérite de $MerittoCompare. Existant=$Merit Difference:$Diffe ($c Record(s))"
 "Le Gap $Gapsize est un Record potentiel avec un Mérite de $MerittoCompare. Existant=$Merit Difference:$Diffe ($c Record(s))"|Add-Content "C:\Temp\Test\ComparetoList\PotentialRecords.txt"
 $c++}Else{
-#$Diff=$Merit - $MerittoCompare
+#$Diff=$Merit - $MerittoCompare                                                                                          #Comment to see only Potential Records
 #Write-Host "Fail. Gap $Gapsize avec un mérite de $Merit. Trouvé:$MerittoCompare Manque:$Diff ($s /"$ToCompare.count")"  #Comment to see only Potential Records
 }$s++
 }#End ForEach
