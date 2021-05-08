@@ -30,7 +30,7 @@ $Merit=$Wanted[7]
 If($MerittoCompare -gt $Merit){
 $Diffe=$MerittoCompare - $Merit
 Write-Warning "Le Gap $Gapsize est un Record potentiel avec un Mérite de $MerittoCompare. Existant=$Merit Difference:$Diffe ($c Record(s))"
-"Le Gap $Gapsize est un Record potentiel avec un Mérite de $MerittoCompare. Existant=$Merit Difference:$Diffe ($c Record(s))"|Add-Content "C:\Temp\Test\ComparetoList\PotentialRecords.txt"
+"Le Gap $Gapsize est un Record potentiel avec un Mérite de $MerittoCompare. Existant=$Merit Difference:$Diffe ($c Record(s))"|Add-Content "$Path\PotentialRecords.txt"
 $c++}Else{
 $Diff=$Merit - $MerittoCompare
 Write-Host "Fail. Gap $Gapsize avec un mérite de $Merit. Trouvé:$MerittoCompare Manque:$Diff ($s /"$ToCompare.count")"
