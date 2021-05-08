@@ -38,7 +38,7 @@ $line|Add-Content "$Path\PotentialRecords.txt"
 " "|Add-Content "$Path\PotentialRecords.txt"
 $c++}Else{
 $Diff=$Merit - $MerittoCompare                                                                                          #Comment to see only Potential Records
-Write-Host "Fail. Gap $Gapsize avec un mérite de $Merit. Trouvé:$MerittoCompare Manque:$Diff ($s /"$ToCompare.count")"  #Comment to see only Potential Records
+Write-Host "Fail. Gap $Gapsize avec un mérite de $Merit. Trouvé:$MerittoCompare Difference:$Diff ($s /"$ToCompare.count")"  #Comment to see only Potential Records
 }$s++
 }#End ForEach
 #pause
