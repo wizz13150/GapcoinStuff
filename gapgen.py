@@ -1,3 +1,6 @@
+# Prime Gap Generator. Produce a random Prime, search the next one, find gap's merit.
+# V0.0.1
+
 import gmpy2
 import random
 import time
@@ -6,7 +9,6 @@ import argparse
 from concurrent.futures import ProcessPoolExecutor
 import signal
 import sys
-import queue
 
 
 parser = argparse.ArgumentParser()
@@ -49,7 +51,7 @@ def boucle(merite_minimum: float, digits: int):
             premier = prochain_premier(premier)
             compteur_premiers += 1
 
-        # Trouver le prochain nombre premier en utilisant l'hybrid sieving
+        # Trouver le prochain nombre premier
         deuxieme_premier = prochain_premier(premier + 1)
         compteur_premiers += 1
 
@@ -72,7 +74,7 @@ def boucle(merite_minimum: float, digits: int):
         if current_time - start_time >= 1:
                 elapsed_time = time.perf_counter() - timer
                 minutes, seconds = divmod(elapsed_time, 60)
-                print(f"\rRunning {minutes:.0f}min {seconds:.0f}sec -{threads}t- MinMerit: {merite_minimum} ; Gaps/s: {compteur_gaps*threads} ; Primes/s: {compteur_premiers*threads} ; Max gap: {gap_maximum} ; Max merit: {merite_maximum}", end='\r', flush=True)
+                print(f"\rRunning {minutes:.0f}min {seconds:.0f}sec -{threads}t- MinMerit:{merite_minimum} |Gaps/s:{compteur_gaps*threads} |Primes/s:{compteur_premiers*threads} |Max gap:{gap_maximum} |Max merit:{merite_maximum}", end='\r', flush=True)
                 compteur_premiers = 0
                 compteur_gaps = 0
                 start_time = current_time
