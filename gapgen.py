@@ -33,6 +33,11 @@ def prochain_premier(n):
 def calculer_merite(gap, premier):
     return gap / math.log(premier)
 
+#Fonction pour quitter le script proprement si Ctrl+C sont pressés
+def exit_gracefully(signum, frame):
+    sys.exit(0)
+signal.signal(signal.SIGINT, exit_gracefully)
+
 def boucle(merite_minimum: float, digits: int):
     compteur_premiers = 0
     compteur_gaps = 0
@@ -70,28 +75,22 @@ def boucle(merite_minimum: float, digits: int):
             print("Gap:", gap, "Mérite:", merite)
             print("GapStart:", premier)
             print("GapEnd:", deuxieme_premier)
+            
         current_time = time.time()    
         if current_time - start_time >= 1:
-                elapsed_time = time.perf_counter() - timer
-                minutes, seconds = divmod(elapsed_time, 60)
-                print(f"\rRunning {minutes:.0f}min {seconds:.0f}sec -{threads}t- MinMerit:{merite_minimum} |Gaps/s:{compteur_gaps*threads} |Primes/s:{compteur_premiers*threads} |Max gap:{gap_maximum} |Max merit:{merite_maximum}", end='\r', flush=True)
-                compteur_premiers = 0
-                compteur_gaps = 0
-                start_time = current_time
-                
-    return gap, gap_maximum, merite, merite_maximum, premier, deuxieme_premier 
-
-def exit_gracefully(signum, frame):
-    sys.exit(0)
-signal.signal(signal.SIGINT, exit_gracefully)
+            elapsed_time = time.perf_counter() - timer
+            minutes, seconds = divmod(elapsed_time, 60)
+            print(f"\rRunning {minutes:.0f}min {seconds:.0f}sec -{threads}t- MinMerit:{merite_minimum} |Gaps/s:{compteur_gaps*threads} |Primes/s:{compteur_premiers*threads} |Max gap:{gap_maximum} |Max merit:{merite_maximum}", end='\r', flush=True)
+            compteur_premiers = 0
+            compteur_gaps = 0
+            start_time = current_time
 
 def main():
     max_workers = 0
     processes = []
     print(f"{threads} threads used")
     with ProcessPoolExecutor(max_workers=threads) as executor:
-        for i in range(threads):
-            executor.submit(boucle, merite_minimum, digits)
+        executor.submit(boucle, merite_minimum, digits)
     for p in processes:
         p.join()
 
