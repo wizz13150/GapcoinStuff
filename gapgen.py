@@ -90,7 +90,8 @@ def main():
     processes = []
     print(f"{threads} threads used")
     with ProcessPoolExecutor(max_workers=threads) as executor:
-        executor.submit(boucle, merite_minimum, digits)
+        for i in range(threads):
+            executor.submit(boucle, merite_minimum, digits)
     for p in processes:
         p.join()
 
