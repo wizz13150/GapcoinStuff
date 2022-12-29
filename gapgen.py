@@ -6,6 +6,7 @@ import argparse
 from concurrent.futures import ProcessPoolExecutor
 import signal
 import sys
+import queue
 
 
 parser = argparse.ArgumentParser()
@@ -24,9 +25,7 @@ def est_premier(n):
 
 # Fonction pour trouver le prochain nombre premier
 def prochain_premier(n):
-    while not est_premier(n):
-        n += 1
-    return n
+    return gmpy2.next_prime(n)
 
 # Fonction pour calculer le mérite d'un prime gap
 def calculer_merite(gap, premier):
@@ -50,7 +49,7 @@ def boucle(merite_minimum: float, digits: int):
             premier = prochain_premier(premier)
             compteur_premiers += 1
 
-        # Trouver le prochain nombre premier
+        # Trouver le prochain nombre premier en utilisant l'hybrid sieving
         deuxieme_premier = prochain_premier(premier + 1)
         compteur_premiers += 1
 
